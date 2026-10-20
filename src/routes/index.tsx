@@ -284,7 +284,6 @@ function Index() {
                 </ul>
               </div>
             </div>
-            <p>靴をお持ちでない方はリバーシューズ 300円（QR決済）</p>
           </div>
         </div>
 
