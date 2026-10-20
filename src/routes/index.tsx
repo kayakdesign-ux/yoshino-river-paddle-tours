@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, MapPin, Check } from "lucide-react";
-import gearAsset from "@/assets/sup-gear.png.asset.json";
+import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
+import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
+
 
 const LINE_URL = "https://page.line.me/418xyaym?openQrModal=true";
 const W = "https://kawaasobi.com/wp/wp-content/uploads";
@@ -247,8 +249,12 @@ function Index() {
       {/* Rental */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>持ち物・レンタル</H2>
-        <div className="mb-6 grid items-center gap-6 rounded-2xl border bg-card p-5 md:grid-cols-[minmax(0,340px)_1fr] md:p-6">
-          <img src={gearAsset.url} alt="当日の服装と装備のイメージ：つば付きハット、ライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[340px] md:max-w-[400px]" />
+        <div className="mb-6 grid items-center gap-6 rounded-2xl border bg-card p-5 md:grid-cols-[minmax(0,500px)_1fr] md:p-6">
+          <div className="grid grid-cols-2 items-end gap-2">
+            <img src={gearWomanAsset.url} alt="当日の服装と装備のイメージ（女性）：つば付きハット、オレンジのライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[240px]" />
+            <img src={gearManAsset.url} alt="当日の服装と装備のイメージ（男性）：つば付きハット、柄のショートパンツ、マリンシューズを着用し、ライフジャケット・SUPボード・パドルを持った状態" className="mx-auto w-full max-w-[240px]" />
+          </div>
+
           <div className="space-y-3 text-sm">
             <p className="text-lg font-bold text-primary">この格好でそのまま川へ</p>
             <p><span className="font-bold">「夏はラッシュガード、上下」</span>がオススメです。</p>
@@ -280,21 +286,12 @@ function Index() {
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           <div className="rounded-2xl border bg-card p-5">
             <p className="mb-3 font-bold text-primary">お店でご用意出来る物（レンタル）</p>
             <ul className="grid grid-cols-2 gap-1 text-sm">
               {["ヘルメット", "ウェットスーツ", "パドル", "ウェットスーツジャケット", "ライフジャケット", "パドリングジャケット", "リーシュコード", "作業グローブ"].map((t) => <li key={t}>・{t}</li>)}
             </ul>
-          </div>
-          <div className="rounded-2xl border bg-card p-5 text-sm">
-            <p className="mb-3 font-bold text-primary">有料でのレンタル品</p>
-            <p>レンタルシューズ 300円</p>
-            <p>ウェットスーツレンタル 500円</p>
-            <p className="mt-2">水に入れる格好で参加いただけます。</p>
-            <p className="mt-2 text-destructive">7/15日〜8月末までは30度を超える気温時はウェットスーツは熱中症の原因になりやすいのでレンタルは非推奨</p>
-            <p className="mb-1 mt-4 font-bold text-primary">店頭販売品</p>
-            <p>タオル／簡易下着</p>
           </div>
           <div className="rounded-2xl border bg-card p-5 text-sm">
             <p className="mb-3 font-bold text-primary">お客様にご用意頂く物</p>
@@ -309,7 +306,30 @@ function Index() {
         </div>
       </section>
 
+      {/* Paid rental */}
+      <section className="mx-auto mt-16 max-w-5xl px-4">
+        <H2>有料レンタル</H2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border bg-card p-5">
+            <p className="font-bold text-primary">レンタルシューズ</p>
+            <p className="mt-1 text-3xl font-bold">300<span className="ml-1 text-sm font-normal">円</span></p>
+            <p className="mt-2 text-sm text-muted-foreground">濡れても良い靴をお持ちでない方へ。ビーサンでは川に入れません。</p>
+          </div>
+          <div className="rounded-2xl border bg-card p-5">
+            <p className="font-bold text-primary">ウェットスーツ</p>
+            <p className="mt-1 text-3xl font-bold">500<span className="ml-1 text-sm font-normal">円</span></p>
+            <p className="mt-2 text-sm text-muted-foreground">水に入れる格好での参加大歓迎。水温や季節が気になる方はこちらから。</p>
+          </div>
+        </div>
+        <p className="mt-3 text-sm text-destructive">7/15〜8月末、30度を超える気温の日は熱中症の原因になりやすいため、ウェットスーツのレンタルは非推奨です。</p>
+        <div className="mt-4 rounded-2xl bg-secondary p-4 text-sm">
+          <p className="font-bold text-primary">お支払いはQR決済（PayPay・楽天Pay）</p>
+          <p className="mt-1">店頭販売：タオル／簡易下着</p>
+        </div>
+      </section>
+
       {/* Packraft */}
+
       <section className="mx-auto mt-16 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
         <CourseCard />
         <div className="space-y-4">
