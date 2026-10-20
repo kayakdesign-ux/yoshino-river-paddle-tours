@@ -247,22 +247,39 @@ function Index() {
       {/* Rental */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>持ち物・レンタル</H2>
-        <div className="mb-6 grid items-center gap-5 rounded-2xl border bg-card p-5 md:grid-cols-[minmax(0,230px)_1fr]">
-          <img src={gearAsset.url} alt="当日の服装と装備のイメージ：つば付きハット、ライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[230px]" />
+        <div className="mb-6 grid items-center gap-6 rounded-2xl border bg-card p-5 md:grid-cols-[minmax(0,340px)_1fr] md:p-6">
+          <img src={gearAsset.url} alt="当日の服装と装備のイメージ：つば付きハット、ライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[340px] md:max-w-[400px]" />
           <div className="space-y-3 text-sm">
-            <p className="font-bold text-primary">この格好でそのまま川へ</p>
-            <p className="text-muted-foreground">写真の服装・装備がそのまま当日のスタイルです。ライフジャケット・ヘルメット・パドル・リーシュコードはお店でご用意しますので、手ぶらでOK。ご自身で用意するのは水着と濡れても良い靴、化繊のTシャツ（またはラッシュガード）だけです。</p>
-            <ul className="grid gap-1 sm:grid-cols-2">
-              {["ライフジャケット", "ヘルメット", "パドル", "リーシュコード"].map((t) => (
-                <li key={t} className="flex items-center gap-2">
-                  <Check className="h-4 w-4 shrink-0 text-line" />
-                  {t}
-                </li>
-              ))}
-            </ul>
+            <p className="text-lg font-bold text-primary">この格好でそのまま川へ</p>
+            <p><span className="font-bold">「夏はラッシュガード、上下」</span>がオススメです。</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl bg-secondary p-4">
+                <p className="mb-2 font-bold text-primary">レンタル料込</p>
+                <ul className="space-y-1">
+                  {["ライフジャケット", "SUP", "パドル"].map((t) => (
+                    <li key={t} className="flex items-center gap-2">
+                      <Check className="h-4 w-4 shrink-0 text-line" />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-xl bg-secondary p-4">
+                <p className="mb-2 font-bold text-primary">必要に応じて</p>
+                <ul className="space-y-1">
+                  {["リーシュコード", "ヘルメット"].map((t) => (
+                    <li key={t} className="flex items-center gap-2">
+                      <Check className="h-4 w-4 shrink-0 text-line" />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <p>靴をお持ちでない方はレンタルシューズ 300円（QR決済）</p>
           </div>
         </div>
+
         <div className="grid gap-5 md:grid-cols-3">
           <div className="rounded-2xl border bg-card p-5">
             <p className="mb-3 font-bold text-primary">お店でご用意出来る物（レンタル）</p>
