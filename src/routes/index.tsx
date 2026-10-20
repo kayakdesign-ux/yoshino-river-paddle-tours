@@ -275,7 +275,7 @@ function Index() {
               <div className="rounded-xl bg-secondary p-4">
                 <p className="mb-2 font-bold text-primary">必要に応じて</p>
                 <ul className="space-y-1">
-                  {["リーシュコード", "ヘルメット"].map((t) => (
+                  {["リーシュコード", "ヘルメット", "作業グローブ"].map((t) => (
                     <li key={t} className="flex items-center gap-2">
                       <Check className="h-4 w-4 shrink-0 text-line" />
                       {t}
@@ -284,7 +284,6 @@ function Index() {
                 </ul>
               </div>
             </div>
-            <p>靴をお持ちでない方はリバーシューズ 300円（QR決済）</p>
           </div>
         </div>
 
