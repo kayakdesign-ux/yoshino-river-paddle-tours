@@ -287,23 +287,15 @@ function Index() {
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
-          <div className="rounded-2xl border bg-card p-5">
-            <p className="mb-3 font-bold text-primary">お店でご用意出来る物（レンタル）</p>
-            <ul className="grid grid-cols-2 gap-1 text-sm">
-              {["ヘルメット", "ウェットスーツ", "パドル", "ウェットスーツジャケット", "ライフジャケット", "パドリングジャケット", "リーシュコード", "作業グローブ"].map((t) => <li key={t}>・{t}</li>)}
-            </ul>
-          </div>
-          <div className="rounded-2xl border bg-card p-5 text-sm">
-            <p className="mb-3 font-bold text-primary">お客様にご用意頂く物</p>
-            <p>水着 または 濡れても良い下着</p>
-            <p>濡れても良い靴（ビーチサンダルでは川に入れません）</p>
-            <p className="mt-2 font-bold">夏期シーズン</p>
-            <p>濡れても良い Tシャツ（化繊）／短パン（サーフトランクス）</p>
-            <p>虫除け、日焼け対策に長ズボンタイプのラッシュガードがオススメです。</p>
-            <p className="mt-2 font-bold">あると良いと思う物</p>
-            <p>日焼け止／飲み物（ゴール後、飲むもの）／メガネバンド、ゴーグル</p>
-          </div>
+        <div className="rounded-2xl border bg-card p-5 text-sm">
+          <p className="mb-3 font-bold text-primary">お客様にご用意頂く物</p>
+          <p>水着 または 濡れても良い下着</p>
+          <p>濡れても良い靴（ビーチサンダルでは川に入れません）</p>
+          <p className="mt-2 font-bold">夏期シーズン</p>
+          <p>濡れても良い Tシャツ（化繊）／短パン（サーフトランクス）</p>
+          <p>虫除け、日焼け対策に長ズボンタイプのラッシュガードがオススメです。</p>
+          <p className="mt-2 font-bold">あると良いと思う物</p>
+          <p>日焼け止／飲み物（ゴール後、飲むもの）／メガネバンド、ゴーグル</p>
         </div>
       </section>
 
