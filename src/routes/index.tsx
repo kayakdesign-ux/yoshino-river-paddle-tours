@@ -288,14 +288,12 @@ function Index() {
         </div>
 
         <div className="rounded-2xl border bg-card p-5 text-sm">
-          <p className="mb-3 font-bold text-primary">お客様にご用意頂く物</p>
-          <p>水着 または 濡れても良い下着</p>
-          <p>濡れても良い靴（ビーチサンダルでは川に入れません）</p>
-          <p className="mt-2 font-bold">夏期シーズン</p>
-          <p>濡れても良い Tシャツ（化繊）／短パン（サーフトランクス）</p>
-          <p>虫除け、日焼け対策に長ズボンタイプのラッシュガードがオススメです。</p>
-          <p className="mt-2 font-bold">あると良いと思う物</p>
-          <p>日焼け止／飲み物（ゴール後、飲むもの）／メガネバンド、ゴーグル</p>
+          <p className="mb-3 font-bold text-primary">必要に応じてご用意いただい方が良いもの</p>
+          <ul className="space-y-1">
+            {["飲み物（水上へは浮く物のみ）", "メガネバンド", "ゴーグル", "虫除け", "日焼け止め"].map((t) => (
+              <li key={t}>・{t}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
