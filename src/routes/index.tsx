@@ -291,13 +291,14 @@ function Index() {
           <div className="mt-3 rounded-xl bg-secondary p-4">
             <p className="mb-2 font-bold text-primary">必要に応じて<br className="sm:hidden" />ご用意いただくと良いもの</p>
             <ul className="flex flex-wrap gap-x-6 gap-y-1">
-              {["飲み物（水上へは浮く物のみ）", "メガネバンド", "ゴーグル", "虫除け", "日焼け止め", "携帯防水パック"].map((t) => (
+              {["飲み物", "携帯防水パック", "メガネバンド", "ゴーグル", "虫除け", "日焼け止め"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="h-4 w-4 shrink-0 text-line" />
                   {t}
                 </li>
               ))}
             </ul>
+            <p className="mt-2 text-sm font-bold text-primary">水上へ持ち込みは浮く物のみ</p>
           </div>
         </div>
       </section>
