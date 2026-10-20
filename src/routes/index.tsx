@@ -289,7 +289,7 @@ function Index() {
             </div>
           </div>
           <div className="mt-3 rounded-xl bg-secondary p-4">
-            <p className="mb-2 font-bold text-primary text-balance">必要に応じてご用意いただくと良いもの</p>
+            <p className="mb-2 font-bold text-primary">必要に応じて<br className="sm:hidden" />ご用意いただくと良いもの</p>
             <ul className="flex flex-wrap gap-x-6 gap-y-1">
               {["飲み物（水上へは浮く物のみ）", "メガネバンド", "ゴーグル", "虫除け", "日焼け止め", "携帯防水パック"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
