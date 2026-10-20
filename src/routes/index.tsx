@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, MapPin, Check } from "lucide-react";
+import gearAsset from "@/assets/sup-gear.png.asset.json";
 
 const LINE_URL = "https://page.line.me/418xyaym?openQrModal=true";
 const W = "https://kawaasobi.com/wp/wp-content/uploads";
@@ -246,6 +247,22 @@ function Index() {
       {/* Rental */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>持ち物・レンタル</H2>
+        <div className="mb-6 grid items-center gap-5 rounded-2xl border bg-card p-5 md:grid-cols-[minmax(0,230px)_1fr]">
+          <img src={gearAsset.url} alt="当日の服装と装備のイメージ：つば付きハット、ライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[230px]" />
+          <div className="space-y-3 text-sm">
+            <p className="font-bold text-primary">この格好でそのまま川へ</p>
+            <p className="text-muted-foreground">写真の服装・装備がそのまま当日のスタイルです。ライフジャケット・ヘルメット・パドル・リーシュコードはお店でご用意しますので、手ぶらでOK。ご自身で用意するのは水着と濡れても良い靴、化繊のTシャツ（またはラッシュガード）だけです。</p>
+            <ul className="grid gap-1 sm:grid-cols-2">
+              {["ライフジャケット", "ヘルメット", "パドル", "リーシュコード"].map((t) => (
+                <li key={t} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 shrink-0 text-line" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <p>靴をお持ちでない方はレンタルシューズ 300円（QR決済）</p>
+          </div>
+        </div>
         <div className="grid gap-5 md:grid-cols-3">
           <div className="rounded-2xl border bg-card p-5">
             <p className="mb-3 font-bold text-primary">お店でご用意出来る物（レンタル）</p>
