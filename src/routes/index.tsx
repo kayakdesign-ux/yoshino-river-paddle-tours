@@ -257,45 +257,47 @@ function Index() {
               <img src={gearWomanAsset.url} alt="当日の服装と装備のイメージ（女性）：つば付きハット、オレンジのライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[240px]" />
               <img src={gearManAsset.url} alt="当日の服装と装備のイメージ（男性）：つば付きハット、柄のショートパンツ、マリンシューズを着用し、ライフジャケット・SUPボード・パドルを持った状態" className="mx-auto w-full max-w-[240px]" />
             </div>
-            <div className="text-sm">
-              <p className="text-lg font-bold text-primary">この格好でそのまま川へ</p>
-              <p className="mt-1"><span className="font-bold">「夏はラッシュガード、上下」</span>がオススメです。</p>
+            <div className="space-y-3 text-sm">
+              <div>
+                <p className="text-lg font-bold text-primary">この格好でそのまま川へ</p>
+                <p className="mt-1"><span className="font-bold">「夏はラッシュガード、上下」</span>がオススメです。</p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl bg-secondary p-4">
+                  <p className="mb-2 font-bold text-primary">レンタル料込み</p>
+                  <ul className="space-y-1">
+                    {["ライフジャケット", "SUP", "パドル"].map((t) => (
+                      <li key={t} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 shrink-0 text-line" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-secondary p-4">
+                  <p className="mb-2 font-bold text-primary">必要に応じてレンタル</p>
+                  <ul className="space-y-1">
+                    {["リーシュコード", "ヘルメット", "作業グローブ"].map((t) => (
+                      <li key={t} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 shrink-0 text-line" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-xl bg-secondary p-4">
-              <p className="mb-2 font-bold text-primary">レンタル料込</p>
-              <ul className="space-y-1">
-                {["ライフジャケット", "SUP", "パドル"].map((t) => (
-                  <li key={t} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0 text-line" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-xl bg-secondary p-4">
-              <p className="mb-2 font-bold text-primary">必要に応じて</p>
-              <ul className="space-y-1">
-                {["リーシュコード", "ヘルメット", "作業グローブ"].map((t) => (
-                  <li key={t} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0 text-line" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-xl bg-secondary p-4">
-              <p className="mb-2 font-bold text-primary">必要に応じてご用意いただい方が良いもの</p>
-              <ul className="space-y-1">
-                {["飲み物（水上へは浮く物のみ）", "メガネバンド", "ゴーグル", "虫除け", "日焼け止め"].map((t) => (
-                  <li key={t} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0 text-line" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-3 rounded-xl bg-secondary p-4">
+            <p className="mb-2 font-bold text-primary">必要に応じて<br className="sm:hidden" />ご用意いただくと良いもの</p>
+            <ul className="flex flex-wrap gap-x-6 gap-y-1">
+              {["飲み物（水上へは浮く物のみ）", "メガネバンド", "ゴーグル", "虫除け", "日焼け止め", "携帯防水パック"].map((t) => (
+                <li key={t} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 shrink-0 text-line" />
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
