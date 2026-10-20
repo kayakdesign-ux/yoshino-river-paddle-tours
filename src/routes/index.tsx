@@ -79,13 +79,15 @@ const steps = [
     "出発の20分前には到着ください。",
     "送迎車は時間通り出発します。",
     "夏期は、化繊のTシャツやラッシュガード、サーフトランクスで参加いただけます。",
-    "ウェットスーツは別途500円でレンタルできますが、夏日にはオススメ致しません。",
+    "ウェットスーツ＋ラッシュガード長袖＋帽子は700円（1点でも700円）です。",
+    "30度を超えると熱中症回避の為、貸出自粛とさせていただきます。",
+
     "ご予約時間の60分前から駐車場にはいれます。",
     "出発30分前から更衣室で着替えできます。",
     "保険の申込をQRコードからお願いします。（お名前、誕生日、連絡先）",
     "鍵付きロッカーございます。",
     "川に出れる濡れても良い服装でお待ちください。",
-    "レンタルシューズは300円 QR決済（PayPay,楽天Pay）でお願いします。",
+    "リバーシューズは300円 QR決済（PayPay,楽天Pay）でお願いします。",
   ] },
   { t: "精算は参加料金、レンタル料金の清算", b: ["お支払は、QR決済（PayPay,楽天Pay）がご利用いただけます。"] },
   { t: "時間になりましたら、出発or安全説明開始となります。", b: [
@@ -282,7 +284,7 @@ function Index() {
                 </ul>
               </div>
             </div>
-            <p>靴をお持ちでない方はレンタルシューズ 300円（QR決済）</p>
+            <p>靴をお持ちでない方はリバーシューズ 300円（QR決済）</p>
           </div>
         </div>
 
@@ -296,7 +298,7 @@ function Index() {
           <div className="rounded-2xl border bg-card p-5 text-sm">
             <p className="mb-3 font-bold text-primary">お客様にご用意頂く物</p>
             <p>水着 または 濡れても良い下着</p>
-            <p>濡れても良い靴（ビーサンは不可）</p>
+            <p>濡れても良い靴（ビーチサンダルでは川に入れません）</p>
             <p className="mt-2 font-bold">夏期シーズン</p>
             <p>濡れても良い Tシャツ（化繊）／短パン（サーフトランクス）</p>
             <p>虫除け、日焼け対策に長ズボンタイプのラッシュガードがオススメです。</p>
@@ -311,21 +313,22 @@ function Index() {
         <H2>有料レンタル</H2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">レンタルシューズ</p>
+            <p className="font-bold text-primary">リバーシューズ</p>
             <p className="mt-1 text-3xl font-bold">300<span className="ml-1 text-sm font-normal">円</span></p>
-            <p className="mt-2 text-sm text-muted-foreground">濡れても良い靴をお持ちでない方へ。ビーサンでは川に入れません。</p>
+            <p className="mt-2 text-sm text-muted-foreground">ビーチサンダルでは川に入れません。</p>
           </div>
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">ウェットスーツ</p>
-            <p className="mt-1 text-3xl font-bold">500<span className="ml-1 text-sm font-normal">円</span></p>
-            <p className="mt-2 text-sm text-muted-foreground">水に入れる格好での参加大歓迎。水温や季節が気になる方はこちらから。</p>
+            <p className="font-bold text-primary">ウェットスーツ＋ラッシュガード長袖＋帽子</p>
+            <p className="mt-1 text-3xl font-bold">700<span className="ml-1 text-sm font-normal">円</span></p>
+            <p className="mt-2 text-sm text-muted-foreground">1点でも700円。水温や季節が気になる方はこちらから。</p>
+
           </div>
         </div>
-        <p className="mt-3 text-sm text-destructive">7/15〜8月末、30度を超える気温の日は熱中症の原因になりやすいため、ウェットスーツのレンタルは非推奨です。</p>
+        <p className="mt-3 text-sm text-destructive">30度を超えると熱中症回避の為、貸出自粛とさせていただきます。</p>
         <div className="mt-4 rounded-2xl bg-secondary p-4 text-sm">
           <p className="font-bold text-primary">お支払いはQR決済（PayPay・楽天Pay）</p>
-          <p className="mt-1">店頭販売：タオル／簡易下着</p>
         </div>
+
       </section>
 
       {/* Packraft */}
