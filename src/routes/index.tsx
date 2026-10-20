@@ -80,7 +80,7 @@ const steps = [
     "送迎車は時間通り出発します。",
     "夏期は、化繊のTシャツやラッシュガード、サーフトランクスで参加いただけます。",
     "ウェットスーツ＋ラッシュガード長袖＋帽子は700円（1点でも700円）です。",
-    "30度を超えると熱中症回避の為、貸出自粛とさせていただきます。",
+    "ウェットスーツは30度を超えると熱中症回避の為、貸出自粛とさせていただきます。",
 
     "ご予約時間の60分前から駐車場にはいれます。",
     "出発30分前から更衣室で着替えできます。",
@@ -319,7 +319,7 @@ function Index() {
 
           </div>
         </div>
-        <p className="mt-3 text-sm text-destructive">30度を超えると熱中症回避の為、貸出自粛とさせていただきます。</p>
+        <p className="mt-3 text-sm text-destructive">ウェットスーツは30度を超えると熱中症回避の為、貸出自粛とさせていただきます。</p>
         <div className="mt-4 rounded-2xl bg-secondary p-4 text-sm">
           <p className="font-bold text-primary">お支払いはQR決済（PayPay・楽天Pay）</p>
         </div>
