@@ -182,7 +182,7 @@ function Index() {
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t, i) => (
             <Reveal key={t} delay={i * 120}>
-              <span className="inline-block rounded-full border-2 border-primary/20 bg-secondary px-5 py-3 text-base font-bold text-secondary-foreground shadow-md md:text-lg">{t}</span>
+              <span className="inline-block rounded-full border-2 border-sakura-strong/30 bg-sakura px-6 py-3.5 text-base font-bold text-sakura-foreground shadow-lg md:text-lg">{t}</span>
             </Reveal>
           ))}
         </div>
