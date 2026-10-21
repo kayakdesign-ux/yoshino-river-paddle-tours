@@ -199,7 +199,7 @@ function Index() {
 
       {/* Title */}
       <section className="mx-auto max-w-5xl px-4 pt-8 text-center">
-        <h1 className="font-display text-2xl font-bold leading-snug md:text-4xl">高知・吉野川SUP体験<br className="md:hidden" />｜初心者・家族連れ歓迎！<br />手ぶらで川遊びツアー</h1>
+        <h1 className="font-display text-2xl font-bold leading-snug md:text-4xl">高知・吉野川SUP体験<br className="md:hidden" />｜初心者・家族連れ歓迎！<br />川遊びツアー</h1>
         <p className="mt-2 text-sm text-muted-foreground">– 高知サップ（SUP）清流吉野川で川遊び –</p>
         <p className="mt-4">高知でSUP体験を探している方へ――清流ランキング2023 1位の吉野川グリーンでリバーサップを満喫しませんか？</p>
       </section>
