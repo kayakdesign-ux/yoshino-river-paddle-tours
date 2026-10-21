@@ -216,23 +216,16 @@ function Index() {
           川用は幅が広く安定感抜群です。
         </span>
         <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          <div>
-            <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
-            <ul className="mt-6 space-y-3">
-              {highlights.map((h) => (
-                <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
-                  <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />
-                  {h.t}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <Reveal>
-            <figure className="rounded-3xl bg-card p-3 shadow-xl ring-1 ring-primary/15">
-              <img src={`${W}/2025-05-8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" className="w-full rounded-2xl" />
-            </figure>
-          </Reveal>
+        <div>
+          <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
+          <ul className="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-2">
+            {highlights.map((h) => (
+              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl sm:col-span-2" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+                <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />
+                {h.t}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
