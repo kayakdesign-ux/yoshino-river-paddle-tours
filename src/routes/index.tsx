@@ -250,7 +250,7 @@ function Index() {
               ))}
             </ul>
           </div>
-          <img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" className="rounded-2xl" />
+          <img src={`${W}/2025/05/Photo03.png`} alt="ツアー写真" className="rounded-2xl" />
         </div>
       </section>
 
@@ -268,7 +268,7 @@ function Index() {
         <div className="space-y-3">
           <H2>ツアー中の写真お撮りします</H2>
           <p className="text-center">写真は気に入ったら購入できます。</p>
-          <img src={`${W}/2025/05/Photo03.png`} alt="ツアー写真" className="rounded-2xl" />
+          <img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" className="rounded-2xl" />
         </div>
         <div className="space-y-3">
           <H2>カメラ・スマートホン持込OK</H2>
