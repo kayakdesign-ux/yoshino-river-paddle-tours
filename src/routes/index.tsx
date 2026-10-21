@@ -493,7 +493,6 @@ function Index() {
             ))}
           </div>
           <p className="mt-6 text-center">がっつりレッスンではないので のんびりするのもOKです。</p>
-          <img src={`${K}/2025/05/P8054157-Sup_nerrupng-1024x586.png`} alt="楽しみ方はいろいろ" className="mx-auto mt-4 max-w-3xl rounded-2xl" />
           <p className="mt-2 text-center font-bold">楽しみ方はいろいろ</p>
           <div className="mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl bg-card p-4">
             <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
@@ -589,6 +588,7 @@ function Index() {
       {/* Footer */}
       <footer className="mt-16 bg-primary py-12 text-primary-foreground">
         <div className="mx-auto max-w-5xl space-y-6 px-4 text-center">
+          <Reveal><img src={`${K}/2025/05/P8054157-Sup_nerrupng-1024x586.png`} alt="楽しみ方はいろいろ" className="mx-auto w-full max-w-3xl rounded-2xl shadow-2xl animate-float" /></Reveal>
           <p className="font-display text-3xl font-bold">最高の休日に出発。</p>
           <img src={`${K}/2024/10/%E5%BA%97%E8%88%971-1024x836-1.jpg`} alt="ガルバンゾのベース（店舗）" className="mx-auto max-w-md rounded-2xl" />
           <p>おおとよIC 約15分。<br />四国・吉野川のすぐそばにベース（店舗）があります。</p>
