@@ -299,18 +299,7 @@ function Index() {
       {/* Photos */}
       <section className="mx-auto mt-16 grid max-w-5xl gap-8 px-4 md:grid-cols-2">
         <div className="space-y-3">
-          <H2>ツアー中の写真お撮りします</H2>
-          <p className="text-center">写真は気に入ったら購入できます。</p>
-        </div>
-        <div className="space-y-3">
           <H2>{"\n"}</H2>
-          <ul className="list-disc space-y-1 pl-5 text-sm">
-            <li>{"\n"}</li>
-            <li>{"\n"}</li>
-            <li>{"\n"}</li>
-            <li>{"\n"}</li>
-            <li>{"\n"}</li>
-          </ul>
           <img src={`${W}/2025/05/SUP06.png`} alt="スマホ持ち込み" className="rounded-2xl" />
         </div>
       </section>
