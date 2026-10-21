@@ -59,28 +59,25 @@ function PointNote({ main, sub }: { main: string; sub: string }) {
   const id = useId();
   return (
     <div className="mt-3 space-y-2">
-      <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
-        <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
-        {main}
-      </p>
-      <div className="overflow-hidden rounded-xl border bg-muted/60">
-        <button
-          type="button"
-          aria-expanded={open}
-          aria-controls={id}
-          onClick={() => setOpen((v) => !v)}
-          className="flex w-full cursor-pointer items-center justify-between gap-2 px-3 py-2 text-left text-xs"
-        >
-          <span className="flex items-center gap-2">
-            <span className="rounded-full bg-background px-2 py-0.5 font-bold text-accent">補足</span>
-            <span className="text-muted-foreground">{open ? "閉じる" : "押すと開きます"}</span>
-          </span>
-          <ChevronDown className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
-        </button>
-        {open && (
-          <p id={id} className="border-t px-3 py-2 text-xs leading-relaxed text-muted-foreground">{sub}</p>
-        )}
-      </div>
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={id}
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-xl bg-accent px-3 py-2 text-left font-bold text-accent-foreground"
+      >
+        <span className="flex items-center gap-2">
+          <span className="rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
+          {main}
+        </span>
+        <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <p id={id} className="rounded-xl border bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+          <span className="mr-2 inline-block rounded-full bg-background px-2 py-0.5 font-bold text-accent">補足</span>
+          {sub}
+        </p>
+      )}
     </div>
   );
 }
