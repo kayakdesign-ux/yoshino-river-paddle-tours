@@ -56,8 +56,10 @@
   --color-chart-5: var(--chart-5);
   --color-line: var(--line);
   --color-river: var(--river);
-  --font-sans: "Zen Kaku Gothic New", system-ui, sans-serif;
-  --font-display: "Zen Maru Gothic", serif;
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --font-sans: "Noto Sans JP", "Yu Gothic", "YuGothic", system-ui, sans-serif;
+  --font-display: "M PLUS 1p", "Noto Sans JP", sans-serif;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -70,16 +72,16 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.985 0.008 160);
+  --background: oklch(0.99 0.006 230);
   --foreground: oklch(0.25 0.04 190);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.25 0.04 190);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.04 190);
-  --primary: oklch(0.52 0.12 175);
+  --primary: oklch(0.5 0.14 240);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.94 0.04 170);
-  --secondary-foreground: oklch(0.3 0.06 180);
+  --secondary: oklch(0.95 0.03 230);
+  --secondary-foreground: oklch(0.3 0.08 240);
   --muted: oklch(0.95 0.015 160);
   --muted-foreground: oklch(0.5 0.03 190);
   --accent: oklch(0.8 0.15 75);
@@ -87,7 +89,9 @@
   --sakura: oklch(0.91 0.06 350);
   --sakura-foreground: oklch(0.32 0.11 350);
   --sakura-strong: oklch(0.55 0.19 350);
-  --river: oklch(0.3 0.06 200);
+  --river: oklch(0.28 0.08 245);
+  --cta: oklch(0.73 0.19 58);
+  --cta-foreground: oklch(0.99 0 0);
   --line: oklch(0.68 0.19 145);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
