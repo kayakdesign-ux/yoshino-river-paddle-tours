@@ -111,12 +111,12 @@ export function WeatherAccess() {
         <b>場所を確認</b>　高知県　大豊ICから約15分{"\n"}
         <MapAccessButton />
       </p>
-      <div className="mt-2 flex justify-center rounded-2xl bg-muted p-3">
+      <div className="mt-2 flex justify-center rounded-2xl bg-muted p-2">
         <img
           src={shikokuMap.url}
           alt="四国の地図（高知県大豊町の場所）"
           loading="lazy"
-          className="h-40 w-auto object-contain"
+          className="h-56 w-auto object-contain"
         />
       </div>
       <p><b>出発時間</b>　9時30分　13時30分</p>
