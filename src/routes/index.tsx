@@ -5,7 +5,6 @@ import { Reveal } from "@/components/Reveal";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
 
 import djiHero from "@/assets/dji-hero.jpg.asset.json";
-import gopr1891 from "@/assets/gopr1891.jpg.asset.json";
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
 
 const afterFlow: { t: string; b: string[] }[] = [
@@ -88,7 +87,7 @@ function PointNote({ main, sub }: { main: string; sub: string }) {
 function CourseCard() {
   return (
     <div className="overflow-hidden rounded-2xl border bg-card shadow-md">
-      <img src={gopr1891.url} alt="吉野川のSUP体験" className="aspect-[8/7] w-full object-cover" />
+      <img src={`${W}/2024/10/GOPR3336-1024x896.jpg`} alt="リバーサップ体験" className="aspect-[8/7] w-full object-cover" />
       <div className="space-y-2 p-5 text-center">
         <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">オススメ</span>
         <p className="text-xl font-bold">ミニ！ツーリング1.5km</p>
