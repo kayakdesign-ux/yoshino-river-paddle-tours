@@ -2,7 +2,7 @@ import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
-import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown, Ship } from "lucide-react";
+import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown, Ship, Camera, Baby, Smartphone, Smile } from "lucide-react";
 
 import djiHero from "@/assets/dji-hero.jpg.asset.json";
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
@@ -254,17 +254,15 @@ function Index() {
         </div>
       </section>
 
-      {/* Family reasons (内容保留) */}
+      {/* Family reasons */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>家族連れに選ばれる理由</H2>
-        <div className="rounded-2xl border border-dashed bg-card p-8 text-center text-sm text-muted-foreground">
-          <p className="font-bold text-foreground">{"\n"}</p>
-          <p className="mt-2">{"\n"}</p>
-          <p className="mx-auto mt-4 w-fit rounded-full bg-card px-5 py-3 text-center font-bold text-primary shadow-sm ring-1 ring-primary/15">ツアー中の家族写真お撮りします</p>
-          <p className="mx-auto mt-3 w-fit rounded-full bg-card px-5 py-3 text-center font-bold text-primary shadow-sm ring-1 ring-primary/15">未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</p>
-          <p className="mx-auto mt-3 w-fit rounded-full bg-primary px-6 py-3 text-center font-bold text-primary-foreground shadow-lg ring-2 ring-primary/30">カメラ・スマートホン持込OK（ルール有）</p>
-          <p className="mx-auto mt-4 w-fit rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl">一人乗りで子供の成長や笑顔がまじかで見れる。</p>
-        </div>
+        <ul className="mx-auto flex max-w-2xl flex-col items-center gap-3 rounded-2xl border bg-card p-6 md:p-8">
+          <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
+          <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Baby className="h-5 w-5 shrink-0" />未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</li>
+          <li className="flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-center font-bold text-primary-foreground shadow-lg ring-2 ring-primary/30"><Smartphone className="h-5 w-5 shrink-0" />カメラ・スマートホン持込OK（ルール有）</li>
+          <li className="flex w-fit items-center gap-2 rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl"><Smile className="h-5 w-5 shrink-0 md:h-6 md:w-6" />一人乗りで子供の成長や笑顔がまじかで見れる。</li>
+        </ul>
       </section>
 
       {/* Photos */}
