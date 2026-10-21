@@ -506,8 +506,8 @@ function Index() {
               </figure>
             ))}
           </div>
-          <p className="mt-6 text-center">がっつりレッスンではないので のんびりするのもOKです。</p>
-          <p className="mt-2 text-center font-bold">楽しみ方はいろいろ</p>
+          <p className="mt-6 text-center">{"\n"}</p>
+          <p className="mt-2 text-center font-bold">{"\n"}</p>
           <div className="mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl bg-card p-4">
             <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
             <p className="text-sm"><b>だっく</b><br />初めての人が気軽に参加できるようにキャンペーンページ特別です。</p>
