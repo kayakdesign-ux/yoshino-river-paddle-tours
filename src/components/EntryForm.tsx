@@ -26,18 +26,39 @@ const groups: {
 const SLOTS = ["午前 9:30出発", "午後 13:30出発"];
 const WD = ["日", "月", "火", "水", "木", "金", "土"];
 
+// 当日表示は当日12時（日本時間）まで。12時を過ぎたら当日を消し、翌日から3日分を表示する。
+function jstNow() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    hour12: false,
+  }).formatToParts(new Date());
+  const num = (type: string) => Number(parts.find((p) => p.type === type)?.value ?? 0);
+  return { y: num("year"), m: num("month"), d: num("day"), h: num("hour") % 24 };
+}
+
+function buildDays() {
+  const { y, m, d, h } = jstNow();
+  const start = h >= 12 ? 1 : 0;
+  const length = h >= 12 ? 3 : 4;
+  return Array.from({ length }, (_, i) => {
+    const t = new Date(Date.UTC(y, m - 1, d + start + i));
+    return {
+      label: `${t.getUTCMonth() + 1}/${t.getUTCDate()}(${WD[t.getUTCDay()]})`,
+      todayOnlyAfternoon: start === 0 && i === 0,
+    };
+  });
+}
+
 export function EntryForm() {
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("");
-  const [days, setDays] = useState<{ label: string }[]>([]);
+  const [days, setDays] = useState<{ label: string; todayOnlyAfternoon: boolean }[]>([]);
   useEffect(() => {
-    const now = new Date();
-    setDays(
-      Array.from({ length: 4 }, (_, i) => {
-        const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
-        return { label: `${d.getMonth() + 1}/${d.getDate()}(${WD[d.getDay()]})` };
-      }),
-    );
+    setDays(buildDays());
   }, []);
   const [c, setC] = useState<Counts>({});
   const [weight80, setWeight80] = useState(0);
