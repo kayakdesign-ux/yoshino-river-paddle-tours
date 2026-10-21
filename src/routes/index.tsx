@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
-import { MessageCircle, MapPin, Check } from "lucide-react";
+import { MessageCircle, MapPin, Check, Lock, ShowerHead } from "lucide-react";
 import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
 import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
 import { WeatherAccess } from "@/components/WeatherAccess";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const afterFlow: { t: string; b: string[] }[] = [
   { t: "忘れ物ありませんか？", b: ["夏期は、化繊のTシャツやラッシュガード、サーフトランクスで参加いただけます。", "飲み物は川に沈まない物なら持込ます。", "携帯は防水ケースに入れて沈まないようにしてください。"] },
@@ -478,20 +477,39 @@ function Index() {
             </li>
           ))}
         </ol>
-        <div className="mt-6 rounded-2xl border bg-card p-5">
-          <h3 className="font-display text-xl font-bold text-primary">予約後の流れ</h3>
-          <Accordion type="multiple" className="mt-2">
-            {afterFlow.map((f, i) => (
-              <AccordionItem key={i} value={`s${i}`}>
-                <AccordionTrigger className="text-left">
-                  <span><span className="mr-2 text-xs font-bold tracking-widest text-primary">SUP{i + 1}</span>{f.t}</span>
-                </AccordionTrigger>
-                <AccordionContent>
-                  {f.b.length > 0 ? <ul className="space-y-1 text-sm">{f.b.map((b) => <li key={b}>・{b}</li>)}</ul> : <p className="text-sm text-muted-foreground">{f.t}</p>}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="mt-6 rounded-3xl border bg-card p-5 md:p-8">
+          <h3 className="text-center font-display text-2xl font-bold text-primary md:text-3xl">予約後の流れ</h3>
+          <p className="mt-1 text-center text-sm text-muted-foreground">スムーズなご参加のため、以下の流れをご確認ください</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="flex items-center gap-4 rounded-2xl bg-secondary p-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card"><Lock className="h-5 w-5 text-primary" /></span>
+              <div><p className="font-bold">鍵付きロッカー完備</p><p className="text-sm text-muted-foreground">貴重品は必ずロッカーへ</p></div>
+            </div>
+            <div className="flex items-center gap-4 rounded-2xl bg-secondary p-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card"><ShowerHead className="h-5 w-5 text-primary" /></span>
+              <div><p className="font-bold">更衣室・トイレ・無料シャワー</p><p className="text-sm text-muted-foreground">ゴール後もさっぱり</p></div>
+            </div>
+          </div>
+          <ol className="mt-8">
+            {afterFlow.map((f, i) => {
+              const big = f.t.match(/(６０|60|30)分前/);
+              return (
+                <li key={i} className="relative flex gap-4 pb-6 last:pb-0">
+                  {i < afterFlow.length - 1 && <span className="absolute left-6 top-12 h-[calc(100%-3rem)] w-px bg-border" />}
+                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-xs font-bold ${big ? "bg-accent text-accent-foreground" : "bg-secondary text-primary"}`}>SUP{i + 1}</span>
+                  <div className="pt-1">
+                    {big && (
+                      <span className="mb-1 inline-block rounded-full bg-accent px-3 py-1 text-accent-foreground">
+                        出発<b className="mx-0.5 font-display text-2xl">{big[1] === "６０" ? "60" : big[1]}分</b>前
+                      </span>
+                    )}
+                    <p className="text-lg font-bold">{f.t}</p>
+                    {f.b.length > 0 && <ul className="mt-1 space-y-0.5 text-sm text-muted-foreground">{f.b.map((b) => <li key={b}>{b}</li>)}</ul>}
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
           <div className="mt-4 space-y-1 rounded-xl bg-secondary p-4 text-sm">
             <p>・写真購入希望はスタッフ迄<br />　ダウンロード方式で購入いただけます。</p>
             <p className="pt-2 font-bold text-primary">ツアー後も良い休日をお楽しみください。</p>
