@@ -58,7 +58,7 @@ export function EntryForm() {
   const text = [
     "【空き状況の確認・申込】",
     `希望日：${date || "未定"}`,
-    `便：${slot}`,
+    `便：${slot || "未定"}`,
     ...groups.map((g) => `${g.title}：${g.fields.map((f) => `${f.label}${c[f.key] ?? 0}人`).join("／")}`),
     `体重80kg：${weight80}人`,
     `合計：${total}人`,
