@@ -122,6 +122,7 @@ const steps = [
   {
     t: "弊社からの返信を持って「予約」とさせていただきます。",
     b: [],
+    pay: true,
     point: {
       main: "無断キャンセルはご遠慮ください。必ずご連絡ください。",
       sub: "スタッフが用具運搬して準備します。急なキャンセルは必ずご連絡ください、悪質な場合は営業損害金も含めて請求します。",
@@ -438,7 +439,6 @@ function Index() {
             </tbody>
           </table>
         </div>
-        <PointNote main="お支払い" sub="クレジットカード、PayPay支払こちら" />
       </section>
 
       {/* Paid rental */}
@@ -539,6 +539,7 @@ function Index() {
                   <EntryForm />
                 </div>
               )}
+              {s.pay && <PointNote main="お支払い" sub="クレジットカード、PayPay支払こちら" />}
               {s.point && <PointNote main={s.point.main} sub={s.point.sub} />}
             </li>
           ))}
