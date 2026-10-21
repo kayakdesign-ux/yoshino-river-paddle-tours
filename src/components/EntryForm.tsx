@@ -113,12 +113,12 @@ export function EntryForm() {
       <p className="font-bold">申込フォーム（空き状況を聞くだけでもOK！）</p>
       <div className="text-sm">
         希望日
-        <div className="mt-1 grid grid-cols-4 gap-2">
-          {days.map((d, i) => (
+        <div className={`mt-1 grid gap-2 ${days.length === 3 ? "grid-cols-3" : "grid-cols-4"}`}>
+          {days.map((d) => (
             <div key={d.label} className="space-y-1 rounded-lg border bg-card p-2 text-center">
               <p className="font-bold">{d.label}</p>
               {SLOTS.map((s) => {
-                const disabled = i === 0 && s.startsWith("午前");
+                const disabled = d.todayOnlyAfternoon && s.startsWith("午前");
                 if (disabled) return <div key={s} className="h-[34px]" />;
                 const on = date === d.label && slot === s;
                 return (
