@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, Navigation, X } from "lucide-react";
-import shikokuMap from "../assets/shikoku-map-outline.png.asset.json";
 
 const LAT = 33.7647;
 const LNG = 133.6639;
@@ -113,11 +112,33 @@ export function WeatherAccess() {
       </p>
       <div className="mt-2 rounded-2xl bg-muted p-3">
         <img
-          src={shikokuMap.url}
+          src="/shikoku-map.png"
           alt="四国の地図（高知県大豊町の場所）"
           loading="lazy"
           className="block h-auto w-full object-contain"
         />
+      </div>
+      <div className="overflow-hidden rounded-2xl border border-border">
+        <table className="w-full text-sm">
+          <caption className="bg-muted px-3 py-2 text-left font-bold">アクセス所要時間（目安）</caption>
+          <tbody>
+            {[
+              ["ひろめ市場まで 🚗", "約50〜60分"],
+              ["高知市内から 🚗", "50〜60分"],
+              ["高知駅〜大杉駅 🚃", "特急 約35分／普通 約70分"],
+              ["高知空港から 🚗", "約50分"],
+              ["高松空港から 🚗", "約80分"],
+              ["徳島空港から 🚗", "約110分"],
+              ["松山空港から 🚗", "約110分"],
+            ].map(([from, time]) => (
+              <tr key={from} className="border-t border-border">
+                <th className="px-3 py-2 text-left font-bold">{from}</th>
+                <td className="px-3 py-2 text-right">{time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="px-3 pb-2 text-xs text-muted-foreground">※高速道路利用時の目安。道路状況・列車により変わります。</p>
       </div>
       <p><b>出発時間</b>　9時30分　13時30分</p>
       <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
