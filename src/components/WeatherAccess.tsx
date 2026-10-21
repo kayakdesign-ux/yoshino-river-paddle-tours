@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, Navigation, X } from "lucide-react";
 
 const LAT = 33.7647;
@@ -22,8 +23,8 @@ const LABELS = ["今日", "明日", "明後日"];
 
 function MapPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
   const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(DEST)}&z=13&output=embed`;
-  if (!open) return null;
-  return (
+  if (!open || typeof document === "undefined") return null;
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={onClose}>
       <div className="w-full max-w-lg rounded-2xl bg-card p-4" onClick={(e) => e.stopPropagation()}>
         <div className="mb-2 flex items-center justify-between">
@@ -36,7 +37,8 @@ function MapPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
           <Navigation className="h-4 w-4" />現在地からのルートと所要時間を見る
         </a>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
