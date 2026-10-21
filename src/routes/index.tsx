@@ -410,6 +410,7 @@ function Index() {
             </tbody>
           </table>
         </div>
+        <PointNote main="お支払い" sub="クレジットカード、PayPay支払こちら" />
       </section>
 
       {/* Paid rental */}
