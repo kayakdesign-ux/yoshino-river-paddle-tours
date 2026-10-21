@@ -453,7 +453,7 @@ function Index() {
               {s.note && (
                 <div className="mt-3 space-y-2 text-sm">
                   <p>{s.note.lead}</p>
-                  <img src={`${W}/2025-04-2368_s.png`} alt="だっく" className="h-14 w-14 rounded-full" />
+                  <img src="/duck.png" alt="だっく" className="h-14 w-14 rounded-full" />
                   <ul className="space-y-1">
                     {s.note.items.map((it) => (
                       <li key={it.text} className={it.bold ? "font-bold" : undefined}>・{it.text}</li>
