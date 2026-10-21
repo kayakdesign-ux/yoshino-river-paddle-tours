@@ -258,8 +258,8 @@ function Index() {
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>家族連れに選ばれる理由</H2>
         <div className="rounded-2xl border border-dashed bg-card p-8 text-center text-sm text-muted-foreground">
-          <p className="font-bold text-foreground">内容は準備中です</p>
-          <p className="mt-2">家族写真お撮りします。</p>
+          <p className="font-bold text-foreground">{"\n"}</p>
+          <p className="mt-2">{"\n"}</p>
           <p className="mx-auto mt-4 w-fit rounded-full bg-card px-5 py-3 text-center font-bold text-primary shadow-sm ring-1 ring-primary/15">ツアー中の家族写真お撮りします</p>
         </div>
       </section>
