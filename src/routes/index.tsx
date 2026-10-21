@@ -3,6 +3,20 @@ import { MessageCircle, MapPin, Check } from "lucide-react";
 import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
 import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
 import { WeatherAccess } from "@/components/WeatherAccess";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+const afterFlow: { t: string; b: string[] }[] = [
+  { t: "忘れ物ありませんか？", b: [] },
+  { t: "移動開始", b: ["大豊ICを降りて、ラストコンビニ「ファミリーマート」あります。", "道の駅「大杉」もあります。", "施設近くに「こんどうストア」あります。（飲み物、田舎寿司、イートインあります。）"] },
+  { t: "駐車場は６０分前から", b: ["長時間駐車は河川敷駐車場へお願いします。"] },
+  { t: "更衣室・トイレは30分前から利用可能", b: ["鍵付きロッカー有ります。", "貴重品は、鍵付きロッカーへ必ずお願いします。"] },
+  { t: "希望レンタル料はQR決済でお支払いください。", b: ["リバーシューズはご自身で選んでください。"] },
+  { t: "出発時間までに着替えしてお待ちください。", b: [] },
+  { t: "ツアースタート", b: [] },
+  { t: "レッスン後・自由行動あり", b: [] },
+  { t: "ゴール　11時15分頃／15時15分頃", b: ["無料シャワーあります。"] },
+  { t: "自由解散", b: ["忘れ物無いようご注意ください。"] },
+];
 
 
 const LINE_URL = "https://page.line.me/418xyaym?openQrModal=true";
@@ -448,6 +462,25 @@ function Index() {
             </li>
           ))}
         </ol>
+        <div className="mt-6 rounded-2xl border bg-card p-5">
+          <h3 className="font-display text-xl font-bold text-primary">予約後の流れ</h3>
+          <Accordion type="multiple" className="mt-2">
+            {afterFlow.map((f, i) => (
+              <AccordionItem key={i} value={`s${i}`}>
+                <AccordionTrigger className="text-left">
+                  <span><span className="mr-2 text-xs font-bold tracking-widest text-primary">SUP{i + 1}</span>{f.t}</span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  {f.b.length > 0 ? <ul className="space-y-1 text-sm">{f.b.map((b) => <li key={b}>・{b}</li>)}</ul> : <p className="text-sm text-muted-foreground">{f.t}</p>}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <div className="mt-4 space-y-1 rounded-xl bg-secondary p-4 text-sm">
+            <p>・写真購入希望はスタッフ迄<br />　ダウンロード方式で購入いただけます。</p>
+            <p className="pt-2 font-bold text-primary">ツアー後も良い休日をお楽しみください。</p>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
