@@ -11,14 +11,14 @@ const groups: {
 }[] = [
   { title: "SUP 1人乗り", fields: [{ key: "s1a", label: "大人" }, { key: "s1k", label: "9歳〜16歳" }] },
   {
-    title: "SUP 2人乗り",
-    note: "大人1名＋未就学1名がセット",
+    title: "SUP 2人乗り（大人1名＋未就学1名がセット）",
+    note: "\n",
     set: true,
     fields: [{ key: "s2a", label: "大人" }, { key: "s2p", label: "未就学" }],
   },
   {
-    title: "パックラフト",
-    note: "落ちたく無い人は",
+    title: "パックラフト（水に落ちるのが苦手な人はこちら）",
+    note: "\n",
     fields: [{ key: "pa", label: "大人" }, { key: "pk", label: "9歳〜16歳" }],
   },
 ];
