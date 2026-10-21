@@ -227,7 +227,7 @@ function Index() {
           </div>
           <Reveal>
             <figure className="rounded-3xl bg-card p-3 shadow-xl ring-1 ring-primary/15">
-              <img src={`${W}/2025-05-8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" loading="lazy" className="w-full rounded-2xl" />
+              <img src={`${W}/2025-05-8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" className="w-full rounded-2xl" />
             </figure>
           </Reveal>
         </div>
