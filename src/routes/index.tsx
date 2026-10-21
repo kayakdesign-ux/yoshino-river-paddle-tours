@@ -4,7 +4,6 @@ import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown, Ship, Camera, Baby, Smartphone, Smile } from "lucide-react";
 
-import djiHero from "@/assets/dji-hero.jpg.asset.json";
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
 
 const afterFlow: { t: string; b: string[] }[] = [
@@ -192,7 +191,7 @@ function Index() {
 
       {/* Hero banner */}
       <section className="relative w-full">
-        <img src={djiHero.url} alt="ドローンから見た吉野川の清流とSUP" className="h-[38vw] max-h-[520px] w-full object-cover" />
+        <img src="/dji-hero.jpg" alt="ドローンから見た吉野川の清流とSUP" className="h-[38vw] max-h-[520px] w-full object-cover" />
         <p className="absolute bottom-2 right-3 rounded-full bg-background/70 px-3 py-1 text-xs font-bold text-river backdrop-blur">
           ドローンから見た吉野川　川底までクリア
         </p>
