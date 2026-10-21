@@ -56,7 +56,9 @@ function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="mb-6 text-center font-display text-2xl font-bold text-primary md:text-3xl">{children}</h2>;
 }
 
-function PointNote({ main, sub }: { main: string; sub: string }) {
+function PointNote({ main, sub, tone = "accent" }: { main: string; sub: string; tone?: "accent" | "sakura" }) {
+  const bar = tone === "sakura" ? "bg-sakura text-sakura-foreground" : "bg-accent text-accent-foreground";
+  const badge = tone === "sakura" ? "text-sakura-strong" : "text-accent";
   const [open, setOpen] = useState(false);
   const id = useId();
   return (
@@ -66,17 +68,17 @@ function PointNote({ main, sub }: { main: string; sub: string }) {
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-xl bg-accent px-3 py-2 text-left font-bold text-accent-foreground"
+        className={`flex w-full cursor-pointer items-center justify-between gap-2 rounded-xl px-3 py-2 text-left font-bold ${bar}`}
       >
         <span className="flex items-center gap-2">
-          <span className="rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
+          <span className={`rounded-full bg-background px-2 py-0.5 text-xs ${badge}`}>ワンポイント</span>
           {main}
         </span>
         <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <p id={id} className="rounded-xl border bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
-          <span className="mr-2 inline-block rounded-full bg-background px-2 py-0.5 font-bold text-accent">補足</span>
+          <span className={`mr-2 inline-block rounded-full bg-background px-2 py-0.5 font-bold ${badge}`}>補足</span>
           {sub}
         </p>
       )}
@@ -539,7 +541,7 @@ function Index() {
                   <EntryForm />
                 </div>
               )}
-              {s.pay && <PointNote main="お支払い" sub="クレジットカード、PayPay支払こちら" />}
+              {s.pay && <PointNote tone="sakura" main="お支払い" sub="クレジットカード、PayPay支払こちら" />}
               {s.point && <PointNote main={s.point.main} sub={s.point.sub} />}
             </li>
           ))}
