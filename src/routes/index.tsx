@@ -454,18 +454,6 @@ function Index() {
                   <WeatherAccess />
                 </div>
               ) : s.b.length > 0 && <ul className="mt-2 space-y-1 text-sm">{s.b.map((b) => <li key={b}>・{b}</li>)}</ul>}
-              {s.point && (
-                <div className="mt-3 space-y-2">
-                  <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
-                    <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
-                    {s.point.main}
-                  </p>
-                  <p className="rounded-xl border bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
-                    <b className="mr-1 text-foreground">補足</b>
-                    {s.point.sub}
-                  </p>
-                </div>
-              )}
               {s.note && (
                 <div className="mt-3 space-y-2 text-sm">
                   <p>{s.note.lead}</p>
