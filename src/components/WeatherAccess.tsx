@@ -3,7 +3,8 @@ import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, N
 
 const LAT = 33.7647;
 const LNG = 133.6639;
-const DEST = "高知県長岡郡大豊町西土居1番地";
+export const DEST = "高知県長岡郡大豊町西土居1番地";
+export const DEST_DIR_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DEST)}&travelmode=driving`;
 
 type Day = { date: string; code: number; max: number; min: number; rain: number };
 
@@ -22,7 +23,7 @@ const LABELS = ["今日", "明日", "明後日"];
 export function MapAccessButton() {
   const [open, setOpen] = useState(false);
   const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(DEST)}&z=13&output=embed`;
-  const dirUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DEST)}&travelmode=driving`;
+  const dirUrl = DEST_DIR_URL;
 
   return (
     <>

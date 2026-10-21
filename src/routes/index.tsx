@@ -4,7 +4,7 @@ import { EntryForm } from "@/components/EntryForm";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
 import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
 import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
-import { WeatherAccess, MapAccessButton } from "@/components/WeatherAccess";
+import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
 
 const afterFlow: { t: string; b: string[] }[] = [
   { t: "忘れ物ありませんか？", b: ["夏期は、化繊のTシャツやラッシュガード、サーフトランクスで参加いただけます。", "飲み物は川に沈まない物なら持込ます。", "携帯は防水ケースに入れて沈まないようにしてください。\n携帯ケースのヒモが切れて水中に沈んだ例がございます。水深が深いと回収できません。防水ケース、浮力付きを強くオススメ致します。"] },
@@ -557,7 +557,7 @@ function Index() {
           <p className="font-display text-3xl font-bold">最高の休日に出発。</p>
           <img src={`${K}/2024/10/%E5%BA%97%E8%88%971-1024x836-1.jpg`} alt="ガルバンゾのベース（店舗）" className="mx-auto max-w-md rounded-2xl" />
           <p>大豊インター 約15分。<br />四国・吉野川のすぐそばにベース（店舗）があります。</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=高知県長岡郡大豊町西土居1番地" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline">
+          <a href={DEST_DIR_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline">
             <MapPin className="h-4 w-4" />高知県長岡郡大豊町西土居１番地
           </a>
           <div><LineButton /></div>
