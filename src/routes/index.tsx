@@ -260,11 +260,7 @@ function Index() {
         <H2>家族連れに選ばれる理由</H2>
         <div className="rounded-2xl border border-dashed bg-card p-8 text-center text-sm text-muted-foreground">
           <p className="font-bold text-foreground">内容は準備中です</p>
-          <p className="mt-2">
-            こちらに「家族連れに選ばれる理由」を掲載予定です。
-            <br />
-            掲載内容が決まりましたらお知らせください。
-          </p>
+          <p className="mt-2">家族写真お撮りします。</p>
         </div>
       </section>
 
