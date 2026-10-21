@@ -199,6 +199,19 @@ function Index() {
         </div>
       </section>
 
+      {/* Family reasons (内容保留) */}
+      <section className="mx-auto mt-16 max-w-5xl px-4">
+        <H2>家族連れに選ばれる理由</H2>
+        <div className="rounded-2xl border border-dashed bg-card p-8 text-center text-sm text-muted-foreground">
+          <p className="font-bold text-foreground">内容は準備中です</p>
+          <p className="mt-2">
+            こちらに「家族連れに選ばれる理由」を掲載予定です。
+            <br />
+            掲載内容が決まりましたらお知らせください。
+          </p>
+        </div>
+      </section>
+
       {/* Photos */}
       <section className="mx-auto mt-16 grid max-w-5xl gap-8 px-4 md:grid-cols-2">
         <div className="space-y-3">
