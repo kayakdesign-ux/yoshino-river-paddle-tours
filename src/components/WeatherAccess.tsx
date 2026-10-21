@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, Navigation, X } from "lucide-react";
+import shikokuMap from "../assets/shikoku-map-outline.png.asset.json";
 
 const LAT = 33.7647;
 const LNG = 133.6639;
@@ -110,6 +111,14 @@ export function WeatherAccess() {
         <b>場所を確認</b>　高知県　大豊ICから約15分{"\n"}
         <MapAccessButton />
       </p>
+      <div className="mt-2 mx-auto w-fit rounded-2xl bg-muted p-3">
+        <img
+          src={shikokuMap.url}
+          alt="四国の地図（高知県大豊町の場所）"
+          loading="lazy"
+          className="block h-44 w-auto object-contain"
+        />
+      </div>
       <p><b>出発時間</b>　9時30分　13時30分</p>
       <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
         <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
