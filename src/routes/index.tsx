@@ -326,7 +326,7 @@ function Index() {
                 </li>
               ))}
             </ul>
-            <p className="mt-2 text-sm font-bold text-primary">水上へ持ち込みは浮く物のみ</p>
+            <p className="mt-2 text-sm font-bold text-primary">注：水上へ持ち込みは浮く物のみ 川で沈んだら回収できません。</p>
           </div>
         </div>
       </section>
