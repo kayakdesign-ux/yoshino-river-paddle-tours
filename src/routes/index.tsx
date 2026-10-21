@@ -183,7 +183,7 @@ function Index() {
     <div id="toppage" className="min-h-screen bg-background pb-24 text-foreground md:pb-0">
       {/* Header */}
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <a href="https://kawaasobi.com/" className="font-display text-sm font-bold text-primary md:text-base">高知 SUP（サップ）吉野川｜一般社団法人自然体感 ガルバンゾ</a>
           <a href="#entry" className="hidden rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground md:inline-block">予約申込</a>
         </div>
@@ -198,13 +198,13 @@ function Index() {
       </section>
 
       {/* Title */}
-      <section className="mx-auto max-w-5xl px-4 pt-8 text-center">
+      <section className="mx-auto max-w-3xl px-4 pt-8 text-center">
         <h1 className="font-display text-2xl font-bold leading-snug md:text-4xl">高知・吉野川SUP体験<br className="md:hidden" />｜初心者・家族連れ歓迎！<br />川遊びツアー</h1>
         <p className="mt-2 text-sm text-muted-foreground">– 高知サップ（SUP）清流吉野川で川遊び –</p>
         <p className="mt-4">高知でSUP体験を探している方へ――清流ランキング2023 1位の吉野川グリーンでリバーサップを満喫しませんか？</p>
       </section>
 
-      <section className="mx-auto mt-8 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
+      <section className="mx-auto mt-8 grid max-w-3xl items-center gap-8 px-4">
         <CourseCard />
         <div className="space-y-4 text-center">
           <p className="font-display text-2xl font-bold text-primary">この綺麗な川に遊びに来て下さい。</p>
@@ -214,7 +214,7 @@ function Index() {
       </section>
 
       {/* Tags */}
-      <section className="mx-auto mt-10 max-w-5xl px-4">
+      <section className="mx-auto mt-10 max-w-3xl px-4">
         <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto w-full max-w-3xl rounded-2xl" />
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t) => (
@@ -228,7 +228,7 @@ function Index() {
       </section>
 
       {/* About */}
-      <section className="mx-auto mt-16 max-w-3xl px-4">
+      <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>{"高知SUP（サップ）清流 吉野川を楽しもう"}</H2>
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
@@ -239,13 +239,13 @@ function Index() {
       </section>
 
       {/* Features */}
-      <section className="mx-auto mt-16 max-w-5xl px-4">
+      <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
         <div>
           <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
-          <ul className="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-2">
+          <ul className="mx-auto mt-6 grid max-w-3xl gap-3">
             {highlights.map((h) => (
-              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl sm:col-span-2" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
                 {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />}
                 <span>
                   {h.t}
@@ -255,7 +255,7 @@ function Index() {
             ))}
           </ul>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5">
           {features.map((f) => (
             <figure key={f.t} className={`overflow-hidden rounded-2xl ${f.hot ? "border-2 border-primary bg-primary/10 shadow-md" : "border bg-card shadow-sm"}`}>
               <img src={f.img} alt={f.t} loading="lazy" className="aspect-[16/10] w-full object-cover" />
@@ -270,7 +270,7 @@ function Index() {
 
       {/* Reasons */}
       <section className="mt-16 bg-secondary py-14">
-        <div className="mx-auto grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
+        <div className="mx-auto grid max-w-3xl items-center gap-8 px-4">
           <div>
             <H2>ガルバンゾがオススメの理由</H2>
             <ul className="space-y-3">
@@ -284,7 +284,7 @@ function Index() {
       </section>
 
       {/* Family reasons */}
-      <section className="mx-auto mt-16 max-w-5xl px-4">
+      <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>家族連れにも選ばれる理由</H2>
         <ul className="mx-auto flex max-w-2xl flex-col items-center gap-3 rounded-2xl border bg-card p-6 md:p-8">
           <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
@@ -297,11 +297,11 @@ function Index() {
 
 
       {/* Lesson note */}
-      <section className="mx-auto mt-16 max-w-3xl px-4 text-center">
+      <section className="mx-auto max-w-3xl px-4 py-20 text-center">
         <Reveal>
           <H2>こんな人にはオススメしません。</H2>
         </Reveal>
-        <div className="mt-6 grid gap-3 text-left sm:grid-cols-3">
+        <div className="mt-6 grid gap-3 text-left">
           {[
             { who: "しっかり練習したい方", go: "レッスンへ" },
             { who: "激しい川下りをしたい方", go: "8km・6kmコースへ" },
@@ -316,7 +316,7 @@ function Index() {
           ))}
         </div>
         <Reveal delay={200}>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-6 grid gap-4">
             <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
             <img src={`${W}/2025/05/SUP08-1024x586.png`} alt="吉野川SUP" className="rounded-2xl" />
           </div>
@@ -330,7 +330,7 @@ function Index() {
       </section>
 
       {/* Flow */}
-      <section className="mx-auto mt-16 max-w-5xl px-4">
+      <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>ツアーの流れ</H2>
         <div className="-mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4">
           {flow.map((f, i) => (
@@ -354,7 +354,7 @@ function Index() {
       </section>
 
       {/* Hobby */}
-      <section className="mx-auto mt-16 grid max-w-5xl items-center gap-6 px-4 md:grid-cols-2">
+      <section className="mx-auto mt-16 grid max-w-3xl items-center gap-6 px-4">
         <img src={`${W}/2024/07/P9171579_s.jpg`} alt="高知リバーサップ" className="rounded-2xl" />
         <div className="text-center">
           <H2>今年、最高の趣味を手に入れよう</H2>
@@ -363,7 +363,7 @@ function Index() {
       </section>
 
       {/* Rental */}
-      <section className="mx-auto mt-16 max-w-5xl px-4">
+      <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>持ち物・レンタル</H2>
         <div className="rounded-2xl border bg-card p-5 md:p-6">
           <div className="grid items-center gap-6 md:grid-cols-[minmax(0,500px)_1fr]">
@@ -376,7 +376,7 @@ function Index() {
                 <p className="text-lg font-bold text-primary">この格好でそのまま川へ</p>
                 <p className="mt-1"><span className="font-bold">「夏はラッシュガード、上下」</span>がオススメです。</p>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3">
                 <div className="rounded-xl bg-secondary p-4">
                   <p className="mb-2 font-bold text-primary">レンタル料込み</p>
                   <ul className="space-y-1">
@@ -418,7 +418,7 @@ function Index() {
       </section>
 
       {/* Pricing */}
-      <section className="mx-auto mt-16 max-w-5xl px-4">
+      <section className="mx-auto max-w-3xl px-4 py-20">
         <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">料金</h2>
         <div className="overflow-x-auto rounded-2xl border bg-card">
           <table className="w-full min-w-[480px] text-center text-sm">
@@ -473,11 +473,11 @@ function Index() {
       </section>
 
       {/* Paid rental */}
-      <section className="mx-auto mt-16 max-w-5xl px-4">
+      <section className="mx-auto max-w-3xl px-4 py-20">
         <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">
           有料レンタル<span className="ml-3 text-base font-bold md:text-lg">当日｜お支払いはQR決済（PayPay・楽天Pay）</span>
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4">
           <div className="rounded-2xl border bg-card p-5">
             <p className="text-sm text-muted-foreground">靴だけレンタルの方は</p>
             <p className="mt-1 font-bold text-primary">レンタルA　リバーシューズ</p>
@@ -496,7 +496,7 @@ function Index() {
 
       {/* More */}
       <section className="mt-16 bg-secondary py-14">
-        <div className="mx-auto max-w-5xl px-4">
+        <div className="mx-auto max-w-3xl px-4">
           <H2>さぁ！やってみよう！</H2>
           <div className="mx-auto mt-8 max-w-md">
             <CourseCard />
@@ -505,7 +505,7 @@ function Index() {
             <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
             <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
-          <div className="mt-8 grid items-start gap-4 sm:grid-cols-2">
+          <div className="mt-8 grid items-start gap-4">
             {[
               { img: `${K}/2025/05/Swim01.png`, t: "スマートフォンは防水ケースに入れて落下防止のヒモがあれば持っていけます" },
               { img: `${K}/2025/05/Junp02.png`, t: "飛び込みもできます。" },
@@ -526,7 +526,7 @@ function Index() {
       </section>
 
       {/* Entry */}
-      <section id="entry" className="mx-auto mt-16 max-w-3xl px-4">
+      <section id="entry" className="mx-auto max-w-3xl px-4 py-20">
         <H2>予約はいますぐ！！ ここから始まる</H2>
         <ol className="space-y-4">
           {steps.map((s, i) => (
@@ -572,7 +572,7 @@ function Index() {
         <div className="mt-6 rounded-3xl border bg-card p-5 md:p-8">
           <h3 className="text-center font-display text-2xl font-bold text-primary md:text-3xl">予約後の流れ</h3>
           <p className="mt-1 text-center text-sm text-muted-foreground">スムーズなご参加のため、以下の流れをご確認ください</p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3">
             <div className="flex items-center gap-4 rounded-2xl bg-secondary p-4">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card"><Lock className="h-5 w-5 text-primary" /></span>
               <div><p className="font-bold">鍵付きロッカー完備</p><p className="text-sm text-muted-foreground">貴重品は必ずロッカーへ</p></div>
@@ -611,7 +611,7 @@ function Index() {
 
       {/* Footer */}
       <footer className="mt-16 bg-primary py-12 text-primary-foreground">
-        <div className="mx-auto max-w-5xl space-y-6 px-4 text-center">
+        <div className="mx-auto max-w-3xl space-y-6 px-4 text-center">
           <Reveal><img src={`${K}/2025/05/P8054157-Sup_nerrupng-1024x586.png`} alt="楽しみ方はいろいろ" className="mx-auto w-full max-w-3xl rounded-2xl shadow-2xl animate-float" /></Reveal>
           <p className="font-display text-3xl font-bold">最高の休日に出発。</p>
           <div className="grid items-center gap-5 text-left sm:grid-cols-[minmax(0,240px)_1fr]">
