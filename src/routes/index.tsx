@@ -339,12 +339,18 @@ function Index() {
             <thead>
               <tr className="border-b">
                 <th className="p-3"></th>
-                <th className="p-3 text-xl font-bold">5,000円</th>
-                <th className="bg-secondary p-3 text-xl font-bold text-primary">
-                  <span className="mb-1 block text-xs"><span className="rounded-full bg-primary px-2 py-0.5 text-primary-foreground">便利でオススメ</span></span>
-                  6,000円
+                <th className="p-3 pt-6">
+                  <span className="block rounded-2xl border bg-card px-2 py-3 text-xl font-bold shadow-sm">5,000円</span>
                 </th>
-                <th className="p-3 text-xl font-bold">7,000円</th>
+                <th className="bg-secondary p-3 pt-6">
+                  <span className="relative block rounded-2xl border-2 border-primary bg-card px-2 py-3 text-xl font-bold text-primary shadow-lg">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-primary px-3 py-0.5 text-xs text-primary-foreground">便利でオススメ</span>
+                    6,000円
+                  </span>
+                </th>
+                <th className="p-3 pt-6">
+                  <span className="block rounded-2xl border bg-card px-2 py-3 text-xl font-bold shadow-sm">7,000円</span>
+                </th>
               </tr>
             </thead>
             <tbody>
