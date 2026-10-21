@@ -474,7 +474,7 @@ function Index() {
         <H2>予約はいますぐ！！ ここから始まる</H2>
         <ol className="space-y-4">
           {steps.map((s, i) => (
-            <li key={i} id={`step-${i + 1}`} className="rounded-2xl border bg-card p-5">
+            <li key={i} id={`step-${i + 1}`} className="scroll-mt-24 rounded-2xl border bg-card p-5">
               <p className="text-xs font-bold tracking-widest text-primary">STEP {i + 1}</p>
               <p className="mt-1 font-bold">{s.t}</p>
               {i === 0 ? (
