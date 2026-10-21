@@ -230,7 +230,7 @@ function Index() {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <figure key={f.t} className={`overflow-hidden rounded-2xl ${f.hot ? "border-2 border-primary bg-primary/10 shadow-md" : "border bg-card shadow-sm"}`}>
-              <img src={f.img} alt={f.t} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+              <img src={f.img} alt={f.t} loading="lazy" className="aspect-[16/10] w-full object-cover" />
               <figcaption className="p-4 text-center">
                 <p className={`inline-block rounded-lg px-3 py-1 font-bold ${f.hot ? "bg-primary text-primary-foreground" : "text-primary"}`}>{f.t}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{f.d}</p>
