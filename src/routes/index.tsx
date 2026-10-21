@@ -233,7 +233,7 @@ function Index() {
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
-            <figure key={f.t} className="overflow-hidden rounded-2xl border bg-card shadow-sm">
+            <figure key={f.t} className="overflow-hidden rounded-2xl border-2 border-primary/60 bg-card shadow-md">
               <img src={f.img} alt={f.t} loading="lazy" className="aspect-[4/3] w-full object-cover" />
               <figcaption className="p-4">
                 <p className="font-bold text-primary">{f.t}</p>
