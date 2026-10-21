@@ -113,7 +113,6 @@ const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof M
 const highlights: { t: string; i?: typeof MapPin; hot?: boolean }[] = [
   { t: "アクセス抜群", i: MapPin },
   { t: "水が綺麗", i: Droplets },
-  { t: "魚ウォッチングも楽しめる" },
   { t: "大歩危温泉も近い", i: Flame },
   { t: "岩からジャンプは何回もできる", i: ArrowDown, hot: true },
 ];
