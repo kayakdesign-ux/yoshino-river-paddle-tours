@@ -590,12 +590,18 @@ function Index() {
         <div className="mx-auto max-w-5xl space-y-6 px-4 text-center">
           <Reveal><img src={`${K}/2025/05/P8054157-Sup_nerrupng-1024x586.png`} alt="楽しみ方はいろいろ" className="mx-auto w-full max-w-3xl rounded-2xl shadow-2xl animate-float" /></Reveal>
           <p className="font-display text-3xl font-bold">最高の休日に出発。</p>
-          <img src={`${K}/2024/10/%E5%BA%97%E8%88%971-1024x836-1.jpg`} alt="ガルバンゾのベース（店舗）" className="mx-auto max-w-md rounded-2xl" />
-          <p>おおとよIC 約15分。<br />四国・吉野川のすぐそばにベース（店舗）があります。</p>
-          <a href={DEST_DIR_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline">
-            <MapPin className="h-4 w-4" />高知県長岡郡大豊町西土居１番地
-          </a>
-          <div><LineButton href="#step-2" /></div>
+          <div className="grid items-center gap-5 text-left sm:grid-cols-[minmax(0,240px)_1fr]">
+            <img src={`${K}/2024/10/%E5%BA%97%E8%88%971-1024x836-1.jpg`} alt="ガルバンゾのベース（店舗）" className="mx-auto w-full max-w-[240px] rounded-2xl" />
+            <div className="space-y-1">
+              <p className="font-display text-xl font-bold">おおとよIC 約15分</p>
+              <p>国道32号と国道439号の合流に</p>
+              <p>四国吉野川のほとりにベース（店舗）があります。</p>
+              <a href={DEST_DIR_URL} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 underline">
+                <MapPin className="h-4 w-4" />高知県長岡郡大豊町西土居１番地
+              </a>
+            </div>
+          </div>
+          <div><LineButton href="#step-2" className="w-full max-w-md py-5 text-lg" /></div>
           <a href="#toppage" className="block text-sm underline">Topへ戻る</a>
         </div>
       </footer>
