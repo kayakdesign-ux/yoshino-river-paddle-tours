@@ -344,12 +344,12 @@ function Index() {
         <H2>有料レンタル</H2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">リバーシューズ</p>
+            <p className="font-bold text-primary">A：リバーシューズ</p>
             <p className="mt-1 text-3xl font-bold">300<span className="ml-1 text-sm font-normal">円</span></p>
             <p className="mt-2 text-sm text-muted-foreground">ビーチサンダルでは川に入れません。</p>
           </div>
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">ウェットスーツ＋ラッシュガード長袖＋帽子</p>
+            <p className="font-bold text-primary">B：ウェットスーツ＋ラッシュガード長袖＋帽子</p>
             <p className="mt-1 text-3xl font-bold">700<span className="ml-1 text-sm font-normal">円</span></p>
             <p className="mt-2 text-sm text-muted-foreground">1点でも700円。水温や季節が気になる方はこちらから。</p>
 
