@@ -101,9 +101,9 @@ function CourseCard() {
   );
 }
 
-const features = [
+const features: { img: string; t: string; d: string; hot?: boolean }[] = [
   { img: `${W}/2024/10/DJI_0678__s-1024x683.jpg`, t: "塩水じゃないからサラサラ", d: "のんびり遊べます" },
-  { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "飛び込みも複数回OK", d: "体験飛び込み" },
+  { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "飛び込みも複数回OK", d: "体験飛び込み", hot: true },
   { img: `${W}/2024/07/P9201623_s.jpg`, t: "泳げ無くてもライフジャケット着用", d: "夏は浮かんでいるだけも楽しい" },
   { img: `${W}/2019/08/P6029311-1.jpg`, t: "2人乗りも可", d: "ゆったりとした流れの中なので色々ためせます" },
   { img: `${W}/2024/07/GOPR1582_s.jpg`, t: "20分程度のレッスン付", d: "初めてでも乗り方、パドル持ち方から習えます。" },
@@ -233,7 +233,7 @@ function Index() {
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
-            <figure key={f.t} className="overflow-hidden rounded-2xl border-2 border-primary/60 bg-card shadow-md">
+            <figure key={f.t} className={`overflow-hidden rounded-2xl bg-card ${f.hot ? "border-2 border-primary/60 shadow-md" : "border shadow-sm"}`}>
               <img src={f.img} alt={f.t} loading="lazy" className="aspect-[4/3] w-full object-cover" />
               <figcaption className="p-4">
                 <p className="font-bold text-primary">{f.t}</p>
