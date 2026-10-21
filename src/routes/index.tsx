@@ -491,7 +491,7 @@ function Index() {
             <div className="flex items-start gap-3 rounded-2xl bg-card p-4">
               <p className="text-sm"><b>だっく</b><br />SUP（サップ）が難しそうと思う方は 安定性抜群のパックラフトで一緒に川下りする事ができます。</p>
             </div>
-            <p className="flex items-center justify-center gap-3 rounded-full border-2 border-primary bg-card px-6 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
+            <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
