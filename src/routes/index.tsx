@@ -212,12 +212,24 @@ function Index() {
       {/* Features */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
-        <div className="grid items-center gap-6 md:grid-cols-2">
-          <img src={`${W}/2025/05/8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" className="rounded-2xl" />
-          <div className="text-center">
-            <p>川はま水、さらさらして気持ちいいですよ。</p>
-            <p className="mt-3 text-xl font-bold">川用は幅が広く<br />安定感があります。</p>
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <div>
+            <p className="text-lg font-bold leading-relaxed">川はま水、さらさらして気持ちいいですよ。</p>
+            <p className="mt-2 text-xl font-bold leading-relaxed">川用は幅が広く<br />安定感があります。</p>
+            <ul className="mt-6 space-y-3">
+              {highlights.map((h) => (
+                <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+                  <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />
+                  {h.t}
+                </li>
+              ))}
+            </ul>
           </div>
+          <Reveal>
+            <figure className="rounded-3xl bg-card p-3 shadow-xl ring-1 ring-primary/15">
+              <img src={`${W}/2025-05-8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" loading="lazy" className="w-full rounded-2xl" />
+            </figure>
+          </Reveal>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
