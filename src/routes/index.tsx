@@ -333,61 +333,70 @@ function Index() {
 
       {/* Pricing */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
-        <H2>料金</H2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {[
-            { price: "7000", pay: "事前決済", tag: "", lead: [], items: ["有料レンタルA B両方付き", "取消手数料1000円（当日）", "急な体調不良でも安心"] },
-            { price: "6000", pay: "事前決済", tag: "便利でオススメ", lead: [], items: ["有料レンタルB付き", "取消手数料1000円（当日）", "急な体調不良でも安心"] },
-            { price: "5000", pay: "当日決済", tag: "格安", lead: ["ラッシュガードや小物は持っている方", "とりあえず安く体験したい方"], items: ["前日当日キャンセルは全額"] },
-          ].map((p) => (
-            <div key={p.price} className={`relative rounded-2xl border bg-card p-5 ${p.tag === "便利でオススメ" ? "border-2 border-primary shadow-lg" : ""}`}>
-              {p.tag === "便利でオススメ" && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-primary-foreground">便利でオススメ</span>
-              )}
-              <p className="text-3xl font-bold">{p.price}<span className="ml-1 text-sm font-normal">円</span></p>
-              <p className="mt-1 text-sm font-bold text-primary">{p.pay}{p.tag === "格安" && "　格安"}</p>
-              {p.lead.length > 0 && (
-                <div className="mt-2 text-sm text-muted-foreground">{p.lead.map((l) => <p key={l}>{l}</p>)}</div>
-              )}
-              <ul className="mt-3 space-y-1 text-sm">
-                {p.items.map((t) => (
-                  <li key={t} className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-line" />{t}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="mt-4 rounded-2xl bg-secondary p-4 text-sm">
-          <p className="font-bold text-primary">雨の日だけの特別</p>
-          <ul className="mt-1 flex flex-wrap gap-x-6 gap-y-1">
-            {["ツアー写真が割引", "ウェットスーツ貸出割引"].map((t) => (
-              <li key={t} className="flex items-center gap-2"><Check className="h-4 w-4 shrink-0 text-line" />{t}</li>
-            ))}
-          </ul>
+        <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">料金</h2>
+        <div className="overflow-x-auto rounded-2xl border bg-card">
+          <table className="w-full min-w-[480px] text-center text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="p-3"></th>
+                <th className="p-3 text-xl font-bold">5,000円</th>
+                <th className="bg-secondary p-3 text-xl font-bold text-primary">
+                  <span className="mb-1 block text-xs"><span className="rounded-full bg-primary px-2 py-0.5 text-primary-foreground">便利でオススメ</span></span>
+                  6,000円
+                </th>
+                <th className="p-3 text-xl font-bold">7,000円</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["事前決済カード", "○", "○", "○"],
+                ["有料レンタルA", "－", "－", "✓"],
+                ["有料レンタルB", "－", "－", "✓"],
+                ["キャンセル料", "全額", "1,000円", "1,000円"],
+              ].map((r) => (
+                <tr key={r[0]} className="border-b">
+                  <th className="p-3 text-left font-bold">{r[0]}</th>
+                  <td className="p-3">{r[1]}</td>
+                  <td className="bg-secondary p-3 font-bold">{r[2]}</td>
+                  <td className="p-3">{r[3]}</td>
+                </tr>
+              ))}
+              <tr><th colSpan={4} className="px-3 pt-3 text-left font-bold text-primary">雨の日特典</th></tr>
+              {[
+                ["・写真割引", "－", "✓", "✓"],
+                ["・ウェットスーツ貸出", "有料", "半額", "無料"],
+              ].map((r) => (
+                <tr key={r[0]} className="border-b last:border-0">
+                  <th className="p-3 text-left font-normal">{r[0]}</th>
+                  <td className="p-3">{r[1]}</td>
+                  <td className="bg-secondary p-3 font-bold">{r[2]}</td>
+                  <td className="p-3">{r[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
       {/* Paid rental */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
-        <H2>有料レンタル</H2>
+        <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">
+          有料レンタル<span className="ml-3 text-base font-bold md:text-lg">当日｜お支払いはQR決済（PayPay・楽天Pay）</span>
+        </h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">A：リバーシューズ</p>
+            <p className="text-sm text-muted-foreground">靴だけレンタルの方は</p>
+            <p className="mt-1 font-bold text-primary">レンタルA　リバーシューズ</p>
             <p className="mt-1 text-3xl font-bold">300<span className="ml-1 text-sm font-normal">円</span></p>
-            <p className="mt-2 text-sm text-muted-foreground">ビーチサンダルでは川に入れません。</p>
+            <p className="mt-2 text-sm text-muted-foreground">ビーチサンダルは怪我防止で不可です。</p>
           </div>
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">B：ウェットスーツ＋ラッシュガード長袖＋帽子</p>
+            <p className="text-sm text-muted-foreground">ウェアセットが必要な方は</p>
+            <p className="mt-1 font-bold text-primary">レンタルB　ラッシュガード、帽子、ウェットスーツ長ズボン、パドリングジャケット</p>
             <p className="mt-1 text-3xl font-bold">700<span className="ml-1 text-sm font-normal">円</span></p>
-            <p className="mt-2 text-sm text-muted-foreground">1点でも700円。水温や季節が気になる方はこちらから。</p>
-
           </div>
         </div>
-        <p className="mt-3 text-sm text-destructive">ウェットスーツは30度を超えると熱中症回避の為、貸出自粛とさせていただきます。</p>
-        <div className="mt-4 rounded-2xl bg-secondary p-4 text-sm">
-          <p className="font-bold text-primary">お支払いはQR決済（PayPay・楽天Pay）</p>
-        </div>
-
+        <p className="mt-4 text-center text-sm text-destructive">ウェットスーツは30度を超えると熱中症回避の為、貸出自粛とさせていただきます。</p>
       </section>
 
       {/* Packraft */}
