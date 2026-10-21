@@ -4,7 +4,8 @@ import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
 
-
+import djiHero from "@/assets/dji-hero.jpg.asset.json";
+import gopr1891 from "@/assets/gopr1891.jpg.asset.json";
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
 
 const afterFlow: { t: string; b: string[] }[] = [
@@ -87,7 +88,7 @@ function PointNote({ main, sub }: { main: string; sub: string }) {
 function CourseCard() {
   return (
     <div className="overflow-hidden rounded-2xl border bg-card shadow-md">
-      <img src={HERO} alt="リバーサップ体験" className="aspect-[8/7] w-full object-cover" />
+      <img src={gopr1891.url} alt="吉野川のSUP体験" className="aspect-[8/7] w-full object-cover" />
       <div className="space-y-2 p-5 text-center">
         <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">オススメ</span>
         <p className="text-xl font-bold">ミニ！ツーリング1.5km</p>
@@ -148,6 +149,14 @@ function Index() {
           <a href="#entry" className="hidden rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground md:inline-block">予約申込</a>
         </div>
       </header>
+
+      {/* Hero banner */}
+      <section className="relative w-full">
+        <img src={djiHero.url} alt="ドローンから見た吉野川の清流とSUP" className="h-[38vw] max-h-[520px] w-full object-cover" />
+        <p className="absolute bottom-2 right-3 rounded-full bg-background/70 px-3 py-1 text-xs font-bold text-river backdrop-blur">
+          ドローンから見た吉野川　川底までクリア
+        </p>
+      </section>
 
       {/* Title */}
       <section className="mx-auto max-w-5xl px-4 pt-8 text-center">
