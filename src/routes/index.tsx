@@ -27,10 +27,10 @@ const HERO = `${W}/2024/10/GOPR3336-1024x896.jpg`;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "【高知・SUP】吉野川体験ツアー｜初心者・家族連れ歓迎！ガルバンゾ" },
-      { name: "description", content: "清流ランキング2023 1位の吉野川でリバーサップ。ミニ！ツーリング1.5km、1人5,000円、8歳ぐらいから。前日20時までキャンセル無料。" },
-      { property: "og:title", content: "【高知・SUP】吉野川体験ツアー｜ガルバンゾ" },
-      { property: "og:description", content: "初心者・家族連れ歓迎！手ぶらOKの川遊びアクティビティ。1人5,000円。" },
+      { title: "高知・吉野川SUP体験｜初心者・家族連れ歓迎！手ぶらで川遊びツアー" },
+      { name: "description", content: "【高知・吉野川SUP体験ツアー】初心者・家族連れ大歓迎！手ぶらでOKの川遊びアクティビティです。美しい吉野川の絶景をSUPでクルージング。ウェットスーツや道具は全てレンタル可能。専属ガイドが丁寧にレクチャーするので、初めての方や子供連れでも安心してお楽しみいただけます。今すぐ予約！" },
+      { property: "og:title", content: "高知・吉野川SUP体験｜初心者・家族連れ歓迎！手ぶらで川遊びツアー" },
+      { property: "og:description", content: "【高知・吉野川SUP体験ツアー】初心者・家族連れ大歓迎！手ぶらでOKの川遊びアクティビティです。美しい吉野川の絶景をSUPでクルージング。ウェットスーツや道具は全てレンタル可能。専属ガイドが丁寧にレクチャーするので、初めての方や子供連れでも安心してお楽しみいただけます。今すぐ予約！" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: HERO },
       { name: "twitter:card", content: "summary_large_image" },
@@ -124,7 +124,7 @@ function Index() {
 
       {/* Title */}
       <section className="mx-auto max-w-5xl px-4 pt-8 text-center">
-        <h1 className="font-display text-2xl font-bold leading-snug md:text-4xl">【高知・SUP】吉野川体験ツアー<br className="md:hidden" />｜初心者・家族連れ歓迎！<br />手ぶらOKの川遊びアクティビティ</h1>
+        <h1 className="font-display text-2xl font-bold leading-snug md:text-4xl">高知・吉野川SUP体験<br className="md:hidden" />｜初心者・家族連れ歓迎！<br />手ぶらで川遊びツアー</h1>
         <p className="mt-2 text-sm text-muted-foreground">– 高知サップ（SUP）清流吉野川で川遊び –</p>
         <p className="mt-4">高知でSUP体験を探している方へ――清流ランキング2023 1位の吉野川グリーンでリバーサップを満喫しませんか？</p>
       </section>
@@ -163,7 +163,7 @@ function Index() {
 
       {/* Features */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
-        <H2>川でSUP！？ オススメいっぱい</H2>
+        <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
         <div className="grid items-center gap-6 md:grid-cols-2">
           <img src={`${W}/2025/05/8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" className="rounded-2xl" />
           <div className="text-center">
@@ -188,7 +188,7 @@ function Index() {
       <section className="mt-16 bg-secondary py-14">
         <div className="mx-auto grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
           <div>
-            <H2>ガルバンゾがオススメの理由</H2>
+            <H2>初心者・家族連れに選ばれる理由</H2>
             <ul className="space-y-3">
               {["JRCA公認インストラクターがレッスン", "27年リバースポーツで無事故", "2006年からSup事業展開", "各種保険に加入"].map((t) => (
                 <li key={t} className="flex items-center gap-3 rounded-xl bg-card p-4 font-bold"><Check className="h-5 w-5 shrink-0 text-primary" />{t}</li>
