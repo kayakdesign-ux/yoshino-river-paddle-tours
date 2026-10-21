@@ -150,6 +150,14 @@ function Index() {
         </div>
       </header>
 
+      {/* Hero banner */}
+      <section className="relative w-full">
+        <img src={djiHero.url} alt="ドローンから見た吉野川の清流とSUP" className="h-[38vw] max-h-[520px] w-full object-cover" />
+        <p className="absolute bottom-2 right-3 rounded-full bg-background/70 px-3 py-1 text-xs font-bold text-river backdrop-blur">
+          ドローンから見た吉野川　川底までクリア
+        </p>
+      </section>
+
       {/* Title */}
       <section className="mx-auto max-w-5xl px-4 pt-8 text-center">
         <h1 className="font-display text-2xl font-bold leading-snug md:text-4xl">高知・吉野川SUP体験<br className="md:hidden" />｜初心者・家族連れ歓迎！<br />手ぶらで川遊びツアー</h1>
