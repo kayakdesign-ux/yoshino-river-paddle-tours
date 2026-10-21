@@ -127,9 +127,7 @@ export function WeatherAccess() {
               ["高知市内から 🚗", "50〜60分"],
               ["高知駅〜大杉駅 🚃", "特急 約35分／普通 約70分"],
               ["高知空港から 🚗", "約50分"],
-              ["高松空港から 🚗", "約80分"],
-              ["徳島空港から 🚗", "約110分"],
-              ["松山空港から 🚗", "約110分"],
+              ["高松・徳島・松山空港 🚗", "約80〜110分"],
             ].map(([from, time]) => (
               <tr key={from} className="border-t border-border">
                 <th className="px-3 py-2 text-left font-bold">{from}</th>
