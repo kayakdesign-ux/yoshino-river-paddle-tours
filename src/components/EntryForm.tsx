@@ -30,8 +30,8 @@ export function EntryForm() {
   const [copied, setCopied] = useState(false);
   const total = Object.values(c).reduce((a, b) => a + b, 0);
 
-  const pairAdult = c.s2a ?? 0;
-  const pairChild = c.s2p ?? 0;
+  const pairAdult = c["s2a"] ?? 0;
+  const pairChild = c["s2p"] ?? 0;
   const pairError =
     pairAdult === 0 && pairChild === 0
       ? ""
