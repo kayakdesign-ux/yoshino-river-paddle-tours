@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { EntryForm } from "@/components/EntryForm";
 import { MessageCircle, MapPin, Check } from "lucide-react";
 import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
 import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
