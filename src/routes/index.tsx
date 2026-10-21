@@ -296,13 +296,6 @@ function Index() {
         <PhoneRulePill />
       </section>
 
-      {/* Photos */}
-      <section className="mx-auto mt-16 grid max-w-5xl gap-8 px-4 md:grid-cols-2">
-        <div className="space-y-3">
-          <H2>{"\n"}</H2>
-          <img src={`${W}/2025/05/SUP06.png`} alt="スマホ持ち込み" className="rounded-2xl" />
-        </div>
-      </section>
 
       {/* Lesson note */}
       <section className="mx-auto mt-16 max-w-3xl px-4 text-center">
@@ -328,6 +321,9 @@ function Index() {
             <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
             <img src={`${W}/2025/05/SUP08-1024x586.png`} alt="吉野川SUP" className="rounded-2xl" />
           </div>
+        </Reveal>
+        <Reveal delay={250}>
+          <img src={`${W}/2025/05/SUP06.png`} alt="スマホ持ち込み" loading="lazy" className="mx-auto mt-6 block w-full max-w-md rounded-2xl shadow-lg" />
         </Reveal>
         <Reveal delay={300}>
           <p className="mt-4 rounded-2xl bg-accent px-4 py-3 font-semibold text-accent-foreground">始めてサップ（SUP）で川下りする方が、のんびりと楽しめるツアーになります。</p>
