@@ -113,7 +113,7 @@ export function WeatherAccess() {
       <div className="mt-2 rounded-2xl bg-muted p-3">
         <img
           src="/shikoku-map.png"
-          alt="四国の地図（高知県大豊町の場所）"
+          alt="四国の地図（高知県大豊ICの場所）"
           loading="lazy"
           className="block h-auto w-full object-contain"
         />
