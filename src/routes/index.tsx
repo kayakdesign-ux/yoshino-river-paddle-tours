@@ -101,19 +101,19 @@ function CourseCard() {
   );
 }
 
-const features: { img: string; t: string; d: string; hot?: boolean }[] = [
+const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof MapPin }[] = [
   { img: `${W}/2024/10/DJI_0678__s-1024x683.jpg`, t: "塩水じゃないからサラサラ", d: "のんびり遊べます" },
   { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "飛び込みも複数回OK", d: "体験飛び込み", hot: true },
   { img: `${W}/2024/07/P9201623_s.jpg`, t: "泳げ無くてもライフジャケット着用", d: "夏は浮かんでいるだけも楽しい" },
   { img: `${W}/2019/08/P6029311-1.jpg`, t: "2人乗りも可", d: "ゆったりとした流れの中なので色々ためせます" },
   { img: `${W}/2024/07/GOPR1582_s.jpg`, t: "20分程度のレッスン付", d: "初めてでも乗り方、パドル持ち方から習えます。" },
-  { img: `${W}/2024/07/P1012125_s-1024x768.jpg`, t: "魚ウオッチングも楽しめる", d: "自由時間もあるのでのんびりくつろぐことも" },
+  { img: `${W}/2024/07/P1012125_s-1024x768.jpg`, t: "魚ウオッチングも楽しめる", d: "自由時間もあるのでのんびりくつろぐことも", i: Fish },
 ];
 
-const highlights: { t: string; i: typeof MapPin; hot?: boolean }[] = [
+const highlights: { t: string; i?: typeof MapPin; hot?: boolean }[] = [
   { t: "アクセス抜群", i: MapPin },
   { t: "水が綺麗", i: Droplets },
-  { t: "魚ウォッチングも楽しめる", i: Fish },
+  { t: "魚ウォッチングも楽しめる" },
   { t: "大歩危温泉も近い", i: Flame },
   { t: "岩からジャンプは何回もできる", i: ArrowDown, hot: true },
 ];
@@ -221,7 +221,7 @@ function Index() {
           <ul className="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-2">
             {highlights.map((h) => (
               <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl sm:col-span-2" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
-                <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />
+                {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />}
                 {h.t}
               </li>
             ))}
@@ -232,7 +232,7 @@ function Index() {
             <figure key={f.t} className={`overflow-hidden rounded-2xl ${f.hot ? "border-2 border-primary bg-primary/10 shadow-md" : "border bg-card shadow-sm"}`}>
               <img src={f.img} alt={f.t} loading="lazy" className="aspect-[16/10] w-full object-cover" />
               <figcaption className="p-4 text-center">
-                <p className={`inline-block rounded-lg px-3 py-1 font-bold ${f.hot ? "bg-primary text-primary-foreground" : "text-primary"}`}>{f.t}</p>
+                <p className={`inline-flex items-center gap-2 rounded-lg px-3 py-1 font-bold ${f.hot ? "bg-primary text-primary-foreground" : "text-primary"}`}>{f.i && <f.i className="h-4 w-4 shrink-0" />}{f.t}</p>
                 <p className="mt-1 text-sm text-muted-foreground">{f.d}</p>
               </figcaption>
             </figure>
