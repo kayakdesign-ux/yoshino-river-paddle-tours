@@ -487,7 +487,7 @@ function Index() {
             <CourseCard />
           </div>
           <div className="mx-auto mt-8 max-w-3xl space-y-4">
-            <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="rounded-2xl" />
+            <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
             <div className="flex items-start gap-3 rounded-2xl bg-card p-4">
               <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
               <p className="text-sm"><b>だっく</b><br />SUP（サップ）が難しそうと思う方は 安定性抜群のパックラフトで一緒に川下りする事ができます。</p>
