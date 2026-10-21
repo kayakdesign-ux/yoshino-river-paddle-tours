@@ -152,7 +152,7 @@ function Index() {
 
       {/* About */}
       <section className="mx-auto mt-16 max-w-3xl px-4">
-        <H2>高知の自然 SUP体験｜清流ランキング１位 リバーサップを楽しもう</H2>
+        <H2>{"高知の自然 SUP体験\n清流ランキング１位 吉野川を楽しもう"}</H2>
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
           <p>高松空港から約９０分なので高松から高知への途中（大豊IC）でおりればこの清流を体験できます。</p>
@@ -234,8 +234,8 @@ function Index() {
 
       {/* Lesson note */}
       <section className="mx-auto mt-16 max-w-3xl px-4 text-center">
-        <H2>しっかり練習したい方はレッスンへお願いします。</H2>
-        <p className="leading-relaxed">初心者が始めて川下りするコースになります。しっかり習いたい、練習をたくさんしたい方には不向きです。練習したい方はレッスンコースへお願いいたします。</p>
+        <H2>{"こんな人にはオススメしません。\n\n・しっかり練習したい方→レッスンへ\n・激しい川下りした方→8km,6kmコースへ\n・水に濡れたくない→多少は濡れちゃいます。\n"}</H2>
+        <p className="leading-relaxed">{"\n"}</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
           <img src={`${W}/2025/05/SUP08-1024x586.png`} alt="吉野川SUP" className="rounded-2xl" />
