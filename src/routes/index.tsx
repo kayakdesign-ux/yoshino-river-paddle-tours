@@ -289,6 +289,7 @@ function Index() {
         <H2>家族連れにも選ばれる理由</H2>
         <ul className="mx-auto flex max-w-2xl flex-col items-center gap-3 rounded-2xl border bg-card p-6 md:p-8">
           <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
+          <li className="w-full max-w-md"><img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" loading="lazy" className="w-full rounded-2xl shadow-xl" /></li>
           <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Baby className="h-5 w-5 shrink-0" />未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</li>
           <li className="flex w-fit items-center gap-2 rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl"><Smile className="h-5 w-5 shrink-0 md:h-6 md:w-6" />一人乗りで子供の成長や笑顔がまじかで見れる。</li>
         </ul>
@@ -300,7 +301,6 @@ function Index() {
         <div className="space-y-3">
           <H2>ツアー中の写真お撮りします</H2>
           <p className="text-center">写真は気に入ったら購入できます。</p>
-          <img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" className="rounded-2xl" />
         </div>
         <div className="space-y-3">
           <H2>{"\n"}</H2>
