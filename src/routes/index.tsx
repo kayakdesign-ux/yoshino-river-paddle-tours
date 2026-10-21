@@ -405,18 +405,6 @@ function Index() {
         <p className="mt-4 text-center text-sm text-destructive">ウェットスーツは30度を超えると熱中症回避の為、貸出自粛とさせていただきます。</p>
       </section>
 
-      {/* Packraft */}
-
-      <section className="mx-auto mt-16 max-w-3xl px-4">
-        <div className="space-y-4">
-          <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="rounded-2xl" />
-          <div className="flex items-start gap-3 rounded-2xl bg-secondary p-4">
-            <img src={`${W}/2025/04/2368_s.png`} alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
-            <p className="text-sm"><b>だっく</b><br />SUP（サップ）が難しそうと思う方は 安定性抜群のパックラフトで一緒に川下りする事ができます。</p>
-          </div>
-          <a href="https://kayaks.jp/lp/packraft/" className="block rounded-full border-2 border-primary px-6 py-3 text-center font-bold text-primary">レンタルで気軽に挑戦！！</a>
-        </div>
-      </section>
 
       {/* More */}
       <section className="mt-16 bg-secondary py-14">
@@ -424,6 +412,14 @@ function Index() {
           <H2>さぁ！やってみよう！</H2>
           <div className="mx-auto mt-8 max-w-md">
             <CourseCard />
+          </div>
+          <div className="mx-auto mt-8 max-w-3xl space-y-4">
+            <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="rounded-2xl" />
+            <div className="flex items-start gap-3 rounded-2xl bg-card p-4">
+              <img src={`${W}/2025/04/2368_s.png`} alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
+              <p className="text-sm"><b>だっく</b><br />SUP（サップ）が難しそうと思う方は 安定性抜群のパックラフトで一緒に川下りする事ができます。</p>
+            </div>
+            <a href="https://kayaks.jp/lp/packraft/" className="block rounded-full border-2 border-primary bg-card px-6 py-3 text-center font-bold text-primary">レンタルで気軽に挑戦！！</a>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
