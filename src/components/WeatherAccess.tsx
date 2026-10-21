@@ -152,10 +152,10 @@ export function WeatherAccess() {
         </table>
         <p className="px-3 pb-2 text-xs text-muted-foreground">※高速道路利用時の目安。道路状況・列車により変わります。</p>
       </div>
-      <p><b>出発時間</b>　9時30分　13時30分</p>
+      <p><b></b></p>
       <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
         <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
-        出発時間までに着替えて集合です。
+        出発時間（9時30分｜13時30分）までに着替えて集合です。
       </p>
     </div>
   );
