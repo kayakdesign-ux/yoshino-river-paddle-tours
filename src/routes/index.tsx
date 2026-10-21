@@ -107,7 +107,7 @@ const features: { img: string; t: string; d: string; hot?: boolean }[] = [
   { img: `${W}/2024/07/P9201623_s.jpg`, t: "泳げ無くてもライフジャケット着用", d: "夏は浮かんでいるだけも楽しい" },
   { img: `${W}/2019/08/P6029311-1.jpg`, t: "2人乗りも可", d: "ゆったりとした流れの中なので色々ためせます" },
   { img: `${W}/2024/07/GOPR1582_s.jpg`, t: "20分程度のレッスン付", d: "初めてでも乗り方、パドル持ち方から習えます。" },
-  { img: `${W}/2024/07/P9171579_s.jpg`, t: "のんびり時間もあります", d: "自由時間もあるのでのんびりくつろぐことも" },
+  { img: `${W}/2024/07/P1012125_s-1024x768.jpg`, t: "のんびり時間もあります", d: "自由時間もあるのでのんびりくつろぐことも" },
 ];
 
 const highlights: { t: string; i: typeof MapPin; hot?: boolean }[] = [
@@ -340,7 +340,7 @@ function Index() {
 
       {/* Hobby */}
       <section className="mx-auto mt-16 grid max-w-5xl items-center gap-6 px-4 md:grid-cols-2">
-        <img src={`${W}/2024/07/P1012125_s-1024x768.jpg`} alt="高知リバーサップ" className="rounded-2xl" />
+        <img src={`${W}/2024/07/P9171579_s.jpg`} alt="高知リバーサップ" className="rounded-2xl" />
         <div className="text-center">
           <H2>今年、最高の趣味を手に入れよう</H2>
           <p>リバーSUPは日本中でやってます。経験があれば他の川に旅行いっても色々な川に行けます。</p>
