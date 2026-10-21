@@ -49,8 +49,8 @@ export function WeatherAccess() {
   return (
     <div className="mt-3 space-y-3 text-sm">
       <div>
-        <p className="font-bold">天気（大豊町・3日間）</p>
-        <p className="text-xs text-muted-foreground">天気予報</p>
+        <p className="font-bold">{"\n"}</p>
+        <p className="text-xs text-muted-foreground">{"\n"}</p>
         {err ? (
           <p className="text-muted-foreground">天気を取得できませんでした。</p>
         ) : !days ? (
