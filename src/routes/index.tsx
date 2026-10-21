@@ -407,8 +407,7 @@ function Index() {
 
       {/* Packraft */}
 
-      <section className="mx-auto mt-16 grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
-        <CourseCard />
+      <section className="mx-auto mt-16 max-w-3xl px-4">
         <div className="space-y-4">
           <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="rounded-2xl" />
           <div className="flex items-start gap-3 rounded-2xl bg-secondary p-4">
@@ -423,6 +422,9 @@ function Index() {
       <section className="mt-16 bg-secondary py-14">
         <div className="mx-auto max-w-5xl px-4">
           <H2>さぁ！やってみよう！</H2>
+          <div className="mx-auto mt-8 max-w-md">
+            <CourseCard />
+          </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               { img: `${K}/2025/05/Swim01.png`, t: "スマートフォンは防水ケースに入れて落下防止のヒモがあれば持っていけます" },
