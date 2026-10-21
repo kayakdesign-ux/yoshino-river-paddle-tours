@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const LINE_ID = "@418xyaym";
 
@@ -23,9 +23,22 @@ const groups: {
   },
 ];
 
+const SLOTS = ["午前 9:30出発", "午後 13:30出発"];
+const WD = ["日", "月", "火", "水", "木", "金", "土"];
+
 export function EntryForm() {
   const [date, setDate] = useState("");
-  const [slot, setSlot] = useState("午前便 9:30");
+  const [slot, setSlot] = useState("");
+  const [days, setDays] = useState<{ label: string }[]>([]);
+  useEffect(() => {
+    const now = new Date();
+    setDays(
+      Array.from({ length: 4 }, (_, i) => {
+        const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+        return { label: `${d.getMonth() + 1}/${d.getDate()}(${WD[d.getDay()]})` };
+      }),
+    );
+  }, []);
   const [c, setC] = useState<Counts>({});
   const [weight80, setWeight80] = useState(0);
   const [copied, setCopied] = useState(false);
@@ -77,30 +90,32 @@ export function EntryForm() {
   return (
     <div className="space-y-4 rounded-2xl border bg-background p-4">
       <p className="font-bold">申込フォーム（空き状況を聞くだけでもOK！）</p>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <label className="text-sm">
-          希望日
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="mt-1 w-full rounded-lg border bg-card p-2"
-          />
-        </label>
-        <div className="text-sm">
-          便
-          <div className="mt-1 flex gap-2">
-            {["午前便 9:30", "午後便 13:30"].map((s) => (
-              <button
-                key={s}
-                type="button"
-                onClick={() => setSlot(s)}
-                className={`flex-1 rounded-lg border p-2 font-bold ${slot === s ? "bg-primary text-primary-foreground" : "bg-card"}`}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
+      <div className="text-sm">
+        希望日
+        <div className="mt-1 grid grid-cols-4 gap-2">
+          {days.map((d, i) => (
+            <div key={d.label} className="space-y-1 rounded-lg border bg-card p-2 text-center">
+              <p className="font-bold">{d.label}</p>
+              {SLOTS.map((s) => {
+                const disabled = i === 0 && s.startsWith("午前");
+                if (disabled) return <div key={s} className="h-[34px]" />;
+                const on = date === d.label && slot === s;
+                return (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => {
+                      setDate(d.label);
+                      setSlot(s);
+                    }}
+                    className={`block w-full rounded-md border px-1 py-1.5 text-xs font-bold ${on ? "bg-primary text-primary-foreground" : "bg-background"}`}
+                  >
+                    {s}
+                  </button>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
       {groups.map((g) => (
