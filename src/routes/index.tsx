@@ -358,7 +358,7 @@ function Index() {
                 ["事前決済カード", "○", "○", "○"],
                 ["有料レンタルA", "－", "－", "✓"],
                 ["有料レンタルB", "－", "－", "✓"],
-                ["キャンセル料", "全額", "1,000円", "1,000円"],
+                ["キャンセル料", "5000円", "無料", "1,000円"],
               ].map((r) => (
                 <tr key={r[0]} className="border-b">
                   <th className="p-3 text-left font-bold">{r[0]}</th>
@@ -471,10 +471,10 @@ function Index() {
                     <a href={LINE_URL} target="_blank" rel="noopener noreferrer"><img src={`${W}/2024/07/QR_LINE_336.png`} alt="公式LINE QRコード" className="h-32 w-32" /></a>
                     <div className="text-center sm:text-left">
                       <LineButton label="Galbanzo | LINE 公式アカウント" />
-                      <p className="mt-2">からの<b>ご予約で直前価格</b>で参加いただけます。</p>
+                      <p className="mt-2">{"\n"}</p>
                     </div>
                   </div>
-                  <p className="text-muted-foreground">(Kawaasobi.com価格)空席があればラッキー！直前でお安くラッキー！のサイトand申込です、通常と異なる対応になりますことをご理解の上、お申し込みくださいませ。</p>
+                  <p className="text-muted-foreground">{"\n"}</p>
                   <p>直前のご参加希望は下記をコピペしてお問い合わせください。</p>
                   <pre className="whitespace-pre-wrap rounded-xl bg-muted p-3 font-sans">{"——–\n：希望日　今日、明日など\n：人数　大人✖️　 人：未就学✖️　人\n：希望種目（何かできればいいって方は　「何かしたい！」「しゃわくら」「SUP」）\n——–"}</pre>
                   <p>返信にて、参加できる時間をご返信します。</p>
