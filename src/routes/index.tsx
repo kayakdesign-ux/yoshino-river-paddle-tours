@@ -188,7 +188,7 @@ function Index() {
       <section className="mt-16 bg-secondary py-14">
         <div className="mx-auto grid max-w-5xl items-center gap-8 px-4 md:grid-cols-2">
           <div>
-            <H2>初心者・家族連れに選ばれる理由</H2>
+            <H2>ガルバンゾがオススメの理由</H2>
             <ul className="space-y-3">
               {["JRCA公認インストラクターがレッスン", "27年リバースポーツで無事故", "2006年からSup事業展開", "各種保険に加入"].map((t) => (
                 <li key={t} className="flex items-center gap-3 rounded-xl bg-card p-4 font-bold"><Check className="h-5 w-5 shrink-0 text-primary" />{t}</li>
