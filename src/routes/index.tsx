@@ -271,7 +271,7 @@ function Index() {
       </section>
 
       {/* Reasons */}
-      <section className="mt-16 bg-secondary py-14">
+      <section className="bg-secondary py-20">
         <div className="mx-auto grid max-w-3xl items-center gap-8 px-4">
           <div>
             <H2>ガルバンゾがオススメの理由</H2>
@@ -497,7 +497,7 @@ function Index() {
 
 
       {/* More */}
-      <section className="mt-16 bg-secondary py-14">
+      <section className="bg-secondary py-20">
         <div className="mx-auto max-w-3xl px-4">
           <H2>さぁ！やってみよう！</H2>
           <div className="mx-auto mt-8 max-w-md">
