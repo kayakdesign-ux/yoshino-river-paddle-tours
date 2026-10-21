@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, Navigation, X } from "lucide-react";
-import shikokuMap from "../assets/shikoku-map-outline.png.asset.json";
 
 const LAT = 33.7647;
 const LNG = 133.6639;
@@ -113,7 +112,7 @@ export function WeatherAccess() {
       </p>
       <div className="mt-2 rounded-2xl bg-muted p-3">
         <img
-          src={shikokuMap.url}
+          src="/shikoku-map.png"
           alt="四国の地図（高知県大豊町の場所）"
           loading="lazy"
           className="block h-auto w-full object-contain"
