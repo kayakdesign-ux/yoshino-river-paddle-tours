@@ -88,7 +88,20 @@ const flow = [
 const steps = [
   { t: "お天気を確認（大豊町・3日間）（ワクワク）", b: ["\n"] },
   { t: "申込フォーム送信・公式LINE（空き状況を聞くだけでもOK！）", b: [], line: true },
-  { t: "弊社からの返信を持って「予約」とさせていただきます。", b: ["当日は、スタッフが用具準備、運搬をしております。また急な連絡無しの不参加は、用具を回収するスタッフの労力もございます。ご予定の変更、取消がありましたら【必ずご連絡ください。】"] },
+  {
+    t: "弊社からの返信を持って「予約」とさせていただきます。",
+    b: ["当日は、スタッフが用具準備、運搬をしております。また急な連絡無しの不参加は、用具を回収するスタッフの労力もございます。ご予定の変更、取消がありましたら【必ずご連絡ください。】"],
+    note: {
+      lead: "返信にて、参加できる時間をご返信します。",
+      items: [
+        { text: "空席が取れない場合はごめんなさい。", bold: true },
+        { text: "空席があれば、その後、お名前や参加者の身長などお聞きします。" },
+        { text: "お支払いは、QR決済でお願いしてます。（PayPay,楽天Pay）" },
+        { text: "少し先のご予約は、本社サイトからお申し込みとなります。" },
+      ],
+      tail: "参加・お問合せ後、友達削除、ミュートOKです。",
+    },
+  },
   { t: "9時30分・13時30分出発", b: [
     "出発の20分前には到着ください。",
     "送迎車は時間通り出発します。",
@@ -456,6 +469,17 @@ function Index() {
                   <WeatherAccess />
                 </div>
               ) : s.b.length > 0 && <ul className="mt-2 space-y-1 text-sm">{s.b.map((b) => <li key={b}>・{b}</li>)}</ul>}
+              {s.note && (
+                <div className="mt-3 space-y-2 text-sm">
+                  <p>{s.note.lead}</p>
+                  <ul className="space-y-1">
+                    {s.note.items.map((it) => (
+                      <li key={it.text} className={it.bold ? "font-bold" : undefined}>・{it.text}</li>
+                    ))}
+                  </ul>
+                  <p className="text-muted-foreground">{s.note.tail}</p>
+                </div>
+              )}
               {s.line && (
                 <div className="mt-4 space-y-3 text-sm">
                   <div className="flex flex-col items-center gap-3 sm:flex-row">
@@ -468,14 +492,6 @@ function Index() {
                   <p className="text-muted-foreground">{"\n"}</p>
                   <p>直前のご参加希望は下記をコピペしてお問い合わせください。</p>
                   <pre className="whitespace-pre-wrap rounded-xl bg-muted p-3 font-sans">{"——–\n：希望日　今日、明日など\n：人数　大人✖️　 人：未就学✖️　人\n：希望種目（何かできればいいって方は　「何かしたい！」「しゃわくら」「SUP」）\n——–"}</pre>
-                  <p>返信にて、参加できる時間をご返信します。</p>
-                  <ul className="space-y-1">
-                    <li className="font-bold">・空席が取れない場合はごめんなさい。</li>
-                    <li>・空席があれば、その後、お名前や参加者の身長などお聞きします。</li>
-                    <li>・お支払いは、QR決済でお願いしてます。（PayPay,楽天Pay）</li>
-                    <li>・少し先のご予約は、本社サイトからお申し込みとなります。</li>
-                  </ul>
-                  <p className="text-muted-foreground">参加・お問合せ後、友達削除、ミュートOKです。</p>
                 </div>
               )}
             </li>
