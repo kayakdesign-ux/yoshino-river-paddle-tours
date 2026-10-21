@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { toast } from "sonner";
 
 const LINE_ID = "@418xyaym";
 
@@ -14,6 +13,7 @@ export function EntryForm() {
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("午前便 9:30");
   const [c, setC] = useState<Counts>({});
+  const [copied, setCopied] = useState(false);
   const total = Object.values(c).reduce((a, b) => a + b, 0);
 
   const text = [
@@ -29,7 +29,7 @@ export function EntryForm() {
     window.open(`https://line.me/R/oaMessage/${encodeURIComponent(LINE_ID)}/?${encodeURIComponent(text)}`, "_blank", "noopener");
   };
   const copy = async () => {
-    try { await navigator.clipboard.writeText(text); toast.success("コピーしました"); } catch { toast.error("コピーできませんでした"); }
+    try { await navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 2000); } catch { /* ignore */ }
   };
 
   return (
@@ -67,7 +67,7 @@ export function EntryForm() {
       <pre className="whitespace-pre-wrap rounded-xl bg-muted p-3 font-sans text-sm">{text}</pre>
       <div className="flex flex-col gap-2 sm:flex-row">
         <button type="button" onClick={send} className="flex-1 rounded-full bg-primary p-3 font-bold text-primary-foreground">公式LINEで送信</button>
-        <button type="button" onClick={copy} className="flex-1 rounded-full border p-3 font-bold">内容をコピー</button>
+        <button type="button" onClick={copy} className="flex-1 rounded-full border p-3 font-bold">{copied ? "コピーしました" : "内容をコピー"}</button>
       </div>
     </div>
   );
