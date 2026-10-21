@@ -218,8 +218,10 @@ function Index() {
             {highlights.map((h) => (
               <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl sm:col-span-2" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
                 {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />}
-                {h.t}
-                {h.em && <span className="font-extrabold">{h.em}</span>}
+                <span>
+                  {h.t}
+                  {h.em && <span className="font-extrabold">{h.em}</span>}
+                </span>
               </li>
             ))}
           </ul>
