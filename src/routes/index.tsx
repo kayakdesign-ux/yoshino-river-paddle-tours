@@ -45,14 +45,14 @@ function LineButton({ label = "公式LINEで予約・空き確認", className = 
   const external = !href.startsWith("#");
   return (
     <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`inline-flex items-center justify-center gap-2 rounded-full bg-line px-6 py-4 font-bold text-primary-foreground shadow-lg transition hover:brightness-105 ${className}`}>
+      className={`inline-flex items-center justify-center gap-2 min-h-14 rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30 transition hover:brightness-105 active:scale-[0.98] ${className}`}>
       <MessageCircle className="h-5 w-5" />{label}
     </a>
   );
 }
 
 function H2({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-6 text-center font-display text-2xl font-bold text-primary md:text-3xl">{children}</h2>;
+  return <h2 className="mb-10 text-center font-display text-3xl font-black leading-tight tracking-tight text-river md:text-4xl">{children}</h2>;
 }
 
 function PointNote({ main, sub, tone = "accent" }: { main: string; sub: string; tone?: "accent" | "sakura" }) {
@@ -185,31 +185,33 @@ function Index() {
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <a href="https://kawaasobi.com/" className="font-display text-sm font-bold text-primary md:text-base">高知 SUP（サップ）吉野川｜一般社団法人自然体感 ガルバンゾ</a>
-          <a href="#entry" className="hidden rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground md:inline-block">予約申込</a>
+          <a href="#entry" className="hidden rounded-full bg-cta px-5 py-2 text-sm font-black text-cta-foreground shadow md:inline-block">予約申込</a>
         </div>
       </header>
 
       {/* Hero banner */}
-      <section className="relative w-full">
-        <img src="/dji-hero.jpg" alt="ドローンから見た吉野川の清流とSUP" className="h-[38vw] max-h-[520px] w-full object-cover" />
-        <p className="absolute bottom-2 right-3 rounded-full bg-background/70 px-3 py-1 text-xs font-bold text-river backdrop-blur">
-          ドローンから見た吉野川　川底までクリア
-        </p>
+      <section className="relative w-full overflow-hidden">
+        <img src="/dji-hero.jpg" alt="ドローンから見た吉野川の清流とSUP" className="h-[88svh] max-h-[760px] min-h-[520px] w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-river/90 via-river/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-3xl px-5 pb-12 text-center text-primary-foreground">
+          <p className="mx-auto mb-4 w-fit rounded-full bg-background/20 px-4 py-1 text-xs font-bold backdrop-blur">清流ランキング2023 1位 ｜ ドローンから見た吉野川</p>
+          <h1 className="font-display text-3xl font-black leading-tight drop-shadow-lg md:text-5xl">高知・吉野川SUP体験<br />初心者・家族連れ歓迎！<br />川遊びツアー</h1>
+          <p className="mt-4 text-sm opacity-90 md:text-base">– 高知サップ（SUP）清流吉野川で川遊び –</p>
+          <a href="#entry" className="mt-8 inline-flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-2xl shadow-cta/40 active:scale-[0.98]">空席を確認して予約する</a>
+          <p className="mt-3 text-xs opacity-80">9:30・13:30出発 ／ 5,000円〜</p>
+        </div>
       </section>
 
-      {/* Title */}
-      <section className="mx-auto max-w-3xl px-4 pt-8 text-center">
-        <h1 className="font-display text-2xl font-bold leading-snug md:text-4xl">高知・吉野川SUP体験<br className="md:hidden" />｜初心者・家族連れ歓迎！<br />川遊びツアー</h1>
-        <p className="mt-2 text-sm text-muted-foreground">– 高知サップ（SUP）清流吉野川で川遊び –</p>
-        <p className="mt-4">高知でSUP体験を探している方へ――清流ランキング2023 1位の吉野川グリーンでリバーサップを満喫しませんか？</p>
+      <section className="mx-auto max-w-3xl px-4 pt-20 text-center">
+        <p className="text-lg leading-relaxed">高知でSUP体験を探している方へ――清流ランキング2023 1位の吉野川グリーンでリバーサップを満喫しませんか？</p>
       </section>
 
-      <section className="mx-auto mt-8 grid max-w-3xl items-center gap-8 px-4">
+      <section className="mx-auto grid py-20 max-w-3xl items-center gap-8 px-4">
         <CourseCard />
         <div className="space-y-4 text-center">
           <p className="font-display text-2xl font-bold text-primary">この綺麗な川に遊びに来て下さい。</p>
           <p>初めてでも楽しめる<br />インター15分で清流で遊ぶ<br />吉野川へぜひ遊びにきてね</p>
-          <a href="#entry" className="inline-block rounded-full bg-accent px-6 py-3 font-bold text-accent-foreground shadow">空席無くなる前に申し込もう！！</a>
+          <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席無くなる前に申し込もう！！</a>
         </div>
       </section>
 
