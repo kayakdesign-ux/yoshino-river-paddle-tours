@@ -2,7 +2,7 @@ import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
-import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown } from "lucide-react";
+import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown, Ship } from "lucide-react";
 
 import djiHero from "@/assets/dji-hero.jpg.asset.json";
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
@@ -211,6 +211,10 @@ function Index() {
 
       {/* Features */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
+        <span className="inline-flex items-center gap-3 rounded-full bg-card px-5 py-3 font-bold text-secondary-foreground shadow-sm ring-1 ring-primary/15">
+          <Ship className="h-5 w-5 shrink-0 text-primary" />
+          川用は幅が広く安定感抜群です。
+        </span>
         <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>
