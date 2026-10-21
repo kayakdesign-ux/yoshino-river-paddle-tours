@@ -27,6 +27,7 @@ export function EntryForm() {
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("午前便 9:30");
   const [c, setC] = useState<Counts>({});
+  const [weight80, setWeight80] = useState(0);
   const [copied, setCopied] = useState(false);
   const total = Object.values(c).reduce((a, b) => a + b, 0);
 
@@ -46,6 +47,7 @@ export function EntryForm() {
     `希望日：${date || "未定"}`,
     `便：${slot}`,
     ...groups.map((g) => `${g.title}：${g.fields.map((f) => `${f.label}${c[f.key] ?? 0}人`).join("／")}`),
+    `体重80kg：${weight80}人`,
     `合計：${total}人`,
   ].join("\n");
 
@@ -131,6 +133,21 @@ export function EntryForm() {
           </div>
         </div>
       ))}
+      <label className="flex items-center justify-between gap-2 rounded-lg border bg-card p-2 text-sm font-bold">
+        体重80kgの方は何人いますか？
+        <select
+          aria-label="体重80kgの方は何人いますか？"
+          value={weight80}
+          onChange={(e) => setWeight80(Number(e.target.value))}
+          className="rounded border bg-background p-1 font-normal"
+        >
+          {Array.from({ length: 11 }, (_, n) => (
+            <option key={n} value={n}>
+              {n}人
+            </option>
+          ))}
+        </select>
+      </label>
       <pre className="whitespace-pre-wrap rounded-xl bg-muted p-3 font-sans text-sm">{text}</pre>
       {pairError && (
         <p role="alert" className="text-sm font-bold text-destructive">
