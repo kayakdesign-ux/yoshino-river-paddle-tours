@@ -599,13 +599,11 @@ function Index() {
               <a href={DEST_DIR_URL} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-2 underline">
                 <MapPin className="h-4 w-4" />高知県長岡郡大豊町西土居１番地
               </a>
+              <a href="https://rafting.co.jp" target="_blank" rel="noopener noreferrer" className="mt-1 block w-fit underline">本社ページ</a>
             </div>
           </div>
           <div><LineButton href="#step-2" className="w-full max-w-md py-5 text-lg" /></div>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm underline">
-            <a href="https://rafting.co.jp" target="_blank" rel="noopener noreferrer">本社ページ</a>
-            <a href="#toppage">Topへ戻る</a>
-          </div>
+          <a href="#toppage" className="block text-sm underline">Topへ戻る</a>
         </div>
       </footer>
 
