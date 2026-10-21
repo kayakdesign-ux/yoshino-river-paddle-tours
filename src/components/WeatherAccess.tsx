@@ -19,10 +19,42 @@ function info(code: number) {
 
 const LABELS = ["今日", "明日", "明後日"];
 
+export function MapAccessButton() {
+  const [open, setOpen] = useState(false);
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(DEST)}&z=13&output=embed`;
+  const dirUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DEST)}&travelmode=driving`;
+
+  return (
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground"
+      >
+        <Navigation className="h-3 w-3" />
+        aboutTime
+      </button>
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={() => setOpen(false)}>
+          <div className="w-full max-w-lg rounded-2xl bg-card p-4" onClick={(e) => e.stopPropagation()}>
+            <div className="mb-2 flex items-center justify-between">
+              <p className="font-bold">{DEST}</p>
+              <button onClick={() => setOpen(false)} aria-label="閉じる"><X className="h-5 w-5" /></button>
+            </div>
+            <iframe title="地図" src={mapSrc} className="h-72 w-full rounded-xl border" loading="lazy" />
+            <p className="mt-2 text-xs text-muted-foreground">目安：大豊ICから約15分／高松空港から約90分</p>
+            <a href={dirUrl} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary py-3 font-bold text-primary-foreground">
+              <Navigation className="h-4 w-4" />現在地からのルートと所要時間を見る
+            </a>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
 export function WeatherAccess() {
   const [days, setDays] = useState<Day[] | null>(null);
   const [err, setErr] = useState(false);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -42,9 +74,6 @@ export function WeatherAccess() {
       )
       .catch(() => setErr(true));
   }, []);
-
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(DEST)}&z=13&output=embed`;
-  const dirUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(DEST)}&travelmode=driving`;
 
   return (
     <div className="mt-3 space-y-3 text-sm">
@@ -78,30 +107,13 @@ export function WeatherAccess() {
       </div>
       <p>
         <b>場所を確認</b>　高知県　大豊ICから約15分{"\n"}
-        <button onClick={() => setOpen(true)} className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
-          <Navigation className="h-3 w-3" />aboutTime
-        </button>
+        <MapAccessButton />
       </p>
       <p><b>出発時間</b>　9時30分　13時30分</p>
       <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
         <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
         出発時間までに着替えて集合です。
       </p>
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={() => setOpen(false)}>
-          <div className="w-full max-w-lg rounded-2xl bg-card p-4" onClick={(e) => e.stopPropagation()}>
-            <div className="mb-2 flex items-center justify-between">
-              <p className="font-bold">{DEST}</p>
-              <button onClick={() => setOpen(false)} aria-label="閉じる"><X className="h-5 w-5" /></button>
-            </div>
-            <iframe title="地図" src={mapSrc} className="h-72 w-full rounded-xl border" loading="lazy" />
-            <p className="mt-2 text-xs text-muted-foreground">目安：大豊ICから約15分／高松空港から約90分</p>
-            <a href={dirUrl} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary py-3 font-bold text-primary-foreground">
-              <Navigation className="h-4 w-4" />現在地からのルートと所要時間を見る
-            </a>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

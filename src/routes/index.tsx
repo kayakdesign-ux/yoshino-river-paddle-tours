@@ -3,7 +3,7 @@ import { EntryForm } from "@/components/EntryForm";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead } from "lucide-react";
 import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
 import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
-import { WeatherAccess } from "@/components/WeatherAccess";
+import { WeatherAccess, MapAccessButton } from "@/components/WeatherAccess";
 
 const afterFlow: { t: string; b: string[] }[] = [
   { t: "忘れ物ありませんか？", b: ["夏期は、化繊のTシャツやラッシュガード、サーフトランクスで参加いただけます。", "飲み物は川に沈まない物なら持込ます。", "携帯は防水ケースに入れて沈まないようにしてください。\n携帯ケースのヒモが切れて水中に沈んだ例がございます。水深が深いと回収できません。防水ケース、浮力付きを強くオススメ致します。"] },
