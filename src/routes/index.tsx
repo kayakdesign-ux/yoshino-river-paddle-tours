@@ -263,6 +263,7 @@ function Index() {
           <p className="mx-auto mt-4 w-fit rounded-full bg-card px-5 py-3 text-center font-bold text-primary shadow-sm ring-1 ring-primary/15">ツアー中の家族写真お撮りします</p>
           <p className="mx-auto mt-3 w-fit rounded-full bg-card px-5 py-3 text-center font-bold text-primary shadow-sm ring-1 ring-primary/15">未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</p>
           <p className="mx-auto mt-3 w-fit rounded-full bg-primary px-6 py-3 text-center font-bold text-primary-foreground shadow-lg ring-2 ring-primary/30">カメラ・スマートホン持込OK（ルール有）</p>
+          <p className="mx-auto mt-4 w-fit rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl">一人乗りで子供の成長や笑顔がまじかで見れる。</p>
         </div>
       </section>
 
