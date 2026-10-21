@@ -2,8 +2,8 @@ import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
-import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
-import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
+
+
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
 
 const afterFlow: { t: string; b: string[] }[] = [
@@ -308,8 +308,8 @@ function Index() {
         <div className="rounded-2xl border bg-card p-5 md:p-6">
           <div className="grid items-center gap-6 md:grid-cols-[minmax(0,500px)_1fr]">
             <div className="grid grid-cols-2 items-end gap-2">
-              <img src={gearWomanAsset.url} alt="当日の服装と装備のイメージ（女性）：つば付きハット、オレンジのライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[240px]" />
-              <img src={gearManAsset.url} alt="当日の服装と装備のイメージ（男性）：つば付きハット、柄のショートパンツ、マリンシューズを着用し、ライフジャケット・SUPボード・パドルを持った状態" className="mx-auto w-full max-w-[240px]" />
+              <img src="/sup-gear-woman.png" alt="当日の服装と装備のイメージ（女性）：つば付きハット、オレンジのライフジャケット、長袖ラッシュガード、マリンシューズを着用し、SUPボードとパドルを持った状態" className="mx-auto w-full max-w-[240px]" />
+              <img src="/sup-gear-man.png" alt="当日の服装と装備のイメージ（男性）：つば付きハット、柄のショートパンツ、マリンシューズを着用し、ライフジャケット・SUPボード・パドルを持った状態" className="mx-auto w-full max-w-[240px]" />
             </div>
             <div className="space-y-3 text-sm">
               <div>
