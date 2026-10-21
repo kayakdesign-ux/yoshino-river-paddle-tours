@@ -26,18 +26,39 @@ const groups: {
 const SLOTS = ["午前 9:30出発", "午後 13:30出発"];
 const WD = ["日", "月", "火", "水", "木", "金", "土"];
 
+// 当日表示は当日12時（日本時間）まで。12時を過ぎたら当日を消し、翌日から3日分を表示する。
+function jstNow() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    hour12: false,
+  }).formatToParts(new Date());
+  const num = (type: string) => Number(parts.find((p) => p.type === type)?.value ?? 0);
+  return { y: num("year"), m: num("month"), d: num("day"), h: num("hour") % 24 };
+}
+
+function buildDays() {
+  const { y, m, d, h } = jstNow();
+  const start = h >= 12 ? 1 : 0;
+  const length = h >= 12 ? 3 : 4;
+  return Array.from({ length }, (_, i) => {
+    const t = new Date(Date.UTC(y, m - 1, d + start + i));
+    return {
+      label: `${t.getUTCMonth() + 1}/${t.getUTCDate()}(${WD[t.getUTCDay()]})`,
+      todayOnlyAfternoon: start === 0 && i === 0,
+    };
+  });
+}
+
 export function EntryForm() {
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("");
-  const [days, setDays] = useState<{ label: string }[]>([]);
+  const [days, setDays] = useState<{ label: string; todayOnlyAfternoon: boolean }[]>([]);
   useEffect(() => {
-    const now = new Date();
-    setDays(
-      Array.from({ length: 4 }, (_, i) => {
-        const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
-        return { label: `${d.getMonth() + 1}/${d.getDate()}(${WD[d.getDay()]})` };
-      }),
-    );
+    setDays(buildDays());
   }, []);
   const [c, setC] = useState<Counts>({});
   const [weight80, setWeight80] = useState(0);
@@ -92,12 +113,12 @@ export function EntryForm() {
       <p className="font-bold">申込フォーム（空き状況を聞くだけでもOK！）</p>
       <div className="text-sm">
         希望日
-        <div className="mt-1 grid grid-cols-4 gap-2">
-          {days.map((d, i) => (
+        <div className={`mt-1 grid gap-2 ${days.length === 3 ? "grid-cols-3" : "grid-cols-4"}`}>
+          {days.map((d) => (
             <div key={d.label} className="space-y-1 rounded-lg border bg-card p-2 text-center">
               <p className="font-bold">{d.label}</p>
               {SLOTS.map((s) => {
-                const disabled = i === 0 && s.startsWith("午前");
+                const disabled = d.todayOnlyAfternoon && s.startsWith("午前");
                 if (disabled) return <div key={s} className="h-[34px]" />;
                 const on = date === d.label && slot === s;
                 return (
