@@ -110,10 +110,11 @@ const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof M
   { img: `${W}/2024/07/P1012125_s-1024x768.jpg`, t: "魚ウオッチングも楽しめる", d: "自由時間もあるのでのんびりくつろぐことも", i: Fish },
 ];
 
-const highlights: { t: string; i?: typeof MapPin; hot?: boolean }[] = [
+const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean; em?: string }[] = [
   { t: "アクセス抜群", i: MapPin },
-  { t: "水が綺麗", i: Droplets },
   { t: "大歩危温泉も近い", i: Flame },
+  { t: "水が綺麗", i: Droplets },
+  { t: "川用は幅が広く ", i: Ship, em: "安定感抜群", soft: true },
   { t: "岩からジャンプは何回もできる", i: ArrowDown, hot: true },
 ];
 
@@ -210,18 +211,15 @@ function Index() {
 
       {/* Features */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
-        <span className="mx-auto flex w-fit items-center gap-3 rounded-full bg-card px-5 py-3 font-bold text-secondary-foreground shadow-sm ring-1 ring-primary/15">
-          <Ship className="h-5 w-5 shrink-0 text-primary" />
-          川用は幅が広く安定感抜群です。
-        </span>
         <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
         <div>
           <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
           <ul className="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-2">
             {highlights.map((h) => (
-              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl sm:col-span-2" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl sm:col-span-2" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
                 {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />}
                 {h.t}
+                {h.em && <span className="font-extrabold">{h.em}</span>}
               </li>
             ))}
           </ul>
