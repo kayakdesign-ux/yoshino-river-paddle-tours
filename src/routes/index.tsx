@@ -216,7 +216,7 @@ function Index() {
       </section>
 
       {/* Tags */}
-      <section className="mx-auto mt-10 max-w-3xl px-4">
+      <section className="mx-auto py-20 max-w-3xl px-4">
         <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto w-full max-w-3xl rounded-2xl" />
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t) => (
@@ -356,7 +356,7 @@ function Index() {
       </section>
 
       {/* Hobby */}
-      <section className="mx-auto mt-16 grid max-w-3xl items-center gap-6 px-4">
+      <section className="mx-auto py-20 grid max-w-3xl items-center gap-6 px-4">
         <img src={`${W}/2024/07/P9171579_s.jpg`} alt="高知リバーサップ" className="rounded-2xl" />
         <div className="text-center">
           <H2>今年、最高の趣味を手に入れよう</H2>
