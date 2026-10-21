@@ -214,7 +214,7 @@ function Index() {
         <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>
-            <p className="text-lg font-bold leading-relaxed">川はま水、さらさらして気持ちいいですよ。</p>
+            <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
             <p className="mt-2 text-xl font-bold leading-relaxed">川用は幅が広く<br />安定感があります。</p>
             <ul className="mt-6 space-y-3">
               {highlights.map((h) => (
