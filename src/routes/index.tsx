@@ -90,7 +90,7 @@ function PhoneRulePill() {
   const [open, setOpen] = useState(false);
   const id = useId();
   return (
-    <li className="flex w-full flex-col items-center gap-2">
+    <div className="mx-auto mt-4 flex w-full max-w-2xl flex-col items-center gap-2">
       <button
         type="button"
         aria-expanded={open}
@@ -112,7 +112,7 @@ function PhoneRulePill() {
           <p className="mt-2 text-muted-foreground">例年、落とされるお客がおり、沈んで回収不能となるケースが多くあります。必ずバックアップもおとりください。ご不安な方は、ロッカーにお預けください。</p>
         </div>
       )}
-    </li>
+    </div>
   );
 }
 
@@ -290,9 +290,9 @@ function Index() {
         <ul className="mx-auto flex max-w-2xl flex-col items-center gap-3 rounded-2xl border bg-card p-6 md:p-8">
           <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
           <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Baby className="h-5 w-5 shrink-0" />未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</li>
-          <PhoneRulePill />
           <li className="flex w-fit items-center gap-2 rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl"><Smile className="h-5 w-5 shrink-0 md:h-6 md:w-6" />一人乗りで子供の成長や笑顔がまじかで見れる。</li>
         </ul>
+        <PhoneRulePill />
       </section>
 
       {/* Photos */}
