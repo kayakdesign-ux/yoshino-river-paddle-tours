@@ -1,0 +1,74 @@
+import { useState } from "react";
+import { toast } from "sonner";
+
+const LINE_ID = "@418xyaym";
+
+type Counts = Record<string, number>;
+const groups: { title: string; note?: string; fields: { key: string; label: string }[] }[] = [
+  { title: "SUP 1人乗り", fields: [{ key: "s1a", label: "大人" }, { key: "s1k", label: "9歳〜16歳" }] },
+  { title: "SUP 2人乗り", fields: [{ key: "s2a", label: "大人" }, { key: "s2p", label: "未就学" }] },
+  { title: "パックラフト", note: "落ちたく無い人は", fields: [{ key: "pa", label: "大人" }, { key: "pk", label: "9歳〜16歳" }] },
+];
+
+export function EntryForm() {
+  const [date, setDate] = useState("");
+  const [slot, setSlot] = useState("午前便 9:30");
+  const [c, setC] = useState<Counts>({});
+  const total = Object.values(c).reduce((a, b) => a + b, 0);
+
+  const text = [
+    "【空き状況の確認・申込】",
+    `希望日：${date || "未定"}`,
+    `便：${slot}`,
+    ...groups.map((g) => `${g.title}：${g.fields.map((f) => `${f.label}${c[f.key] ?? 0}人`).join("／")}`),
+    `合計：${total}人`,
+  ].join("\n");
+
+  const send = async () => {
+    try { await navigator.clipboard.writeText(text); } catch { /* ignore */ }
+    window.open(`https://line.me/R/oaMessage/${encodeURIComponent(LINE_ID)}/?${encodeURIComponent(text)}`, "_blank", "noopener");
+  };
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(text); toast.success("コピーしました"); } catch { toast.error("コピーできませんでした"); }
+  };
+
+  return (
+    <div className="space-y-4 rounded-2xl border bg-background p-4">
+      <p className="font-bold">申込フォーム（空き状況を聞くだけでもOK！）</p>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className="text-sm">希望日
+          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="mt-1 w-full rounded-lg border bg-card p-2" />
+        </label>
+        <div className="text-sm">便
+          <div className="mt-1 flex gap-2">
+            {["午前便 9:30", "午後便 13:30"].map((s) => (
+              <button key={s} type="button" onClick={() => setSlot(s)}
+                className={`flex-1 rounded-lg border p-2 font-bold ${slot === s ? "bg-primary text-primary-foreground" : "bg-card"}`}>{s}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+      {groups.map((g) => (
+        <div key={g.title}>
+          {g.note && <p className="text-xs text-muted-foreground">{g.note}</p>}
+          <p className="text-sm font-bold">{g.title}</p>
+          <div className="mt-1 grid grid-cols-2 gap-2">
+            {g.fields.map((f) => (
+              <label key={f.key} className="flex items-center justify-between gap-2 rounded-lg border bg-card p-2 text-sm">
+                {f.label}
+                <select value={c[f.key] ?? 0} onChange={(e) => setC({ ...c, [f.key]: Number(e.target.value) })} className="rounded border bg-background p-1">
+                  {Array.from({ length: 11 }, (_, n) => <option key={n} value={n}>{n}人</option>)}
+                </select>
+              </label>
+            ))}
+          </div>
+        </div>
+      ))}
+      <pre className="whitespace-pre-wrap rounded-xl bg-muted p-3 font-sans text-sm">{text}</pre>
+      <div className="flex flex-col gap-2 sm:flex-row">
+        <button type="button" onClick={send} className="flex-1 rounded-full bg-primary p-3 font-bold text-primary-foreground">公式LINEで送信</button>
+        <button type="button" onClick={copy} className="flex-1 rounded-full border p-3 font-bold">内容をコピー</button>
+      </div>
+    </div>
+  );
+}

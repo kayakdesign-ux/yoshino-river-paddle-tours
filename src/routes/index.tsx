@@ -485,8 +485,7 @@ function Index() {
                     </div>
                   </div>
                   <p className="text-muted-foreground">{"\n"}</p>
-                  <p>直前のご参加希望は下記をコピペしてお問い合わせください。</p>
-                  <pre className="whitespace-pre-wrap rounded-xl bg-muted p-3 font-sans">{"——–\n：希望日　今日、明日など\n：人数　大人✖️　 人：未就学✖️　人\n：希望種目（何かできればいいって方は　「何かしたい！」「しゃわくら」「SUP」）\n——–"}</pre>
+                  <EntryForm />
                 </div>
               )}
             </li>
