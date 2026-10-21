@@ -261,6 +261,7 @@ function Index() {
           <p className="font-bold text-foreground">内容は準備中です</p>
           <p className="mt-2">家族写真お撮りします。</p>
         </div>
+        <p className="mx-auto mt-4 w-fit rounded-full bg-card px-5 py-3 text-center font-bold text-primary shadow-sm ring-1 ring-primary/15">ツアー中の写真お撮りします</p>
       </section>
 
       {/* Photos */}
