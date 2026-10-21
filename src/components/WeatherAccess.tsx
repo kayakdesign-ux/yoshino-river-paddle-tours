@@ -77,7 +77,7 @@ export function WeatherAccess() {
         </p>
       </div>
       <p>
-        <b>場所</b>　高知県　大豊ICから約15分{" "}
+        <b>場所を確認</b>　高知県　大豊ICから約15分{"\n"}
         <button onClick={() => setOpen(true)} className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
           <Navigation className="h-3 w-3" />aboutTime
         </button>
