@@ -179,9 +179,11 @@ function Index() {
       {/* Tags */}
       <section className="mx-auto mt-10 max-w-5xl px-4">
         <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto w-full max-w-3xl rounded-2xl" />
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t) => (
-            <span key={t} className="rounded-full bg-secondary px-4 py-2 text-sm font-bold text-secondary-foreground">{t}</span>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t, i) => (
+            <Reveal key={t} delay={i * 120}>
+              <span className="inline-block rounded-full border-2 border-primary/20 bg-secondary px-5 py-3 text-base font-bold text-secondary-foreground shadow-md md:text-lg">{t}</span>
+            </Reveal>
           ))}
         </div>
         <p className="mt-6 text-center font-bold text-river">塩水じゃないから遊びやすいよ</p>
