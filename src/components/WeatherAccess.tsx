@@ -115,7 +115,7 @@ export function WeatherAccess() {
         <MapAccessButton />
       </p>
       <div className="mt-2 rounded-2xl bg-muted p-3">
-        <div className="relative">
+        <div className="relative" style={{ aspectRatio: "958 / 693" }}>
           <img
             src="/shikoku-map.png"
             alt="四国の地図（高知県おおとよICの場所）"
