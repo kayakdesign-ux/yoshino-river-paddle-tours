@@ -409,7 +409,7 @@ function Index() {
           <div className="mx-auto mt-8 max-w-3xl space-y-4">
             <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="rounded-2xl" />
             <div className="flex items-start gap-3 rounded-2xl bg-card p-4">
-              <img src={`${W}/2025/04/2368_s.png`} alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
+              <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
               <p className="text-sm"><b>だっく</b><br />SUP（サップ）が難しそうと思う方は 安定性抜群のパックラフトで一緒に川下りする事ができます。</p>
             </div>
             <a href="https://kayaks.jp/lp/packraft/" className="block rounded-full border-2 border-primary bg-card px-6 py-3 text-center font-bold text-primary">レンタルで気軽に挑戦！！</a>
@@ -430,7 +430,7 @@ function Index() {
           <img src={`${K}/2025/05/P8054157-Sup_nerrupng-1024x586.png`} alt="楽しみ方はいろいろ" className="mx-auto mt-4 max-w-3xl rounded-2xl" />
           <p className="mt-2 text-center font-bold">楽しみ方はいろいろ</p>
           <div className="mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl bg-card p-4">
-            <img src={`${W}/2025/04/2368_s.png`} alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
+            <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
             <p className="text-sm"><b>だっく</b><br />初めての人が気軽に参加できるようにキャンペーンページ特別です。</p>
           </div>
         </div>
