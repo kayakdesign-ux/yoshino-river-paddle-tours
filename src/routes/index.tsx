@@ -602,7 +602,10 @@ function Index() {
             </div>
           </div>
           <div><LineButton href="#step-2" className="w-full max-w-md py-5 text-lg" /></div>
-          <a href="#toppage" className="block text-sm underline">Topへ戻る</a>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm underline">
+            <a href="https://rafting.co.jp" target="_blank" rel="noopener noreferrer">本社ページ</a>
+            <a href="#toppage">Topへ戻る</a>
+          </div>
         </div>
       </footer>
 
