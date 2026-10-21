@@ -303,17 +303,53 @@ function Index() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section className="mx-auto mt-16 max-w-5xl px-4">
+        <H2>料金</H2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            { price: "7000", pay: "事前決済", tag: "", lead: [], items: ["有料レンタルA B両方付き", "取消手数料1000円（当日）", "急な体調不良でも安心"] },
+            { price: "6000", pay: "事前決済", tag: "便利でオススメ", lead: [], items: ["有料レンタルB付き", "取消手数料1000円（当日）", "急な体調不良でも安心"] },
+            { price: "5000", pay: "当日決済", tag: "格安", lead: ["ラッシュガードや小物は持っている方", "とりあえず安く体験したい方"], items: ["前日当日キャンセルは全額"] },
+          ].map((p) => (
+            <div key={p.price} className={`relative rounded-2xl border bg-card p-5 ${p.tag === "便利でオススメ" ? "border-2 border-primary shadow-lg" : ""}`}>
+              {p.tag === "便利でオススメ" && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-primary-foreground">便利でオススメ</span>
+              )}
+              <p className="text-3xl font-bold">{p.price}<span className="ml-1 text-sm font-normal">円</span></p>
+              <p className="mt-1 text-sm font-bold text-primary">{p.pay}{p.tag === "格安" && "　格安"}</p>
+              {p.lead.length > 0 && (
+                <div className="mt-2 text-sm text-muted-foreground">{p.lead.map((l) => <p key={l}>{l}</p>)}</div>
+              )}
+              <ul className="mt-3 space-y-1 text-sm">
+                {p.items.map((t) => (
+                  <li key={t} className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-line" />{t}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 rounded-2xl bg-secondary p-4 text-sm">
+          <p className="font-bold text-primary">雨の日だけの特別</p>
+          <ul className="mt-1 flex flex-wrap gap-x-6 gap-y-1">
+            {["ツアー写真が割引", "ウェットスーツ貸出割引"].map((t) => (
+              <li key={t} className="flex items-center gap-2"><Check className="h-4 w-4 shrink-0 text-line" />{t}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Paid rental */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>有料レンタル</H2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">リバーシューズ</p>
+            <p className="font-bold text-primary">A：リバーシューズ</p>
             <p className="mt-1 text-3xl font-bold">300<span className="ml-1 text-sm font-normal">円</span></p>
             <p className="mt-2 text-sm text-muted-foreground">ビーチサンダルでは川に入れません。</p>
           </div>
           <div className="rounded-2xl border bg-card p-5">
-            <p className="font-bold text-primary">ウェットスーツ＋ラッシュガード長袖＋帽子</p>
+            <p className="font-bold text-primary">B：ウェットスーツ＋ラッシュガード長袖＋帽子</p>
             <p className="mt-1 text-3xl font-bold">700<span className="ml-1 text-sm font-normal">円</span></p>
             <p className="mt-2 text-sm text-muted-foreground">1点でも700円。水温や季節が気になる方はこちらから。</p>
 
