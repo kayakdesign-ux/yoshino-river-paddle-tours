@@ -192,7 +192,7 @@ function Index() {
 
       {/* About */}
       <section className="mx-auto mt-16 max-w-3xl px-4">
-        <H2>{"高知の自然 SUP体験\n清流ランキング１位 吉野川を楽しもう"}</H2>
+        <H2>{"高知SUP（サップ）清流 吉野川を楽しもう"}</H2>
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
           <p>{"\n"}</p>
