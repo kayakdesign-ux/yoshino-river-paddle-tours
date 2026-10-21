@@ -2,7 +2,7 @@ import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
-import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
+import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown } from "lucide-react";
 
 import djiHero from "@/assets/dji-hero.jpg.asset.json";
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
@@ -108,6 +108,14 @@ const features = [
   { img: `${W}/2024/07/GOPR1582_s.jpg`, t: "20分程度のレッスン付", d: "初めてでも乗り方、パドル持ち方から習えます。" },
   { img: `${W}/2024/07/P9171579_s.jpg`, t: "のんびり時間もあります", d: "自由時間もあるのでのんびりくつろぐことも" },
   { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "飛び込みも複数回OK", d: "体験飛び込み" },
+];
+
+const highlights: { t: string; i: typeof MapPin; hot?: boolean }[] = [
+  { t: "アクセス抜群", i: MapPin },
+  { t: "水が綺麗", i: Droplets },
+  { t: "魚ウォッチングも楽しめる", i: Fish },
+  { t: "大歩危温泉も近い", i: Flame },
+  { t: "岩からジャンプは何回もできる", i: ArrowDown, hot: true },
 ];
 
 const flow = [
