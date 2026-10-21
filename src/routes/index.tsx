@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, MapPin, Check } from "lucide-react";
 import gearWomanAsset from "@/assets/sup-gear-woman.png.asset.json";
 import gearManAsset from "@/assets/sup-gear-man.png.asset.json";
+import { WeatherAccess } from "@/components/WeatherAccess";
 
 
 const LINE_URL = "https://page.line.me/418xyaym?openQrModal=true";
@@ -415,7 +416,13 @@ function Index() {
             <li key={i} className="rounded-2xl border bg-card p-5">
               <p className="text-xs font-bold tracking-widest text-primary">STEP {i + 1}</p>
               <p className="mt-1 font-bold">{s.t}</p>
-              {s.b.length > 0 && <ul className="mt-2 space-y-1 text-sm">{s.b.map((b) => <li key={b}>・{b}</li>)}</ul>}
+              {i === 0 ? (
+                <div className="mt-2 text-sm">
+                  <p>{s.b[0]}</p>
+                  <WeatherAccess />
+                  <p className="mt-3">{s.b[1]}</p>
+                </div>
+              ) : s.b.length > 0 && <ul className="mt-2 space-y-1 text-sm">{s.b.map((b) => <li key={b}>・{b}</li>)}</ul>}
               {s.line && (
                 <div className="mt-4 space-y-3 text-sm">
                   <div className="flex flex-col items-center gap-3 sm:flex-row">
