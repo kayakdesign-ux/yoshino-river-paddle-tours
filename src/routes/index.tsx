@@ -303,13 +303,13 @@ function Index() {
           <img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" className="rounded-2xl" />
         </div>
         <div className="space-y-3">
-          <H2>カメラ・スマートホン持込OK</H2>
+          <H2>{"\n"}</H2>
           <ul className="list-disc space-y-1 pl-5 text-sm">
-            <li>防水ケースに入れて下さい</li>
-            <li>ヒモを着けて落下しないようにしてください</li>
-            <li>浮力つけて沈まないようにしてください</li>
-            <li>バックアップを取ることを強くオススメします。</li>
-            <li>他のお客様の迷惑になる撮影、レッスン動画の撮影はご遠慮ください。</li>
+            <li>{"\n"}</li>
+            <li>{"\n"}</li>
+            <li>{"\n"}</li>
+            <li>{"\n"}</li>
+            <li>{"\n"}</li>
           </ul>
           <img src={`${W}/2025/05/SUP06.png`} alt="スマホ持ち込み" className="rounded-2xl" />
         </div>
