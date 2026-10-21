@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, Navigation, X } from "lucide-react";
+import accessMap from "@/assets/access_map.png.asset.json";
 
 const LAT = 33.7647;
 const LNG = 133.6639;
@@ -50,6 +51,7 @@ export function WeatherAccess() {
     <div className="mt-3 space-y-3 text-sm">
       <div>
         <p className="font-bold">天気（大豊町・3日間）</p>
+        <p className="text-xs text-muted-foreground">天気予報</p>
         {err ? (
           <p className="text-muted-foreground">天気を取得できませんでした。</p>
         ) : !days ? (
@@ -70,6 +72,10 @@ export function WeatherAccess() {
             })}
           </div>
         )}
+        <p className="mt-2 rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
+          <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
+          雨の日特典あります。濡れるから楽しいよ
+        </p>
       </div>
       <p>
         <b>場所</b>　高知県　大豊ICから約15分{" "}
@@ -77,6 +83,8 @@ export function WeatherAccess() {
           <Navigation className="h-3 w-3" />aboutTime
         </button>
       </p>
+      <img src={accessMap.url} alt="四国のイラスト地図（大豊IC・ガルバンゾの場所）" className="w-full rounded-xl border" loading="lazy" />
+      <p><b>出発時間</b>　9時30分　13時30分</p>
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={() => setOpen(false)}>
           <div className="w-full max-w-lg rounded-2xl bg-card p-4" onClick={(e) => e.stopPropagation()}>
