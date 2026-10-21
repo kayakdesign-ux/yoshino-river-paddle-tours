@@ -41,9 +41,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function LineButton({ label = "公式LINEで予約・空き確認", className = "" }: { label?: string; className?: string }) {
+function LineButton({ label = "公式LINEで予約・空き確認", className = "", href = LINE_URL }: { label?: string; className?: string; href?: string }) {
+  const external = !href.startsWith("#");
   return (
-    <a href={LINE_URL} target="_blank" rel="noopener noreferrer"
+    <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={`inline-flex items-center justify-center gap-2 rounded-full bg-line px-6 py-4 font-bold text-primary-foreground shadow-lg transition hover:brightness-105 ${className}`}>
       <MessageCircle className="h-5 w-5" />{label}
     </a>
@@ -473,7 +474,7 @@ function Index() {
         <H2>予約はいますぐ！！ ここから始まる</H2>
         <ol className="space-y-4">
           {steps.map((s, i) => (
-            <li key={i} className="rounded-2xl border bg-card p-5">
+            <li key={i} id={`step-${i + 1}`} className="rounded-2xl border bg-card p-5">
               <p className="text-xs font-bold tracking-widest text-primary">STEP {i + 1}</p>
               <p className="mt-1 font-bold">{s.t}</p>
               {i === 0 ? (
@@ -560,7 +561,7 @@ function Index() {
           <a href={DEST_DIR_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline">
             <MapPin className="h-4 w-4" />高知県長岡郡大豊町西土居１番地
           </a>
-          <div><LineButton /></div>
+          <div><LineButton href="#step-2" /></div>
           <a href="#toppage" className="block text-sm underline">Topへ戻る</a>
         </div>
       </footer>
