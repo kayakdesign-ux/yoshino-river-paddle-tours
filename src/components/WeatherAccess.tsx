@@ -83,6 +83,10 @@ export function WeatherAccess() {
         </button>
       </p>
       <p><b>出発時間</b>　9時30分　13時30分</p>
+      <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
+        <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
+        出発時間までに着替えて集合です。
+      </p>
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={() => setOpen(false)}>
           <div className="w-full max-w-lg rounded-2xl bg-card p-4" onClick={(e) => e.stopPropagation()}>
