@@ -220,7 +220,7 @@ function Index() {
                 {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />}
                 <span>
                   {h.t}
-                  {h.em && <span className="font-extrabold">{h.em}</span>}
+                  {h.em && <span className="font-black">{h.em}</span>}
                 </span>
               </li>
             ))}
