@@ -211,7 +211,7 @@ function Index() {
 
       {/* Features */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
-        <span className="inline-flex items-center gap-3 rounded-full bg-card px-5 py-3 font-bold text-secondary-foreground shadow-sm ring-1 ring-primary/15">
+        <span className="mx-auto flex w-fit items-center gap-3 rounded-full bg-card px-5 py-3 font-bold text-secondary-foreground shadow-sm ring-1 ring-primary/15">
           <Ship className="h-5 w-5 shrink-0 text-primary" />
           川用は幅が広く安定感抜群です。
         </span>
