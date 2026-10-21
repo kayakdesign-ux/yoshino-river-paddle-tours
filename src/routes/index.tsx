@@ -90,7 +90,11 @@ const steps = [
   { t: "申込フォーム送信・公式LINE（空き状況を聞くだけでもOK！）", b: [], line: true },
   {
     t: "弊社からの返信を持って「予約」とさせていただきます。",
-    b: ["当日は、スタッフが用具準備、運搬をしております。また急な連絡無しの不参加は、用具を回収するスタッフの労力もございます。ご予定の変更、取消がありましたら【必ずご連絡ください。】"],
+    b: [],
+    point: {
+      main: "無断キャンセルはご遠慮ください。必ずご連絡ください。",
+      sub: "スタッフが用具運搬して準備します。急なキャンセルは必ずご連絡ください、悪質な場合は営業損害金も含めて請求します。",
+    },
     note: {
       lead: "返信にて、参加できる時間をご返信します。",
       items: [
@@ -450,6 +454,18 @@ function Index() {
                   <WeatherAccess />
                 </div>
               ) : s.b.length > 0 && <ul className="mt-2 space-y-1 text-sm">{s.b.map((b) => <li key={b}>・{b}</li>)}</ul>}
+              {s.point && (
+                <div className="mt-3 space-y-2">
+                  <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
+                    <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
+                    {s.point.main}
+                  </p>
+                  <p className="rounded-xl border bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+                    <b className="mr-1 text-foreground">補足</b>
+                    {s.point.sub}
+                  </p>
+                </div>
+              )}
               {s.note && (
                 <div className="mt-3 space-y-2 text-sm">
                   <p>{s.note.lead}</p>
