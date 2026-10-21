@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, Navigation, X } from "lucide-react";
-import accessMap from "@/assets/access_map.png.asset.json";
 
 const LAT = 33.7647;
 const LNG = 133.6639;
@@ -83,7 +82,6 @@ export function WeatherAccess() {
           <Navigation className="h-3 w-3" />aboutTime
         </button>
       </p>
-      <img src={accessMap.url} alt="四国のイラスト地図（大豊IC・ガルバンゾの場所）" className="w-full rounded-xl border" loading="lazy" />
       <p><b>出発時間</b>　9時30分　13時30分</p>
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={() => setOpen(false)}>
