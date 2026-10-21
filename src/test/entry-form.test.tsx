@@ -60,7 +60,7 @@ describe("申込フォーム 体重80kg", () => {
 
   it("人数を選ぶと送信文に反映される", () => {
     render(<EntryForm />);
-    pick("体重80kgの方は何人いますか？", 3);
+    pick("体重80kg以上の方は何人いますか？", 3);
 
     expect(screen.getByText(/体重80kg：3人/)).toBeInTheDocument();
     expect(sendButton()).toBeEnabled();
