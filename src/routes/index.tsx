@@ -2,7 +2,7 @@ import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
-import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
+import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown } from "lucide-react";
 
 import djiHero from "@/assets/dji-hero.jpg.asset.json";
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
@@ -110,6 +110,14 @@ const features = [
   { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "飛び込みも複数回OK", d: "体験飛び込み" },
 ];
 
+const highlights: { t: string; i: typeof MapPin; hot?: boolean }[] = [
+  { t: "アクセス抜群", i: MapPin },
+  { t: "水が綺麗", i: Droplets },
+  { t: "魚ウォッチングも楽しめる", i: Fish },
+  { t: "大歩危温泉も近い", i: Flame },
+  { t: "岩からジャンプは何回もできる", i: ArrowDown, hot: true },
+];
+
 const flow = [
   { img: `${W}/2025/05/P8013228-1024x768.jpg`, d: "準備運動、漕ぎ方の練習。JRCA公認インストラクターがレッスン 20分程度" },
   { img: `${K}/2024/07/GOPR2636_1500-1024x896.jpg`, d: "浮く練習・クールダウン・レスキュー練習と熱中症対策。記念写真もお撮りします。" },
@@ -204,12 +212,24 @@ function Index() {
       {/* Features */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
         <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
-        <div className="grid items-center gap-6 md:grid-cols-2">
-          <img src={`${W}/2025/05/8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" className="rounded-2xl" />
-          <div className="text-center">
-            <p>川はま水、さらさらして気持ちいいですよ。</p>
-            <p className="mt-3 text-xl font-bold">川用は幅が広く<br />安定感があります。</p>
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <div>
+            <p className="text-lg font-bold leading-relaxed">川はま水、さらさらして気持ちいいですよ。</p>
+            <p className="mt-2 text-xl font-bold leading-relaxed">川用は幅が広く<br />安定感があります。</p>
+            <ul className="mt-6 space-y-3">
+              {highlights.map((h) => (
+                <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+                  <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />
+                  {h.t}
+                </li>
+              ))}
+            </ul>
           </div>
+          <Reveal>
+            <figure className="rounded-3xl bg-card p-3 shadow-xl ring-1 ring-primary/15">
+              <img src={`${W}/2025-05-8b741230ea1fc9769777e44b34daa304-1024x768.png`} alt="川用SUPボード" className="w-full rounded-2xl" />
+            </figure>
+          </Reveal>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
