@@ -493,11 +493,10 @@ function Index() {
             <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
             <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
               { img: `${K}/2025/05/Swim01.png`, t: "スマートフォンは防水ケースに入れて落下防止のヒモがあれば持っていけます" },
               { img: `${K}/2025/05/Junp02.png`, t: "飛び込みもできます。" },
-              { img: `${K}/2025/05/Photo03.png`, t: "写真もお撮りしてます。" },
             ].map((x) => (
               <figure key={x.t} className="overflow-hidden rounded-2xl bg-card">
                 <img src={x.img} alt={x.t} loading="lazy" className="w-full" />
