@@ -219,7 +219,6 @@ function Index() {
         <div className="grid items-center gap-8 md:grid-cols-2">
           <div>
             <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
-            <p className="mt-2 text-xl font-bold leading-relaxed">川用は幅が広く<br />安定感があります。</p>
             <ul className="mt-6 space-y-3">
               {highlights.map((h) => (
                 <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
