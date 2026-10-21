@@ -423,12 +423,6 @@ function Index() {
       <section className="mt-16 bg-secondary py-14">
         <div className="mx-auto max-w-5xl px-4">
           <H2>さぁ！やってみよう！</H2>
-          <div className="mx-auto max-w-xl rounded-2xl bg-card p-6 text-center">
-            <p className="font-bold">このページからお申込で</p>
-            <p className="mt-1 text-xl font-bold text-destructive">【前日20時迄、キャンセル料無料】</p>
-            <p className="mt-2">このページからは低価格 ツーリング1.5km【5000円/1人】</p>
-            <p className="mt-1 text-sm text-muted-foreground">雨でもできます。濡れるアクティビティ</p>
-          </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               { img: `${K}/2025/05/Swim01.png`, t: "スマートフォンは防水ケースに入れて落下防止のヒモがあれば持っていけます" },
