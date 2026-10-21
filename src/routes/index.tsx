@@ -492,7 +492,7 @@ function Index() {
               <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
               <p className="text-sm"><b>だっく</b><br />SUP（サップ）が難しそうと思う方は 安定性抜群のパックラフトで一緒に川下りする事ができます。</p>
             </div>
-            <a href="https://kayaks.jp/lp/packraft/" className="block rounded-full border-2 border-primary bg-card px-6 py-3 text-center font-bold text-primary">レンタルで気軽に挑戦！！</a>
+            <p className="block rounded-full border-2 border-primary bg-card px-6 py-3 text-center font-bold text-primary">サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
