@@ -94,7 +94,7 @@ function CourseCard() {
         <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">オススメ</span>
         <p className="text-xl font-bold">ミニ！ツーリング1.5km</p>
         <p className="text-sm text-muted-foreground">たくさんの人に体験して欲しい</p>
-        <p className="font-display text-3xl font-bold text-primary">5000円<span className="text-base">/1人</span></p>
+        <p className="font-display text-3xl font-bold text-primary">5000円〜<span className="text-base">/1人</span></p>
         <p className="text-sm">８歳ぐらいから ／ 9時30分・13時30分出発</p>
       </div>
     </div>
