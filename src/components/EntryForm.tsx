@@ -134,9 +134,9 @@ export function EntryForm() {
         </div>
       ))}
       <label className="flex items-center justify-between gap-2 rounded-lg border bg-card p-2 text-sm font-bold">
-        体重80kgの方は何人いますか？
+        体重80kg以上の方は何人いますか？
         <select
-          aria-label="体重80kgの方は何人いますか？"
+          aria-label="体重80kg以上の方は何人いますか？"
           value={weight80}
           onChange={(e) => setWeight80(Number(e.target.value))}
           className="rounded border bg-background p-1 font-normal"
