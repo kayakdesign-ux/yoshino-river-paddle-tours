@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
+import { Reveal } from "@/components/Reveal";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
 
 
