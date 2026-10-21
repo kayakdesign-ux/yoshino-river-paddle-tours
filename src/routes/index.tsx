@@ -168,7 +168,7 @@ function Index() {
       <section className="mx-auto mt-10 max-w-5xl px-4">
         <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto w-full max-w-3xl rounded-2xl" />
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "大豊IC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t) => (
+          {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t) => (
             <span key={t} className="rounded-full bg-secondary px-4 py-2 text-sm font-bold text-secondary-foreground">{t}</span>
           ))}
         </div>
@@ -181,7 +181,7 @@ function Index() {
         <H2>{"高知の自然 SUP体験\n清流ランキング１位 吉野川を楽しもう"}</H2>
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
-          <p>高松空港から約９０分なので高松から高知への途中（大豊IC）でおりればこの清流を体験できます。</p>
+          <p>高松空港から約９０分なので高松から高知への途中（おおとよIC）でおりればこの清流を体験できます。</p>
           <p>吉野川を気軽に体験してもらう為に、サップ（SUP）ツアーを始めたのは2011年。当時よりも知名度もあがり、用具も進化して、毎年たくさんの方に吉野川で遊んでいただいています。</p>
           <p>最初は海用SUPで薄いのしかなかったんですよ。</p>
         </div>
@@ -557,7 +557,7 @@ function Index() {
         <div className="mx-auto max-w-5xl space-y-6 px-4 text-center">
           <p className="font-display text-3xl font-bold">最高の休日に出発。</p>
           <img src={`${K}/2024/10/%E5%BA%97%E8%88%971-1024x836-1.jpg`} alt="ガルバンゾのベース（店舗）" className="mx-auto max-w-md rounded-2xl" />
-          <p>大豊インター 約15分。<br />四国・吉野川のすぐそばにベース（店舗）があります。</p>
+          <p>おおとよIC 約15分。<br />四国・吉野川のすぐそばにベース（店舗）があります。</p>
           <a href={DEST_DIR_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline">
             <MapPin className="h-4 w-4" />高知県長岡郡大豊町西土居１番地
           </a>

@@ -20,11 +20,28 @@ function info(code: number) {
 
 const LABELS = ["今日", "明日", "明後日"];
 
+function MapPopup({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(DEST)}&z=13&output=embed`;
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={onClose}>
+      <div className="w-full max-w-lg rounded-2xl bg-card p-4" onClick={(e) => e.stopPropagation()}>
+        <div className="mb-2 flex items-center justify-between">
+          <p className="font-bold">{DEST}</p>
+          <button onClick={onClose} aria-label="閉じる"><X className="h-5 w-5" /></button>
+        </div>
+        <iframe title="地図" src={mapSrc} className="h-72 w-full rounded-xl border" loading="lazy" />
+        <p className="mt-2 text-xs text-muted-foreground">目安：おおとよICから約15分／高松空港から約90分</p>
+        <a href={DEST_DIR_URL} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary py-3 font-bold text-primary-foreground">
+          <Navigation className="h-4 w-4" />現在地からのルートと所要時間を見る
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function MapAccessButton() {
   const [open, setOpen] = useState(false);
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(DEST)}&z=13&output=embed`;
-  const dirUrl = DEST_DIR_URL;
-
   return (
     <>
       <button
@@ -34,21 +51,7 @@ export function MapAccessButton() {
         <Navigation className="h-3 w-3" />
         aboutTime
       </button>
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 p-4" onClick={() => setOpen(false)}>
-          <div className="w-full max-w-lg rounded-2xl bg-card p-4" onClick={(e) => e.stopPropagation()}>
-            <div className="mb-2 flex items-center justify-between">
-              <p className="font-bold">{DEST}</p>
-              <button onClick={() => setOpen(false)} aria-label="閉じる"><X className="h-5 w-5" /></button>
-            </div>
-            <iframe title="地図" src={mapSrc} className="h-72 w-full rounded-xl border" loading="lazy" />
-            <p className="mt-2 text-xs text-muted-foreground">目安：大豊ICから約15分／高松空港から約90分</p>
-            <a href={dirUrl} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary py-3 font-bold text-primary-foreground">
-              <Navigation className="h-4 w-4" />現在地からのルートと所要時間を見る
-            </a>
-          </div>
-        </div>
-      )}
+      <MapPopup open={open} onClose={() => setOpen(false)} />
     </>
   );
 }
@@ -56,6 +59,7 @@ export function MapAccessButton() {
 export function WeatherAccess() {
   const [days, setDays] = useState<Day[] | null>(null);
   const [err, setErr] = useState(false);
+  const [mapOpen, setMapOpen] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -107,24 +111,34 @@ export function WeatherAccess() {
         </p>
       </div>
       <p>
-        <b>場所を確認</b>　高知県　大豊ICから約15分{"\n"}
+        <b>場所を確認</b>　高知県　おおとよICから約15分{"\n"}
         <MapAccessButton />
       </p>
       <div className="mt-2 rounded-2xl bg-muted p-3">
-        <img
-          src="/shikoku-map.png"
-          alt="四国の地図（高知県大豊ICの場所）"
-          loading="lazy"
-          className="block h-auto w-full object-contain"
-        />
+        <div className="relative">
+          <img
+            src="/shikoku-map.png"
+            alt="四国の地図（高知県おおとよICの場所）"
+            loading="lazy"
+            className="block h-auto w-full object-contain"
+          />
+          <button
+            type="button"
+            onClick={() => setMapOpen(true)}
+            aria-label="おおとよICの地図と現在地からのルートを開く"
+            title="おおとよICの地図と現在地からのルートを開く"
+            className="absolute cursor-pointer rounded-xl outline-none transition hover:ring-2 hover:ring-primary/70 focus-visible:ring-2 focus-visible:ring-primary"
+            style={{ left: "55.1%", top: "21.9%", width: "26.7%", height: "18.5%" }}
+          />
+        </div>
       </div>
+      <MapPopup open={mapOpen} onClose={() => setMapOpen(false)} />
       <div className="overflow-hidden rounded-2xl border border-border">
         <table className="w-full text-sm">
           <caption className="bg-muted px-3 py-2 text-left font-bold">アクセス所要時間（目安）</caption>
           <tbody>
             {[
-              ["ひろめ市場まで 🚗", "約50〜60分"],
-              ["高知市内から 🚗", "50〜60分"],
+              ["高知市内｜ひろめ市場 🚗", "約50分〜60分"],
               ["高知駅〜大杉駅 🚃", "特急 約35分／普通 約70分"],
               ["高知空港から 🚗", "約50分"],
               ["高松・徳島・松山空港 🚗", "約80〜110分"],
