@@ -503,7 +503,7 @@ function Index() {
                         出発<b className="mx-0.5 font-display text-2xl">{big[1] === "６０" ? "60" : big[1]}分</b>前
                       </span>
                     )}
-                    <p className="text-lg font-bold">{f.t}</p>
+                    <p className="text-lg font-bold">{f.t}{f.t.includes("駐車場") && <MapAccessButton />}</p>
                     {f.b.length > 0 && <ul className="mt-1 space-y-0.5 text-sm text-muted-foreground">{f.b.map((b) => <li key={b}>{b}</li>)}</ul>}
                   </div>
                 </li>
