@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "55583828-b7d4-4e9d-bfeb-cf33e25b1d79",
+  "asset_id": "5b2a19b4-632d-4bd2-92b5-c66645c09548",
   "project_id": "159af9ae-c81e-424a-b1c9-4a1b53dcdd4a",
-  "url": "/__l5e/assets-v1/55583828-b7d4-4e9d-bfeb-cf33e25b1d79/shikoku-map-annotated.png",
-  "r2_key": "a/v1/159af9ae-c81e-424a-b1c9-4a1b53dcdd4a/55583828-b7d4-4e9d-bfeb-cf33e25b1d79/shikoku-map-annotated.png",
-  "original_filename": "shikoku-map-annotated.png",
-  "size": 46287,
+  "url": "/__l5e/assets-v1/5b2a19b4-632d-4bd2-92b5-c66645c09548/shikoku-map-annotated-v2.png",
+  "r2_key": "a/v1/159af9ae-c81e-424a-b1c9-4a1b53dcdd4a/5b2a19b4-632d-4bd2-92b5-c66645c09548/shikoku-map-annotated-v2.png",
+  "original_filename": "shikoku-map-annotated-v2.png",
+  "size": 40858,
   "content_type": "image/png",
-  "created_at": "2026-10-21T09:01:12Z"
+  "created_at": "2026-10-21T09:02:20Z"
 }
