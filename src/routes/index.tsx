@@ -340,7 +340,7 @@ function Index() {
 
       {/* Hobby */}
       <section className="mx-auto mt-16 grid max-w-5xl items-center gap-6 px-4 md:grid-cols-2">
-        <img src={`${W}/2024/07/P1012125_s-1024x768.jpg`} alt="高知リバーサップ" className="rounded-2xl" />
+        <img src={`${W}/2024/07/P9171579_s.jpg`} alt="高知リバーサップ" className="rounded-2xl" />
         <div className="text-center">
           <H2>今年、最高の趣味を手に入れよう</H2>
           <p>リバーSUPは日本中でやってます。経験があれば他の川に旅行いっても色々な川に行けます。</p>
