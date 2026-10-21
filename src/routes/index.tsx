@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
+import { Reveal } from "@/components/Reveal";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown } from "lucide-react";
 
 
@@ -260,13 +261,32 @@ function Index() {
 
       {/* Lesson note */}
       <section className="mx-auto mt-16 max-w-3xl px-4 text-center">
-        <H2>{"こんな人にはオススメしません。\n\n・しっかり練習したい方→レッスンへ\n・激しい川下りした方→8km,6kmコースへ\n・水に濡れたくない→多少は濡れちゃいます。\n"}</H2>
-        <p className="leading-relaxed">{"\n"}</p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
-          <img src={`${W}/2025/05/SUP08-1024x586.png`} alt="吉野川SUP" className="rounded-2xl" />
+        <Reveal>
+          <H2>こんな人にはオススメしません。</H2>
+        </Reveal>
+        <div className="mt-6 grid gap-3 text-left sm:grid-cols-3">
+          {[
+            { who: "しっかり練習したい方", go: "レッスンへ" },
+            { who: "激しい川下りをしたい方", go: "8km・6kmコースへ" },
+            { who: "水に濡れたくない方", go: "多少は濡れちゃいます" },
+          ].map((it, i) => (
+            <Reveal key={it.who} delay={i * 150}>
+              <div className="h-full rounded-2xl border bg-card p-4 shadow-sm">
+                <p className="font-bold">{it.who}</p>
+                <p className="mt-2 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">→ {it.go}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
-        <p className="mt-4">始めてサップ（SUP）で川下りする方が、のんびりと楽しめるツアーになります。</p>
+        <Reveal delay={200}>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
+            <img src={`${W}/2025/05/SUP08-1024x586.png`} alt="吉野川SUP" className="rounded-2xl" />
+          </div>
+        </Reveal>
+        <Reveal delay={300}>
+          <p className="mt-4 rounded-2xl bg-accent px-4 py-3 font-semibold text-accent-foreground">始めてサップ（SUP）で川下りする方が、のんびりと楽しめるツアーになります。</p>
+        </Reveal>
       </section>
 
       {/* Flow */}
