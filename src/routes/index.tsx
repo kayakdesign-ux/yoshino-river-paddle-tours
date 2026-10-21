@@ -256,7 +256,7 @@ function Index() {
 
       {/* Family reasons */}
       <section className="mx-auto mt-16 max-w-5xl px-4">
-        <H2>家族連れに選ばれる理由</H2>
+        <H2>家族連れにも選ばれる理由</H2>
         <ul className="mx-auto flex max-w-2xl flex-col items-center gap-3 rounded-2xl border bg-card p-6 md:p-8">
           <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
           <li className="flex w-fit items-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Baby className="h-5 w-5 shrink-0" />未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</li>
