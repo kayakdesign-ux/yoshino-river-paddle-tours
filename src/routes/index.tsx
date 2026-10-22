@@ -691,7 +691,7 @@ function Index() {
       </section>
 
       {/* Footer */}
-
+      <footer className="mt-16 bg-primary py-12 text-primary-foreground">
         <div className="mx-auto max-w-3xl space-y-6 px-4 text-center">
           <Reveal><img src={`${K}/2025/05/P8054157-Sup_nerrupng-1024x586.png`} alt="楽しみ方はいろいろ" className="mx-auto w-full max-w-3xl rounded-2xl shadow-2xl animate-float" /></Reveal>
           <p className="font-display text-3xl font-bold">最高の休日に出発。</p>
