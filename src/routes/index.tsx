@@ -544,17 +544,6 @@ function Index() {
             <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
             <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
-          <div className="mt-8 grid items-start gap-4">
-            {[
-              { img: `${K}/2025/05/Swim01.png`, t: "スマートフォンは防水ケースに入れて落下防止のヒモがあれば持っていけます" },
-              { img: `${K}/2025/05/Junp02.png`, t: "飛び込みもできます。" },
-            ].map((x) => (
-              <figure key={x.t} className="overflow-hidden rounded-2xl bg-card">
-                <img src={x.img} alt={x.t} loading="lazy" className="w-full" />
-                <figcaption className="p-3 text-sm">{x.t}</figcaption>
-              </figure>
-            ))}
-          </div>
           <p className="mt-6 text-center">{"\n"}</p>
           <p className="mt-2 text-center font-bold">{"\n"}</p>
           <div className="mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl bg-card p-4">
