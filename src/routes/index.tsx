@@ -225,7 +225,7 @@ function Index() {
           <p>都会の喧騒を離れ、高知の雄大な自然の中で、家族や仲間と吉野川の川遊びを楽しみませんか？</p>
         </div>
         <div className="mt-8 text-center">
-          <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">ツアーの詳細を見る</a>
+          <a href="#features" className="inline-flex min-h-12 items-center rounded-full bg-cta px-6 py-3 text-base font-black text-cta-foreground shadow-lg shadow-cta/30">ツアーの詳細を見る</a>
         </div>
       </section>
 
