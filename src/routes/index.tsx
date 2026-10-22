@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { Fragment, useId, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
@@ -89,13 +89,13 @@ function PhoneRulePill() {
   const [open, setOpen] = useState(false);
   const id = useId();
   return (
-    <div className="mx-auto mt-4 flex w-full max-w-2xl flex-col items-center gap-2">
+    <li className="flex w-full flex-col items-center gap-2">
       <button
         type="button"
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((v) => !v)}
-        className="flex w-fit cursor-pointer items-center gap-2 rounded-full bg-primary px-6 py-3 text-center font-bold text-primary-foreground shadow-lg ring-2 ring-primary/30"
+        className="flex w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-sakura px-5 py-3 text-center font-bold text-sakura-foreground shadow-sm ring-2 ring-sakura-strong/30"
       >
         <Smartphone className="h-5 w-5 shrink-0" />
         カメラ・スマートホン持込OK（ルール有）
@@ -111,7 +111,7 @@ function PhoneRulePill() {
           <p className="mt-2 text-muted-foreground">例年、落とされるお客がおり、沈んで回収不能となるケースが多くあります。必ずバックアップもおとりください。ご不安な方は、ロッカーにお預けください。</p>
         </div>
       )}
-    </div>
+    </li>
   );
 }
 
@@ -281,13 +281,16 @@ function Index() {
           <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
           <ul className="mx-auto mt-6 grid max-w-3xl gap-3">
             {highlights.map((h) => (
-              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : h.leaf ? "bg-leaf text-leaf-foreground shadow-sm ring-2 ring-leaf-foreground/25" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+              <Fragment key={h.t}>
+                {h.t === "岩からジャンプは何回もできる" && <PhoneRulePill />}
+              <li className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : h.leaf ? "bg-leaf text-leaf-foreground shadow-sm ring-2 ring-leaf-foreground/25" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
                 {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : h.leaf ? "text-leaf-foreground" : "text-primary"}`} />}
                 <span>
                   {h.t}
                   {h.em && <span className="font-black">{h.em}</span>}
                 </span>
               </li>
+              </Fragment>
             ))}
           </ul>
         </div>
@@ -329,7 +332,6 @@ function Index() {
           <li className="flex w-fit items-center gap-2 rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl"><Smile className="h-5 w-5 shrink-0 md:h-6 md:w-6" />お子様の笑顔がまず直で見れる</li>
           <li className="w-full max-w-[300px]"><img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" loading="lazy" className="w-full rounded-2xl shadow-xl" /></li>
         </ul>
-        <PhoneRulePill />
       </section>
 
 
