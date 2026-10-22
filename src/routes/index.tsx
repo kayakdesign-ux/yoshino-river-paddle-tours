@@ -502,18 +502,6 @@ function Index() {
         <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">
           急な予定変更｜体調不良がご不安の方は<br />「おすすめ6000円コース・7000円コース」をお選びください。
         </h2>
-        <div className="grid gap-4">
-          <div className="rounded-2xl border bg-card p-5">
-            <p className="text-sm text-muted-foreground">靴だけレンタルの方は</p>
-            <p className="mt-1 font-bold text-primary">レンタルA　リバーシューズ</p>
-            <p className="mt-1 text-3xl font-bold">300<span className="ml-1 text-sm font-normal">円</span></p>
-          </div>
-          <div className="rounded-2xl border bg-card p-5">
-            <p className="text-sm text-muted-foreground">ウェアセットが必要な方は</p>
-            <p className="mt-1 font-bold text-primary">レンタルB　ラッシュガード、帽子、ウェットスーツ長ズボン、パドリングジャケット</p>
-            <p className="mt-1 text-3xl font-bold">700<span className="ml-1 text-sm font-normal">円</span></p>
-          </div>
-        </div>
         <div className="mt-6 rounded-2xl border-2 border-destructive/40 bg-card p-5">
           <p className="mb-3">
             <span className="inline-block rounded-full border-2 border-destructive px-4 py-1 text-sm font-bold text-destructive">ご注意</span>
