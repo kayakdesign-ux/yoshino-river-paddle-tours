@@ -26,6 +26,7 @@ const K = "https://kayaks.jp/wp/wp-content/uploads";
 const HERO = `${W}/2024/10/GOPR3336-1024x896.jpg`;
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "高知・吉野川SUP体験｜初心者・家族連れ歓迎！手ぶらで川遊びツアー" },
