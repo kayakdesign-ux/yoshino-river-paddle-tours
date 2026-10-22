@@ -312,7 +312,7 @@ function Index() {
       </section>
 
       {/* Family reasons */}
-      <section className="mx-auto max-w-3xl px-4 py-20">
+      <section className="mx-auto max-w-3xl px-4 py-20 overflow-x-clip">
         <H2>吉野川の川遊びが家族連れに選ばれる理由</H2>
         <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2 shadow-2xl">
           <img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="block w-full" />
