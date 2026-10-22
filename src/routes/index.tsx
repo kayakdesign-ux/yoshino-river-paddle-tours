@@ -671,8 +671,27 @@ function Index() {
         </div>
       </section>
 
+      {/* Field about */}
+      <section className="mx-auto max-w-3xl px-4 py-20">
+        <Reveal>
+          <div className="rounded-3xl border border-border bg-secondary/60 p-6 md:p-10">
+            <p className="inline-block rounded-full bg-card px-4 py-1 text-sm font-bold text-primary shadow-sm">
+              フィールドについて
+            </p>
+            <div className="mt-5 space-y-5 text-base leading-loose text-foreground md:text-lg">
+              <p>
+                当ツアーは、四国の中央を流れる吉野川の、流れが穏やかで透明度の高い安全な区間で開催しています。20年以上ツアー無事故で開催。徳島県と高知県の県境に位置し、高速道路のインターチェンジからもアクセスが良く、四国観光のスケジュールにも組み込みやすい立地です。
+              </p>
+              <p>
+                日本三大暴れ川の雄大な自然景観と、驚くほど澄んだ「碧（あお）」の流れを、ぜひ体感してください。都会の喧騒を離れ、鳥のさえずりやアンパンマン列車を眺めながら、のんびりとした時間を過ごせます。
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* Footer */}
-      <footer className="mt-16 bg-primary py-12 text-primary-foreground">
+
         <div className="mx-auto max-w-3xl space-y-6 px-4 text-center">
           <Reveal><img src={`${K}/2025/05/P8054157-Sup_nerrupng-1024x586.png`} alt="楽しみ方はいろいろ" className="mx-auto w-full max-w-3xl rounded-2xl shadow-2xl animate-float" /></Reveal>
           <p className="font-display text-3xl font-bold">最高の休日に出発。</p>
