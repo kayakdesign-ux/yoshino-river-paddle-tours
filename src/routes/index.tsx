@@ -517,7 +517,7 @@ function Index() {
       {/* Paid rental */}
       <section className="mx-auto max-w-3xl px-4 py-20">
         <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">
-          有料レンタル<span className="ml-3 text-base font-bold md:text-lg">当日｜お支払いはQR決済（PayPay・楽天Pay）</span>
+          急な予定変更｜体調不良がご不安の方は<br />「おすすめ6000円コース・7000円コース」をお選びください。
         </h2>
         <div className="grid gap-4">
           <div className="rounded-2xl border bg-card p-5">
