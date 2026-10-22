@@ -210,8 +210,7 @@ function Index() {
         <div className="rounded-3xl border-4 border-cta bg-card p-6 text-center shadow-xl md:p-10">
           <h2 className="font-display text-2xl font-black text-primary md:text-3xl">【2027年夏】吉野川SUPツアー開催概要</h2>
           <div className="mt-6 grid gap-4">
-            <div className="rounded-2xl bg-secondary p-5"><p className="text-3xl">📅</p><p className="font-display text-xl font-black md:text-2xl">開催期間：7月10日(土) 〜 9月30日(木)</p></div>
-            <div className="rounded-2xl bg-secondary p-5"><p className="text-3xl">☀️</p><p className="font-display text-xl font-black md:text-2xl">期間中、毎日開催！</p></div>
+            <div className="rounded-2xl bg-secondary p-5"><p className="text-3xl">📅☀️</p><p className="font-display text-xl font-black md:text-2xl">開催期間：7月10日(土) 〜 9月30日(木)</p><p className="mt-1 font-display text-xl font-black md:text-2xl">期間中、毎日開催！</p></div>
             <div className="rounded-2xl bg-cta p-5 text-cta-foreground"><p className="text-3xl">⏰</p><p className="font-display text-xl font-black md:text-2xl">ご予約はお早めに</p></div>
           </div>
         </div>
