@@ -16,3 +16,8 @@
 
 ## Page metadata
 - Every content route defines one self-referencing canonical and matching og:url using the published site origin in its leaf head(); never add canonicals to the root layout, which would duplicate them on child pages.
+
+## Booking submissions
+- Validate enquiries with a shared Zod schema and save through a purpose-built public server function before opening LINE; this ensures enquiries survive without exposing records to visitors.
+- Keep booking_requests service-role-only with RLS and per-submission UUID deduplication; owners review entries in Cloud, not a public listing.
+- Add owner emails only after a sending domain is verified, using managed fixed-recipient templates and event-derived idempotency keys; never create email queues or email tables.

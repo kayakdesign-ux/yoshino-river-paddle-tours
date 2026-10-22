@@ -1,4 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { bookingSchema } from "@/lib/booking-schema";
+import { submitBooking } from "@/lib/bookings.functions";
 
 const LINE_ID = "@418xyaym";
 
@@ -47,6 +52,7 @@ function buildDays() {
   return Array.from({ length }, (_, i) => {
     const t = new Date(Date.UTC(y, m - 1, d + start + i));
     return {
+      value: t.toISOString().slice(0, 10),
       label: `${t.getUTCMonth() + 1}/${t.getUTCDate()}(${WD[t.getUTCDay()]})`,
       todayOnlyAfternoon: start === 0 && i === 0,
     };
@@ -54,9 +60,16 @@ function buildDays() {
 }
 
 export function EntryForm() {
+  const saveBooking = useServerFn(submitBooking);
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [status, setStatus] = useState("");
+  const [error, setError] = useState("");
+  const submission = useRef<{ payload: string; id: string } | null>(null);
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("");
-  const [days, setDays] = useState<{ label: string; todayOnlyAfternoon: boolean }[]>([]);
+  const [days, setDays] = useState<{ value: string; label: string; todayOnlyAfternoon: boolean }[]>([]);
   useEffect(() => {
     setDays(buildDays());
   }, []);
@@ -78,7 +91,9 @@ export function EntryForm() {
 
   const text = [
     "【空き状況の確認・申込】",
-    `希望日：${date || "未定"}`,
+    `お名前：${name || "未入力"}`,
+    `連絡先：${contact || "未入力"}`,
+    `希望日：${days.find((d) => d.value === date)?.label || "未定"}`,
     `便：${slot || "未定"}`,
     ...groups.map((g) => `${g.title}：${g.fields.map((f) => `${f.label}${c[f.key] ?? 0}人`).join("／")}`),
     `体重80kg：${weight80}人`,
@@ -86,7 +101,25 @@ export function EntryForm() {
   ].join("\n");
 
   const send = async () => {
-    if (pairError) return;
+    if (pairError || busy) return;
+    setError("");
+    setStatus("");
+    const payload = { name, contact, preferredDate: date, departure: slot.startsWith("午前") ? "09:30" : "13:30",
+      participants: { s1a: c.s1a ?? 0, s1k: c.s1k ?? 0, s2a: c.s2a ?? 0, s2p: c.s2p ?? 0, pa: c.pa ?? 0, pk: c.pk ?? 0 }, weight80 };
+    const signature = JSON.stringify(payload);
+    if (submission.current?.payload !== signature) submission.current = { payload: signature, id: crypto.randomUUID() };
+    const result = bookingSchema.safeParse({ ...payload, id: submission.current.id });
+    if (!result.success) { setError(result.error.issues[0]?.message ?? "入力内容を確認してください。"); return; }
+    setBusy(true);
+    try {
+      await saveBooking({ data: result.data });
+      setStatus("送信内容を受け付けました。予約はまだ確定していません。続けて公式LINEでご確認ください。");
+    } catch {
+      setError("保存できませんでした。時間をおいて再度お試しください。");
+      setBusy(false);
+      return;
+    }
+    setBusy(false);
     try {
       await navigator.clipboard.writeText(text);
     } catch {
@@ -111,6 +144,12 @@ export function EntryForm() {
   return (
     <div id="entry-form" tabIndex={-1} className="scroll-mt-24 space-y-4 rounded-2xl border bg-background p-4">
       <p className="font-bold">申込フォーム（空き状況を聞くだけでもOK！）</p>
+      <label className="block space-y-1 text-sm font-bold">
+        お名前<Input autoComplete="name" value={name} maxLength={100} onChange={(e) => setName(e.target.value)} />
+      </label>
+      <label className="block space-y-1 text-sm font-bold">
+        電話番号またはメールアドレス<Input autoComplete="email" value={contact} maxLength={255} onChange={(e) => setContact(e.target.value)} />
+      </label>
       <div className="text-sm">
         希望日
         <div className={`mt-1 grid gap-2 ${days.length === 3 ? "grid-cols-3" : "grid-cols-4"}`}>
@@ -120,13 +159,13 @@ export function EntryForm() {
               {SLOTS.map((s) => {
                 const disabled = d.todayOnlyAfternoon && s.startsWith("午前");
                 if (disabled) return <div key={s} className="h-[34px]" />;
-                const on = date === d.label && slot === s;
+                const on = date === d.value && slot === s;
                 return (
                   <button
                     key={s}
                     type="button"
                     onClick={() => {
-                      setDate(d.label);
+                      setDate(d.value);
                       setSlot(s);
                     }}
                     className={`block w-full rounded-md border px-1 py-1.5 text-xs font-bold ${on ? "bg-primary text-primary-foreground" : "bg-background"}`}
@@ -190,20 +229,23 @@ export function EntryForm() {
           {pairError}
         </p>
       )}
+      {error && <p role="alert" className="text-sm font-bold text-destructive">{error}</p>}
+      {status && <p role="status" className="text-sm text-primary">{status}</p>}
+      {status && <a className="block font-bold text-primary underline" href={`https://line.me/R/oaMessage/${encodeURIComponent(LINE_ID)}/?${encodeURIComponent(text)}`} target="_blank" rel="noopener noreferrer">公式LINEを開く</a>}
       <div className="flex flex-col gap-2 sm:flex-row">
-        <button
+        <Button
           type="button"
           onClick={send}
-          disabled={!!pairError}
+          disabled={!!pairError || busy}
           className={`flex-1 rounded-full p-3 font-bold ${
             pairError ? "cursor-not-allowed bg-muted text-muted-foreground" : "bg-primary text-primary-foreground"
           }`}
         >
-          公式LINEで送信
-        </button>
-        <button type="button" onClick={copy} className="flex-1 rounded-full border p-3 font-bold">
+          {busy ? "保存しています…" : "公式LINEで送信"}
+        </Button>
+        <Button variant="outline" type="button" onClick={copy} className="flex-1 rounded-full border p-3 font-bold">
           {copied ? "コピーしました" : "内容をコピー"}
-        </button>
+        </Button>
       </div>
     </div>
   );
