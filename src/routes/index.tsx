@@ -95,7 +95,7 @@ function PhoneRulePill() {
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((v) => !v)}
-        className="flex w-fit cursor-pointer items-center gap-3 rounded-full bg-sakura px-5 py-3 text-center font-bold text-sakura-foreground shadow-sm ring-2 ring-sakura-strong/30"
+        className="flex w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-sakura px-5 py-3 text-center font-bold text-sakura-foreground shadow-sm ring-2 ring-sakura-strong/30"
       >
         <Smartphone className="h-5 w-5 shrink-0" />
         カメラ・スマートホン持込OK（ルール有）
