@@ -336,7 +336,6 @@ function Index() {
             </span>
             <p className="flex-1 text-lg font-black leading-snug md:text-xl">お子様の笑顔がまじかで見れる</p>
           </li>
-          <li className="mx-auto w-full max-w-[300px]"><img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" loading="lazy" className="w-full rounded-2xl shadow-xl" /></li>
         </ul>
       </section>
 
