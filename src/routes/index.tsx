@@ -34,10 +34,12 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "高知・吉野川SUP体験｜初心者・家族連れ歓迎！手ぶらで川遊びツアー" },
       { property: "og:description", content: "【高知・吉野川SUP体験ツアー】初心者・家族連れ大歓迎！手ぶらでOKの川遊びアクティビティです。美しい吉野川の絶景をSUPでクルージング。ウェットスーツや道具は全てレンタル可能。専属ガイドが丁寧にレクチャーするので、初めての方や子供連れでも安心してお楽しみいただけます。今すぐ予約！" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://yoshino-river-paddle-tours.lovable.app/" },
       { property: "og:image", content: HERO },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: HERO },
     ],
+    links: [{ rel: "canonical", href: "https://yoshino-river-paddle-tours.lovable.app/" }],
   }),
   component: Index,
 });
