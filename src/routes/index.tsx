@@ -325,8 +325,8 @@ function Index() {
       {/* Family reasons */}
       <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>家族連れにも選ばれる理由</H2>
-        <img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="mx-auto mt-6 block w-full max-w-md rounded-2xl shadow-2xl" />
         <ul className="mx-auto mt-6 flex w-full max-w-md flex-col items-stretch gap-3 rounded-2xl border bg-card p-5 md:p-6">
+          <li><img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="block w-full rounded-2xl shadow-xl" /></li>
           <li className="flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
           <li className="flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Baby className="h-5 w-5 shrink-0" />未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</li>
           <li className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl"><Smile className="h-5 w-5 shrink-0 md:h-6 md:w-6" />お子様の笑顔がまじかで見れる</li>
