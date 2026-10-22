@@ -314,14 +314,32 @@ function Index() {
       {/* Family reasons */}
       <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>吉野川の川遊びが家族連れに選ばれる理由</H2>
-        <ul className="mx-auto mt-6 flex w-full max-w-md flex-col items-stretch gap-3 rounded-2xl border bg-card p-5 md:p-6">
-          <li><img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="block w-full rounded-2xl shadow-xl" /></li>
-          <li className="flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
-          <li className="flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Baby className="h-5 w-5 shrink-0" />未就学も参加可能（2人乗り 5歳ぐらい・35kgぐらい迄）</li>
-          <li className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 text-center text-lg font-black text-accent-foreground shadow-xl ring-2 ring-accent/50 md:text-xl"><Smile className="h-5 w-5 shrink-0 md:h-6 md:w-6" />お子様の笑顔がまじかで見れる</li>
+        <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2 shadow-2xl">
+          <img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="block w-full" />
+        </div>
+        <ul className="mx-auto mt-8 flex w-full flex-col gap-4">
+          <li className="flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-md ring-1 ring-primary/10 md:p-5">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/20">
+              <Camera className="h-6 w-6" />
+            </span>
+            <p className="flex-1 text-base font-bold leading-snug md:text-lg">ツアー中の家族写真お撮りします</p>
+          </li>
+          <li className="flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-md ring-1 ring-primary/10 md:p-5">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary text-primary ring-1 ring-primary/20">
+              <Baby className="h-6 w-6" />
+            </span>
+            <p className="flex-1 text-base font-bold leading-snug md:text-lg">未就学も参加可能<span className="mt-1 block text-sm font-semibold text-muted-foreground">2人乗り 5歳ぐらい・35kgぐらい迄</span></p>
+          </li>
+          <li className="flex items-center gap-4 rounded-2xl bg-gradient-to-r from-accent to-primary p-4 text-accent-foreground shadow-lg shadow-accent/30 md:p-5">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card/90 text-accent shadow-sm">
+              <Smile className="h-6 w-6" />
+            </span>
+            <p className="flex-1 text-lg font-black leading-snug md:text-xl">お子様の笑顔がまじかで見れる</p>
+          </li>
           <li className="mx-auto w-full max-w-[300px]"><img src={`${W}/2025/05/Photo02.png`} alt="ガルバンゾのインストラクター" loading="lazy" className="w-full rounded-2xl shadow-xl" /></li>
         </ul>
       </section>
+
 
 
       {/* Lesson note */}
