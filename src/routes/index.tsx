@@ -524,7 +524,6 @@ function Index() {
             <p className="text-sm text-muted-foreground">靴だけレンタルの方は</p>
             <p className="mt-1 font-bold text-primary">レンタルA　リバーシューズ</p>
             <p className="mt-1 text-3xl font-bold">300<span className="ml-1 text-sm font-normal">円</span></p>
-            <p className="mt-2 text-sm text-muted-foreground">ビーチサンダルは怪我防止で不可です。</p>
           </div>
           <div className="rounded-2xl border bg-card p-5">
             <p className="text-sm text-muted-foreground">ウェアセットが必要な方は</p>
@@ -532,7 +531,15 @@ function Index() {
             <p className="mt-1 text-3xl font-bold">700<span className="ml-1 text-sm font-normal">円</span></p>
           </div>
         </div>
-        <p className="mt-4 text-center text-sm text-destructive">ウェットスーツは30度を超えると熱中症回避の為、貸出自粛とさせていただきます。</p>
+        <div className="mt-6 rounded-2xl border-2 border-destructive/40 bg-card p-5">
+          <p className="mb-3">
+            <span className="inline-block rounded-full border-2 border-destructive px-4 py-1 text-sm font-bold text-destructive">ご注意</span>
+          </p>
+          <ul className="space-y-2 text-sm leading-relaxed">
+            <li>・ビーチサンダルは怪我防止の為、不可です。</li>
+            <li className="font-bold text-destructive">・ウェットスーツは30度超えると熱中症回避の為、貸出自粛してます。</li>
+          </ul>
+        </div>
       </section>
 
 
