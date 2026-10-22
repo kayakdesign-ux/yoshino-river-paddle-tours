@@ -1,4 +1,4 @@
-import { Fragment, useId, useState } from "react";
+import { Fragment, useId, useState, type MouseEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
@@ -77,10 +77,31 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function LineButton({ label = "公式LINEで予約・空き確認", className = "", href = LINE_URL }: { label?: string; className?: string; href?: string }) {
+// 予約ボタン押下後、申込フォームをヘッダー直下まで運んで、そのまま入力始められる位置に着地させる
+function scrollToEntryForm(e: MouseEvent<HTMLAnchorElement>) {
+  const form = document.getElementById("entry-form");
+  if (!form) return; // フォームが見つからない場合はブラウザ標準のアンカー移動に任せる
+  e.preventDefault();
+  const headerHeight = document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+  const top = form.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  form.focus({ preventScroll: true });
+}
+
+function LineButton({
+  label = "公式LINEで予約・空き確認",
+  className = "",
+  href = LINE_URL,
+  onPress,
+}: {
+  label?: string;
+  className?: string;
+  href?: string;
+  onPress?: (e: MouseEvent<HTMLAnchorElement>) => void;
+}) {
   const external = !href.startsWith("#");
   return (
-    <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    <a href={href} onClick={onPress} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={`inline-flex items-center justify-center gap-2 min-h-14 rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30 transition hover:brightness-105 active:scale-[0.98] ${className}`}>
       <MessageCircle className="h-5 w-5" />{label}
     </a>
@@ -712,7 +733,7 @@ function Index() {
             </div>
           </div>
           <p className="rounded-2xl bg-background/10 p-4 text-left text-sm leading-relaxed">［SUPかわあそび］は吉野川で夏期（7月〜9月）を中心にSUPツアーを開催しています。オフシーズンの団体予約やその他のお問い合わせは、お電話またはメールにてご連絡ください。</p>
-          <div><LineButton href="#step-2" className="w-full max-w-md py-5 text-lg" /></div>
+          <div><LineButton href="#entry-form" onPress={scrollToEntryForm} className="w-full max-w-md py-5 text-lg" /></div>
           <a href="#toppage" className="block text-sm underline">Topへ戻る</a>
         </div>
       </footer>

@@ -109,7 +109,7 @@ export function EntryForm() {
   };
 
   return (
-    <div className="space-y-4 rounded-2xl border bg-background p-4">
+    <div id="entry-form" tabIndex={-1} className="scroll-mt-24 space-y-4 rounded-2xl border bg-background p-4">
       <p className="font-bold">申込フォーム（空き状況を聞くだけでもOK！）</p>
       <div className="text-sm">
         希望日
