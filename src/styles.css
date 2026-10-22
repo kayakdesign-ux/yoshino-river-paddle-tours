@@ -56,6 +56,8 @@
   --color-chart-5: var(--chart-5);
   --color-line: var(--line);
   --color-river: var(--river);
+  --color-leaf: var(--leaf);
+  --color-leaf-foreground: var(--leaf-foreground);
   --color-cta: var(--cta);
   --color-cta-foreground: var(--cta-foreground);
   --font-sans: "Noto Sans JP", "Yu Gothic", "YuGothic", system-ui, sans-serif;
@@ -90,6 +92,8 @@
   --sakura-foreground: oklch(0.32 0.11 350);
   --sakura-strong: oklch(0.55 0.19 350);
   --river: oklch(0.28 0.08 245);
+  --leaf: oklch(0.95 0.06 155);
+  --leaf-foreground: oklch(0.42 0.12 155);
   --cta: oklch(0.73 0.19 58);
   --cta-foreground: oklch(0.99 0 0);
   --line: oklch(0.68 0.19 145);
@@ -131,6 +135,8 @@
   --sakura: oklch(0.35 0.1 350);
   --sakura-foreground: oklch(0.95 0.03 350);
   --sakura-strong: oklch(0.8 0.12 350);
+  --leaf: oklch(0.3 0.06 155);
+  --leaf-foreground: oklch(0.92 0.05 155);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
