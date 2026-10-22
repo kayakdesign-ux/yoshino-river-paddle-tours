@@ -25,6 +25,38 @@ const W = "https://kawaasobi.com/wp/wp-content/uploads";
 const K = "https://kayaks.jp/wp/wp-content/uploads";
 const HERO = `${W}/2024/10/GOPR3336-1024x896.jpg`;
 
+export const LOCAL_BUSINESS_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  name: "アウトドア！ガルバンゾ（一般社団法人 自然体感ガルバンゾ）",
+  description: "吉野川の初心者・ファミリー向けリバーSUP体験ツアー。ツアー出発 9:30／13:30。ウォーターアクティビティは5月〜11月。",
+  image: HERO,
+  url: "https://yoshino-river-paddle-tours.lovable.app/",
+  sameAs: [
+    "https://page.line.me/418xyaym?openQrModal=true",
+    "https://natural.or.jp/",
+    "https://kawaasobi.com/",
+    "https://rafting.co.jp",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "JP",
+    addressRegion: "高知県",
+    addressLocality: "長岡郡大豊町",
+    streetAddress: "西土居1番地",
+  },
+  priceRange: "¥5,000 - ¥14,000",
+  paymentAccepted: "Stripe（カード決済）, QRコード決済（PayPay, 楽天ペイ）",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "08:00",
+      closes: "20:00",
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
@@ -40,6 +72,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: HERO },
     ],
     links: [{ rel: "canonical", href: "https://yoshino-river-paddle-tours.lovable.app/" }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(LOCAL_BUSINESS_JSONLD) }],
   }),
   component: Index,
 });
