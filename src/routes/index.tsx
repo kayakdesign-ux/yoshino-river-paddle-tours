@@ -216,8 +216,17 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 pt-20 text-center">
-        <p className="text-lg leading-relaxed">今年の夏休みは、四国・徳島/高知の吉野川で決まり！日本三大暴れ川の美しい清流を、SUPでゆったり、時にスリリングにクルージング。7月10日から9月末までの期間限定・毎日開催だから、旅行のスケジュールにも組み込みやすい！この夏、吉野川でしか体験できない感動をお届けします。</p>
+      <section className="mx-auto max-w-3xl px-4 pt-20">
+        <h2 className="font-display text-2xl font-black leading-snug text-primary md:text-3xl">仁淀川だけじゃない！吉野川を知り尽くしたガイドが案内するSUPツアー</h2>
+        <div className="mt-6 space-y-5 text-lg leading-relaxed">
+          <p>私たちとSUPの出会いは2006年。当時は『川でSUP？』と驚かれる時代でした。高知といえば四万十川や仁淀川が有名ですが、ここ吉野川の自然と水質に惚れ込みました。</p>
+          <p>2008年にツアーを始めた当初は、月に2人のお客様しかいないこともありました。しかし、吉野川の素晴らしさを安全に体感できる区間を見つけ出し、今では多くの皆さんにその魅力を感じていただけるようになりました。</p>
+          <p>私たちがご案内するのは、流れが穏やかで『かなり安全な区間』です。透明な水面をのんびり進めば、カワセミやヤマセミ、アカショウビンのかわせみ等、魚、運が良ければ、亀に出会うことも。アンパンマン列車が走る姿も見られますよ。</p>
+          <p>都会の喧騒を離れ、田舎ならではの雄大な風景の中で、私たちと一緒に最高の夏を過ごしませんか？</p>
+        </div>
+        <div className="mt-8 text-center">
+          <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">吉野川SUPツアーの空き状況を確認</a>
+        </div>
       </section>
 
       <section className="mx-auto grid py-20 max-w-3xl items-center gap-8 px-4">
