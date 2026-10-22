@@ -330,7 +330,7 @@ function Index() {
             </span>
             <p className="flex-1 text-base font-bold leading-snug md:text-lg">未就学も参加可能<span className="mt-1 block text-sm font-semibold text-muted-foreground">2人乗り 5歳ぐらい・35kgぐらい迄</span></p>
           </li>
-          <li className="flex items-center gap-4 rounded-2xl bg-gradient-to-r from-accent to-primary p-4 text-accent-foreground shadow-lg shadow-accent/30 md:p-5">
+          <li className="flex items-center gap-4 rounded-2xl bg-cta p-4 text-cta-foreground shadow-lg shadow-cta/40 md:p-5">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card/90 text-accent shadow-sm">
               <Smile className="h-6 w-6" />
             </span>
