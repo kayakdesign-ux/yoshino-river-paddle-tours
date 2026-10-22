@@ -13,3 +13,6 @@
 - Derive sitemap URLs from required route `staticData.sitemap` decisions using `src/lib/sitemap.ts`; this keeps public pages in sync without a manual URL list.
 - Serve `/sitemap.xml` through its TanStack server route using the published site origin; omit lastmod unless authoritative page-specific content timestamps exist.
 - Keep robots.txt as a public deployment asset and preserve its crawler blocks; this avoids introducing a competing generator for static crawler rules.
+
+## Page metadata
+- Every content route defines one self-referencing canonical and matching og:url using the published site origin in its leaf head(); never add canonicals to the root layout, which would duplicate them on child pages.
