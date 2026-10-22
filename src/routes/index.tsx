@@ -187,7 +187,7 @@ function Index() {
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <a href="https://kawaasobi.com/" className="font-display text-sm font-bold text-primary md:text-base">高知 SUP（サップ）吉野川｜一般社団法人自然体感 ガルバンゾ</a>
-          <a href="#entry" className="shrink-0 rounded-full bg-destructive px-4 py-2 text-xs font-black text-destructive-foreground shadow md:px-5 md:text-sm">【夏限定】吉野川SUP予約</a>
+          <a href="#entry" className="shrink-0 rounded-full bg-destructive px-4 py-2 text-xs font-black text-destructive-foreground shadow md:px-5 md:text-sm">高知・吉野川SUP予約</a>
         </div>
       </header>
 
@@ -197,9 +197,9 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-t from-river/90 via-river/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-3xl px-5 pb-12 text-center text-primary-foreground">
           <p className="mx-auto mb-4 w-fit rounded-full bg-cta px-5 py-2 text-sm font-black text-cta-foreground shadow-lg md:text-base">7/10 〜 9/30 毎日開催！</p>
-          <h1 className="font-display text-3xl font-black leading-tight drop-shadow-lg md:text-5xl">四国・吉野川の夏は川遊び！<br />絶景リバーSUP【毎日運行】</h1>
-          <p className="mt-4 text-sm opacity-90 md:text-base">期間限定！透明度抜群の吉野川で最高の思い出を作ろう。<br />初心者・子供も大歓迎、手ぶらでOK。</p>
-          <a href="#entry" className="mt-8 inline-flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-2xl shadow-cta/40 active:scale-[0.98]">今すぐ夏の吉野川SUPを予約</a>
+          <h1 className="font-display text-3xl font-black leading-tight drop-shadow-lg md:text-5xl">【高知・吉野川】絶景リバーSUP体験！<br />初心者・家族連れで川遊び</h1>
+          <p className="mt-4 text-sm opacity-90 md:text-base">手ぶらでOK！ウェットスーツや道具は全てレンタル可能。<br />専属ガイドが丁寧にレクチャーするので、初めての方や子供連れも安心です。</p>
+          <a href="#entry" className="mt-8 inline-flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-2xl shadow-cta/40 active:scale-[0.98]">今すぐ空き状況を確認・予約</a>
           <p className="mx-auto mt-3 w-fit animate-pulse rounded-full bg-destructive px-3 py-1 text-xs font-bold text-destructive-foreground">夏休み・週末は残席わずか！</p>
           <p className="mt-3 text-xs opacity-80">9:30・13:30出発 ／ 5,000円〜</p>
         </div>
@@ -217,15 +217,15 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-3xl px-4 pt-20">
-        <h2 className="font-display text-2xl font-black leading-snug text-primary md:text-3xl">仁淀川だけじゃない！吉野川を知り尽くしたガイドが案内するSUPツアー</h2>
+        <h2 className="font-display text-2xl font-black leading-snug text-primary md:text-3xl">高知の吉野川でSUPツアーを始めた理由</h2>
         <div className="mt-6 space-y-5 text-lg leading-relaxed">
-          <p>私たちとSUPの出会いは2006年。当時は『川でSUP？』と驚かれる時代でした。高知といえば四万十川や仁淀川が有名ですが、ここ吉野川の自然と水質に惚れ込みました。</p>
-          <p>2008年にツアーを始めた当初は、月に2人のお客様しかいないこともありました。しかし、吉野川の素晴らしさを安全に体感できる区間を見つけ出し、今では多くの皆さんにその魅力を感じていただけるようになりました。</p>
-          <p>私たちがご案内するのは、流れが穏やかで『かなり安全な区間』です。透明な水面をのんびり進めば、カワセミやヤマセミ、アカショウビンのかわせみ等、魚、運が良ければ、亀に出会うことも。アンパンマン列車が走る姿も見られますよ。</p>
-          <p>都会の喧騒を離れ、田舎ならではの雄大な風景の中で、私たちと一緒に最高の夏を過ごしませんか？</p>
+          <p>私たちとSUPの出会いは2006年。当時は「川でSUP？」と驚かれる時代でした。高知の川といえば四万十川や仁淀川が有名ですが、私たちは吉野川の自然と水の美しさにすっかり惚れ込みました。</p>
+          <p>2008年に高知・吉野川でSUPツアーを始めた当初は、月に2人のお客様しかいないこともありました。それでも、吉野川の川遊びを安全に楽しめる区間を探し続け、今では毎年たくさんの皆さんにSUPの魅力を感じていただけるようになりました。</p>
+          <p>ご案内するのは、流れが穏やかで「かなり安全な区間」。透明な吉野川の水面をSUPでのんびり進めば、カワセミやヤマセミ、アカショウビン、泳ぐ魚たち、運が良ければ亀に出会えることも。川沿いを走るアンパンマン列車の姿も見られますよ。</p>
+          <p>都会の喧騒を離れ、高知の雄大な自然の中で、家族や仲間と吉野川の川遊びを楽しみませんか？</p>
         </div>
         <div className="mt-8 text-center">
-          <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">吉野川SUPツアーの空き状況を確認</a>
+          <a href="#features" className="inline-flex min-h-12 items-center rounded-full bg-cta px-6 py-3 text-base font-black text-cta-foreground shadow-lg shadow-cta/30">ツアーの詳細を見る</a>
         </div>
       </section>
 
@@ -265,7 +265,7 @@ function Index() {
 
       {/* Features */}
       <section className="mx-auto max-w-3xl px-4 py-20">
-        <H2>高知・吉野川で楽しむSUP体験の魅力</H2>
+        <H2>高知・吉野川SUP体験の魅力｜初心者・家族連れも安心</H2>
         <div>
           <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
           <ul className="mx-auto mt-6 grid max-w-3xl gap-3">
@@ -313,7 +313,7 @@ function Index() {
 
       {/* Family reasons */}
       <section className="mx-auto max-w-3xl px-4 py-20">
-        <H2>家族連れにも選ばれる理由</H2>
+        <H2>吉野川の川遊びが家族連れに選ばれる理由</H2>
         <ul className="mx-auto mt-6 flex w-full max-w-md flex-col items-stretch gap-3 rounded-2xl border bg-card p-5 md:p-6">
           <li><img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="block w-full rounded-2xl shadow-xl" /></li>
           <li className="flex w-full items-center justify-center gap-2 rounded-full bg-secondary px-5 py-3 text-center font-bold text-primary ring-1 ring-primary/15"><Camera className="h-5 w-5 shrink-0" />ツアー中の家族写真お撮りします</li>
@@ -353,7 +353,7 @@ function Index() {
 
       {/* Flow */}
       <section className="mx-auto max-w-3xl px-4 py-20">
-        <H2>ツアーの流れ</H2>
+        <H2>吉野川SUP体験ツアーの流れ</H2>
         <div className="-mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4">
           {flow.map((f, i) => (
             <div key={i} className="w-72 shrink-0 snap-start overflow-hidden rounded-2xl border bg-card shadow-sm">
@@ -386,7 +386,7 @@ function Index() {
 
       {/* Rental */}
       <section className="mx-auto max-w-3xl px-4 py-20">
-        <H2>持ち物・レンタル</H2>
+        <H2>持ち物・レンタル｜手ぶらでOK</H2>
         <div className="rounded-2xl border bg-card p-5 md:p-6">
           <div className="grid items-center gap-6 md:grid-cols-[minmax(0,500px)_1fr]">
             <div className="grid grid-cols-2 items-end gap-2">
@@ -441,7 +441,7 @@ function Index() {
 
       {/* Pricing */}
       <section className="mx-auto max-w-3xl px-4 py-20">
-        <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">料金</h2>
+        <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">吉野川SUP体験コース一覧・料金</h2>
         <div className="overflow-x-auto rounded-2xl border bg-card">
           <table className="w-full min-w-[480px] text-center text-sm">
             <thead>
