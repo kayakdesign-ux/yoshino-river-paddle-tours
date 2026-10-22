@@ -315,7 +315,7 @@ function Index() {
       <section className="mx-auto max-w-3xl px-4 py-20 overflow-x-clip">
         <H2>吉野川の川遊びが家族連れに選ばれる理由</H2>
         <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2 shadow-2xl">
-          <img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="block w-full" />
+          <img src="/sup-family.jpg" alt="家族でSUPを楽しむイラスト" loading="lazy" className="block aspect-[16/9] w-full object-cover object-center md:aspect-[21/9]" />
         </div>
         <ul className="mx-auto mt-8 flex w-full flex-col gap-4">
           <li className="flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-md ring-1 ring-primary/10 md:p-5">
