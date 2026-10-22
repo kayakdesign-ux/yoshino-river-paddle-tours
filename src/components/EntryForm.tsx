@@ -105,7 +105,7 @@ export function EntryForm() {
     setError("");
     setStatus("");
     const payload = { name, contact, preferredDate: date, departure: slot.startsWith("午前") ? "09:30" : "13:30",
-      participants: { s1a: c.s1a ?? 0, s1k: c.s1k ?? 0, s2a: c.s2a ?? 0, s2p: c.s2p ?? 0, pa: c.pa ?? 0, pk: c.pk ?? 0 }, weight80 };
+      participants: { s1a: c["s1a"] ?? 0, s1k: c["s1k"] ?? 0, s2a: c["s2a"] ?? 0, s2p: c["s2p"] ?? 0, pa: c["pa"] ?? 0, pk: c["pk"] ?? 0 }, weight80 };
     const signature = JSON.stringify(payload);
     if (submission.current?.payload !== signature) submission.current = { payload: signature, id: crypto.randomUUID() };
     const result = bookingSchema.safeParse({ ...payload, id: submission.current.id });
