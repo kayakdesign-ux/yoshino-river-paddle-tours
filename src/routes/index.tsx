@@ -140,7 +140,7 @@ const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof M
 ];
 
 const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean; em?: string }[] = [
-  { t: "アクセス抜群", i: MapPin },
+  { t: "アクセス抜群　IC約15分", i: MapPin },
   { t: "大歩危温泉も近い", i: Flame },
   { t: "水が綺麗", i: Droplets },
   { t: "川用は幅が広く ", i: Ship, em: "安定感抜群", soft: true },
