@@ -14,7 +14,7 @@ declare global {
  * project secret, so read it server-side and expose it intentionally.
  */
 export const getGaMeasurementId = createServerFn({ method: "GET" }).handler(() => {
-  return process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID ?? null;
+  return process.env["GOOGLE_ANALYTICS_MEASUREMENT_ID"] ?? null;
 });
 
 function initGoogleAnalytics(measurementId: string) {
