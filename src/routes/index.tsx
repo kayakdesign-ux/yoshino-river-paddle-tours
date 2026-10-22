@@ -185,25 +185,38 @@ function Index() {
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <a href="https://kawaasobi.com/" className="font-display text-sm font-bold text-primary md:text-base">高知 SUP（サップ）吉野川｜一般社団法人自然体感 ガルバンゾ</a>
-          <a href="#entry" className="hidden rounded-full bg-cta px-5 py-2 text-sm font-black text-cta-foreground shadow md:inline-block">予約申込</a>
+          <a href="#entry" className="shrink-0 rounded-full bg-destructive px-4 py-2 text-xs font-black text-destructive-foreground shadow md:px-5 md:text-sm">【夏限定】吉野川SUP予約</a>
         </div>
       </header>
 
       {/* Hero banner */}
       <section className="relative w-full overflow-hidden">
-        <img src="/dji-hero.jpg" alt="ドローンから見た吉野川の清流とSUP" className="h-[88svh] max-h-[760px] min-h-[520px] w-full object-cover" />
+        <img src="/dji-hero.jpg" alt="夏の吉野川の清流とSUP" className="h-[88svh] max-h-[760px] min-h-[520px] w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-river/90 via-river/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-3xl px-5 pb-12 text-center text-primary-foreground">
-          <p className="mx-auto mb-4 w-fit rounded-full bg-background/20 px-4 py-1 text-xs font-bold backdrop-blur">清流ランキング2023 1位 ｜ ドローンから見た吉野川</p>
-          <h1 className="font-display text-3xl font-black leading-tight drop-shadow-lg md:text-5xl">高知・吉野川SUP体験<br />初心者・家族連れ歓迎！<br />川遊びツアー</h1>
-          <p className="mt-4 text-sm opacity-90 md:text-base">– 高知サップ（SUP）清流吉野川で川遊び –</p>
-          <a href="#entry" className="mt-8 inline-flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-2xl shadow-cta/40 active:scale-[0.98]">空席を確認して予約する</a>
+          <p className="mx-auto mb-4 w-fit rounded-full bg-cta px-5 py-2 text-sm font-black text-cta-foreground shadow-lg md:text-base">7/10 〜 9/30 毎日開催！</p>
+          <h1 className="font-display text-3xl font-black leading-tight drop-shadow-lg md:text-5xl">四国・吉野川の夏は川遊び！<br />絶景リバーSUP【毎日運行】</h1>
+          <p className="mt-4 text-sm opacity-90 md:text-base">期間限定！透明度抜群の吉野川で最高の思い出を作ろう。<br />初心者・子供も大歓迎、手ぶらでOK。</p>
+          <a href="#entry" className="mt-8 inline-flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-2xl shadow-cta/40 active:scale-[0.98]">今すぐ夏の吉野川SUPを予約</a>
+          <p className="mx-auto mt-3 w-fit animate-pulse rounded-full bg-destructive px-3 py-1 text-xs font-bold text-destructive-foreground">夏休み・週末は残席わずか！</p>
           <p className="mt-3 text-xs opacity-80">9:30・13:30出発 ／ 5,000円〜</p>
         </div>
       </section>
 
+      {/* Summer outline */}
+      <section className="mx-auto max-w-3xl px-4 pt-20">
+        <div className="rounded-3xl border-4 border-cta bg-card p-6 text-center shadow-xl md:p-10">
+          <h2 className="font-display text-2xl font-black text-primary md:text-3xl">【2024年夏】吉野川SUPツアー開催概要</h2>
+          <div className="mt-6 grid gap-4">
+            <div className="rounded-2xl bg-secondary p-5"><p className="text-3xl">📅</p><p className="font-display text-xl font-black md:text-2xl">開催期間：7月10日(水) 〜 9月30日(月)</p></div>
+            <div className="rounded-2xl bg-secondary p-5"><p className="text-3xl">☀️</p><p className="font-display text-xl font-black md:text-2xl">期間中、毎日開催！</p></div>
+            <div className="rounded-2xl bg-cta p-5 text-cta-foreground"><p className="text-3xl">⏰</p><p className="font-display text-xl font-black md:text-2xl">ご予約はお早めに</p></div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-3xl px-4 pt-20 text-center">
-        <p className="text-lg leading-relaxed">高知でSUP体験を探している方へ――清流ランキング2023 1位の吉野川グリーンでリバーサップを満喫しませんか？</p>
+        <p className="text-lg leading-relaxed">今年の夏休みは、四国・徳島/高知の吉野川で決まり！日本三大暴れ川の美しい清流を、SUPでゆったり、時にスリリングにクルージング。7月10日から9月末までの期間限定・毎日開催だから、旅行のスケジュールにも組み込みやすい！この夏、吉野川でしか体験できない感動をお届けします。</p>
       </section>
 
       <section className="mx-auto grid py-20 max-w-3xl items-center gap-8 px-4">
@@ -632,6 +645,7 @@ function Index() {
               </p>
             </div>
           </div>
+          <p className="rounded-2xl bg-background/10 p-4 text-left text-sm leading-relaxed">［SUPかわあそび］は吉野川で夏期（7月〜9月）を中心にSUPツアーを開催しています。オフシーズンの団体予約やその他のお問い合わせは、お電話またはメールにてご連絡ください。</p>
           <div><LineButton href="#step-2" className="w-full max-w-md py-5 text-lg" /></div>
           <a href="#toppage" className="block text-sm underline">Topへ戻る</a>
         </div>
