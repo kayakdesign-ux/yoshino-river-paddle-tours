@@ -346,7 +346,6 @@ function Index() {
         <Reveal delay={200}>
           <div className="mt-6 grid gap-4">
             <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
-            <img src={`${W}/2025/05/SUP08-1024x586.png`} alt="吉野川SUP" className="rounded-2xl" />
           </div>
         </Reveal>
         <Reveal delay={250}>
