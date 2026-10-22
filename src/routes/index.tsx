@@ -143,6 +143,8 @@ const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean;
   { t: "アクセス抜群　IC約15分", i: MapPin },
   { t: "大歩危温泉も近い", i: Flame },
   { t: "水が綺麗", i: Droplets },
+  { t: "初めてでも楽しめる｜家族でも楽しめる", i: Baby, soft: true },
+  { t: "レンタルで気軽できる｜SUP以外もできる", i: Check, soft: true },
   { t: "川用サップ(SUP)は幅が広く ", i: Ship, em: "安定感抜群", soft: true },
   { t: "岩からジャンプは何回もできる", i: ArrowDown, hot: true },
 ];
