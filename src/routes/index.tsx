@@ -343,11 +343,6 @@ function Index() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={200}>
-          <div className="mt-6 grid gap-4">
-            <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
-          </div>
-        </Reveal>
         <Reveal delay={250}>
           <img src={`${W}/2025/05/SUP06.png`} alt="スマホ持ち込み" loading="lazy" className="mx-auto mt-6 block w-full max-w-md rounded-2xl shadow-lg" />
         </Reveal>
@@ -382,7 +377,7 @@ function Index() {
 
       {/* Hobby */}
       <section className="mx-auto py-20 grid max-w-3xl items-center gap-6 px-4">
-        <img src={`${W}/2024/07/P9171579_s.jpg`} alt="高知リバーサップ" className="rounded-2xl" />
+        <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
         <div className="text-center">
           <H2>今年、最高の趣味を手に入れよう</H2>
           <p>リバーSUPは日本中でやってます。経験があれば他の川に旅行いっても色々な川に行けます。</p>
