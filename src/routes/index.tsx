@@ -139,10 +139,10 @@ const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof M
   { img: `${W}/2024/07/P1012125_s-1024x768.jpg`, t: "魚ウオッチングも楽しめる", d: "自由時間もあるのでのんびりくつろぐことも", i: Fish },
 ];
 
-const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean; em?: string }[] = [
+const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean; leaf?: boolean; em?: string }[] = [
   { t: "アクセス抜群　IC約15分", i: MapPin },
   { t: "大歩危温泉も近い", i: Flame },
-  { t: "水が綺麗", i: Droplets },
+  { t: "水が綺麗", i: Droplets, leaf: true },
   { t: "初めてでも楽しめる｜家族でも楽しめる", i: Baby, soft: true },
   { t: "レンタルで気軽できる｜SUP以外もできる", i: Check, soft: true },
   { t: "川用サップ(SUP)は幅が広く ", i: Ship, em: "安定感抜群", soft: true },
@@ -262,8 +262,8 @@ function Index() {
           <p className="text-lg font-bold leading-relaxed">{"\n"}</p>
           <ul className="mx-auto mt-6 grid max-w-3xl gap-3">
             {highlights.map((h) => (
-              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
-                {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : "text-primary"}`} />}
+              <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.hot ? "bg-primary text-lg text-primary-foreground shadow-lg ring-2 ring-primary/30 md:text-xl" : h.leaf ? "bg-leaf text-leaf-foreground shadow-sm ring-2 ring-leaf-foreground/25" : h.soft ? "bg-primary/10 text-primary shadow-sm ring-2 ring-primary/40" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+                {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.hot ? "text-primary-foreground" : h.leaf ? "text-leaf-foreground" : "text-primary"}`} />}
                 <span>
                   {h.t}
                   {h.em && <span className="font-black">{h.em}</span>}
