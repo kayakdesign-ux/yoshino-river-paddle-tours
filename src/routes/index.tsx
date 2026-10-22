@@ -482,13 +482,16 @@ function Index() {
               {[
                 ["前日支払（クレジット｜PayPay）", "-", "○", "○"],
                 ["当日支払（QR決済：PayPay・楽天Pay）", "-", "○", "○"],
-                ["有料レンタルA 300円", "-", "○", "⚪︎"],
+                ["有料レンタルA 300円", "-", "○", "⚪︎", "靴だけレンタル（リバーシューズ）"],
                 ["有料レンタルB 500円", "－", "－", "○"],
                 ["通常キャンセル料（当日）", "5000円", "1000円", "1,000円"],
                 ["雨の日キャンセル料", "5000円", "1000円", "無料"],
               ].map((r) => (
                 <tr key={r[0]} className="border-b">
-                  <th className="p-3 text-left font-bold">{r[0]}</th>
+                  <th className="p-3 text-left font-bold">
+                    {r[0]}
+                    {r[4] && <span className="mt-1 block text-xs font-normal text-muted-foreground">{r[4]}</span>}
+                  </th>
                   <td className="p-3">{r[1]}</td>
                   <td className="bg-secondary p-3 font-bold">{r[2]}</td>
                   <td className="p-3">{r[3]}</td>
