@@ -252,17 +252,6 @@ function Index() {
         <img src={`${W}/2025/05/SUP02.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-4 w-full max-w-3xl rounded-2xl" />
       </section>
 
-      {/* About */}
-      <section className="mx-auto max-w-3xl px-4 py-20">
-        <H2>{"仁淀川だけじゃない！吉野川を知り尽くしたガイドが案内するSUPツアー"}</H2>
-        <div className="space-y-3 leading-relaxed">
-          <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
-          <p>{"\n"}</p>
-          <p>吉野川を気軽に体験してもらう為に、サップ（SUP）ツアーを始めたのは2008年。当時よりも知名度もあがり、用具も進化して、毎年たくさんの方に吉野川で遊んでいただいています。</p>
-          <p>最初の頃は、海用SUPの薄いSUPでよく落ちていましたね。</p>
-        </div>
-      </section>
-
       {/* About copy 1 */}
       <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>{"高知SUP（サップ）清流 吉野川を楽しもう"}</H2>
