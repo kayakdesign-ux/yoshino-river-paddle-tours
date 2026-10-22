@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      booking_requests: {
+        Row: {
+          contact: string
+          created_at: string
+          departure: string
+          id: string
+          message: string
+          name: string
+          participants: Json
+          preferred_date: string
+          total: number
+          weight80: number
+        }
+        Insert: {
+          contact: string
+          created_at?: string
+          departure: string
+          id: string
+          message: string
+          name: string
+          participants: Json
+          preferred_date: string
+          total: number
+          weight80: number
+        }
+        Update: {
+          contact?: string
+          created_at?: string
+          departure?: string
+          id?: string
+          message?: string
+          name?: string
+          participants?: Json
+          preferred_date?: string
+          total?: number
+          weight80?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
