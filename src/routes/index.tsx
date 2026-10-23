@@ -267,12 +267,15 @@ function Index() {
       </section>
 
       {/* Pills */}
-      <section className="mx-auto max-w-3xl px-4 pt-8">
+      <section className="mx-auto max-w-3xl space-y-6 px-4 pt-8 text-center">
+        <p className="font-display text-2xl font-bold text-primary">この綺麗な吉野川に遊びに来て下さい。</p>
         <div className="flex flex-wrap justify-center gap-2">
-          {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない"].map((t) => (
+          {["初めてでも楽しめる", "家族でも楽しめる", "楽しさ満点", "おおとよIC15分、アクセス抜群", "レンタルで気軽に", "施設は川の真横！移動が少ない", "ひろめ市場から約50分"].map((t) => (
             <span key={t} className="rounded-full bg-secondary px-4 py-2 text-sm font-bold text-secondary-foreground">{t}</span>
           ))}
         </div>
+        <p className="mx-auto w-fit rounded-full border-2 border-sakura-strong/30 bg-sakura px-8 py-4 text-center text-lg font-bold text-sakura-foreground shadow-lg md:text-2xl">塩水じゃないから遊びやすいよ</p>
+        <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席無くなる前に申し込もう！！</a>
       </section>
 
       {/* Summer outline */}
@@ -302,19 +305,10 @@ function Index() {
 
       <section className="mx-auto grid py-20 max-w-3xl items-center gap-8 px-4">
         <CourseCard />
-        <div className="space-y-4 text-center">
-          <p className="font-display text-2xl font-bold text-primary">この綺麗な吉野川に遊びに来て下さい。</p>
-          <p>{"\n"}</p>
-          <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席無くなる前に申し込もう！！</a>
-        </div>
       </section>
 
       {/* Tags */}
       <section className="mx-auto py-20 max-w-3xl px-4">
-        <Reveal>
-
-          <p className="mx-auto mt-8 w-fit rounded-full border-2 border-sakura-strong/30 bg-sakura px-8 py-4 text-center text-lg font-bold text-sakura-foreground shadow-lg md:text-2xl">塩水じゃないから遊びやすいよ</p>
-        </Reveal>
         <img src={`${W}/2025/05/SUP02.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-4 w-full max-w-3xl rounded-2xl" />
       </section>
 
