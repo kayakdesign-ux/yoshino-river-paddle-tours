@@ -196,13 +196,14 @@ const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof M
   { img: `${W}/2024/07/P1012125_s-1024x768.jpg`, t: "魚ウオッチングも楽しめる", d: "自由時間もあるのでのんびりくつろぐことも", i: Fish },
 ];
 
-const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean; leaf?: boolean; em?: string }[] = [
 const accessPills: { t: string; i?: typeof MapPin; leaf?: boolean }[] = [
   { t: "アクセス抜群　IC約15分", i: MapPin },
   { t: "ひろめ市場まで約50分", i: Store },
   { t: "大歩危温泉も近い", i: Flame },
   { t: "水が綺麗", i: Droplets, leaf: true },
 ];
+
+const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean; leaf?: boolean; em?: string }[] = [
   { t: "初めてでも楽しめる｜家族でも楽しめる", i: Baby, soft: true },
   { t: "レンタルで気軽できる｜SUP以外もできる", i: Check, soft: true },
   { t: "川用サップ(SUP)は幅が広く ", i: Ship, em: "安定感抜群", soft: true },
