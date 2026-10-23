@@ -2,7 +2,7 @@ import { Fragment, useId, useState, type MouseEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
-import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown, Ship, Camera, Baby, Smartphone, Smile } from "lucide-react";
+import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown, Ship, Camera, Baby, Smartphone, Smile, Store } from "lucide-react";
 
 import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
 
@@ -197,9 +197,12 @@ const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof M
 ];
 
 const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean; leaf?: boolean; em?: string }[] = [
+const accessPills: { t: string; i?: typeof MapPin; leaf?: boolean }[] = [
   { t: "アクセス抜群　IC約15分", i: MapPin },
+  { t: "ひろめ市場まで約50分", i: Store },
   { t: "大歩危温泉も近い", i: Flame },
   { t: "水が綺麗", i: Droplets, leaf: true },
+];
   { t: "初めてでも楽しめる｜家族でも楽しめる", i: Baby, soft: true },
   { t: "レンタルで気軽できる｜SUP以外もできる", i: Check, soft: true },
   { t: "川用サップ(SUP)は幅が広く ", i: Ship, em: "安定感抜群", soft: true },
@@ -312,6 +315,14 @@ function Index() {
       {/* About copy 1 */}
       <section className="mx-auto max-w-3xl px-4 py-20">
         <H2>{"高知SUP（サップ）清流 吉野川を楽しもう"}</H2>
+        <ul className="mx-auto mt-6 grid max-w-3xl gap-3">
+          {accessPills.map((h) => (
+            <li key={h.t} className={`flex items-center gap-3 rounded-full px-5 py-3 font-bold ${h.leaf ? "bg-leaf text-leaf-foreground shadow-sm ring-2 ring-leaf-foreground/25" : "bg-card text-secondary-foreground shadow-sm ring-1 ring-primary/15"}`}>
+              {h.i && <h.i className={`h-5 w-5 shrink-0 ${h.leaf ? "text-leaf-foreground" : "text-primary"}`} />}
+              <span>{h.t}</span>
+            </li>
+          ))}
+        </ul>
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
           <p>{"\n"}</p>
