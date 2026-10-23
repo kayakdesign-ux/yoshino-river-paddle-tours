@@ -181,7 +181,7 @@ function CourseCard() {
         <p className="text-xl font-bold">ミニ！ツーリング1.5km</p>
         <p className="text-sm text-muted-foreground">たくさんの人に体験して欲しい</p>
         <p className="font-display text-3xl font-bold text-primary">5000円〜<span className="text-base">/1人</span></p>
-        <p className="text-sm">８歳ぐらいから ／ 9時30分・13時30分出発</p>
+        <p className="text-sm">１人乗りは８歳ぐらいから ／ 9時30分・13時30分出発</p>
       </div>
     </div>
   );
@@ -189,7 +189,7 @@ function CourseCard() {
 
 const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof MapPin }[] = [
   { img: `${W}/2024/10/DJI_0678__s-1024x683.jpg`, t: "塩水じゃないからサラサラ", d: "のんびり遊べます" },
-  { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "飛び込みも複数回OK", d: "体験飛び込み", hot: true },
+  { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "人気の飛び込みも複数回OK", d: "希望者のみです。", hot: true },
   { img: `${W}/2024/07/P9201623_s.jpg`, t: "泳げ無くてもライフジャケット着用", d: "夏は浮かんでいるだけも楽しい" },
   { img: `${W}/2019/08/P6029311-1.jpg`, t: "2人乗りも可", d: "ゆったりとした流れの中なので色々ためせます" },
   { img: `${W}/2024/07/GOPR1582_s.jpg`, t: "20分程度のレッスン付", d: "初めてでも乗り方、パドル持ち方から習えます。" },
@@ -198,8 +198,8 @@ const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof M
 
 const accessPills: { t: string; i?: typeof MapPin; leaf?: boolean }[] = [
   { t: "アクセス抜群　IC約15分", i: MapPin },
-  { t: "ひろめ市場まで約50分", i: Store },
-  { t: "大歩危温泉も近い", i: Flame },
+  { t: "高知市内｜ひろめ市場まで約50分", i: Store },
+  { t: "祖谷・大歩危温泉も近い", i: Flame },
   { t: "水が綺麗", i: Droplets, leaf: true },
 ];
 
@@ -293,8 +293,8 @@ function Index() {
       <section className="mx-auto grid py-20 max-w-3xl items-center gap-8 px-4">
         <CourseCard />
         <div className="space-y-4 text-center">
-          <p className="font-display text-2xl font-bold text-primary">この綺麗な川に遊びに来て下さい。</p>
-          <p>初めてでも楽しめる<br />インター15分で清流で遊ぶ<br />吉野川へぜひ遊びにきてね</p>
+          <p className="font-display text-2xl font-bold text-primary">この綺麗な吉野川に遊びに来て下さい。</p>
+          <p>{"\n"}</p>
           <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席無くなる前に申し込もう！！</a>
         </div>
       </section>
@@ -327,8 +327,8 @@ function Index() {
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
           <p>{"\n"}</p>
-          <p>吉野川を気軽に体験してもらう為に、サップ（SUP）ツアーを始めたのは2008年。当時よりも知名度もあがり、用具も進化して、毎年たくさんの方に吉野川で遊んでいただいています。</p>
-          <p>最初の頃は、海用SUPの薄いSUPでよく落ちていましたね。</p>
+          <p>{"\n"}</p>
+          <p>{"\n"}</p>
         </div>
       </section>
 
@@ -371,7 +371,7 @@ function Index() {
           <div>
             <H2>ガルバンゾがオススメの理由</H2>
             <ul className="space-y-3">
-              {["JRCA公認インストラクターがレッスン", "27年リバースポーツで無事故", "2006年からSup事業展開", "各種保険に加入"].map((t) => (
+              {["JRCA公認校｜JRCA公認インストラクターがレッスン", "吉野川で27年リバースポーツで無事故", "2006年からSup事業展開", "各種保険に加入"].map((t) => (
                 <li key={t} className="flex items-center gap-3 rounded-xl bg-card p-4 font-bold"><Check className="h-5 w-5 shrink-0 text-primary" />{t}</li>
               ))}
             </ul>
@@ -391,13 +391,13 @@ function Index() {
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/20">
               <Camera className="h-6 w-6" />
             </span>
-            <p className="flex-1 text-base font-bold leading-snug md:text-lg">ツアー中の家族写真お撮りします</p>
+            <p className="flex-1 text-base font-bold leading-snug md:text-lg">GoPROや４Kのツアー中の家族写真お撮りします</p>
           </li>
           <li className="flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-md ring-1 ring-primary/10 md:p-5">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary text-primary ring-1 ring-primary/20">
               <Baby className="h-6 w-6" />
             </span>
-            <p className="flex-1 text-base font-bold leading-snug md:text-lg">未就学も参加可能<span className="mt-1 block text-sm font-semibold text-muted-foreground">2人乗り 5歳ぐらい・35kgぐらい迄</span></p>
+            <p className="flex-1 text-base font-bold leading-snug md:text-lg">未就学も参加可能（２人乗り）<span className="mt-1 block text-sm font-semibold text-muted-foreground">5歳ぐらい・35kgぐらい迄</span></p>
           </li>
           <li className="flex items-center gap-4 rounded-2xl bg-cta p-4 text-cta-foreground shadow-lg shadow-cta/40 md:p-5">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card/90 text-cta shadow-sm">
@@ -609,13 +609,13 @@ function Index() {
           </div>
           <div className="mx-auto mt-8 max-w-3xl space-y-4">
             <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
-            <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
+            <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそう｜落ちたくない<br />安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
           <p className="mt-6 text-center">{"\n"}</p>
           <p className="mt-2 text-center font-bold">{"\n"}</p>
           <div className="mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl bg-card p-4">
             <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
-            <p className="text-sm"><b>だっく</b><br />初めての人が気軽に参加できるようにキャンペーンページ特別です。</p>
+            <p className="text-sm"><b></b><br />{"\n"}</p>
           </div>
         </div>
       </section>
@@ -713,10 +713,10 @@ function Index() {
             </p>
             <div className="mt-5 space-y-5 text-base leading-loose text-foreground md:text-lg">
               <p>
-                当ツアーは、四国の中央を流れる吉野川の、流れが穏やかで透明度の高い安全な区間で開催しています。20年以上ツアー無事故で開催。徳島県と高知県の県境に位置し、高速道路のインターチェンジからもアクセスが良く、四国観光のスケジュールにも組み込みやすい立地です。
+                当ツアーは、四国の中央を流れる吉野川の、流れが穏やかで透明度の高い安全な区間で開催しています。25年以上ツアー無事故で開催。徳島県と高知県の県境に位置し、高速道路のインターチェンジからもアクセスが良く、四国観光のスケジュールにも組み込みやすい立地です。
               </p>
               <p>
-                日本三大暴れ川の雄大な自然景観と、驚くほど澄んだ「碧（あお）」の流れを、ぜひ体感してください。都会の喧騒を離れ、鳥のさえずりやアンパンマン列車を眺めながら、のんびりとした時間を過ごせます。
+                日本三大暴れ川の雄大な自然景観と、驚くほど澄んだ「緑」の流れを、ぜひ体感してください。都会の喧騒を離れ、鳥のさえずりやアンパンマン列車を眺めながら、のんびりとした時間を過ごせます。
               </p>
             </div>
           </div>
