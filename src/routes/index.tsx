@@ -276,7 +276,7 @@ function Index() {
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-3xl px-5 pb-12 text-center text-primary-foreground">
           <p className="mx-auto mb-4 w-fit rounded-full bg-cta px-5 py-2 text-sm font-black text-cta-foreground shadow-lg md:text-base">7/10 〜 9/30 毎日開催！</p>
           <h1 className="font-display text-3xl font-black leading-tight drop-shadow-lg md:text-5xl">初めてでも立てる！<br />吉野川の穏やかSUP</h1>
-          <p className="mt-4 text-sm opacity-90 md:text-base">流れの優しい安全エリアを厳選。<br />高知市内から50分、手ぶらで安心の川遊び体験。</p>
+          <p className="mt-4 text-sm opacity-90 md:text-base"><span className="font-bold">1.5kmを安全にくだる。</span><br />流れの優しい安全エリアを厳選。<br />高知市内から50分、手ぶらで安心の川遊び体験。</p>
           <a href="#entry" className="mt-8 inline-flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-2xl shadow-cta/40 active:scale-[0.98]">今すぐ空き状況を確認・予約</a>
           <p className="mx-auto mt-3 w-fit animate-pulse rounded-full bg-destructive px-3 py-1 text-xs font-bold text-destructive-foreground">夏休み・週末は残席わずか！</p>
           <p className="mt-3 text-xs opacity-80">9:30・13:30出発 ／ 5,000円〜</p>
