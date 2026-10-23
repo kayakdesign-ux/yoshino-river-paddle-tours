@@ -311,8 +311,8 @@ function Index() {
 
       {/* Tags */}
       <section className="mx-auto py-20 max-w-3xl px-4">
-
         <Reveal>
+
           <p className="mx-auto mt-8 w-fit rounded-full border-2 border-sakura-strong/30 bg-sakura px-8 py-4 text-center text-lg font-bold text-sakura-foreground shadow-lg md:text-2xl">塩水じゃないから遊びやすいよ</p>
         </Reveal>
         <img src={`${W}/2025/05/SUP02.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-4 w-full max-w-3xl rounded-2xl" />
