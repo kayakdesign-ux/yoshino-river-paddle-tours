@@ -311,8 +311,8 @@ function Index() {
 
       {/* Tags */}
       <section className="mx-auto py-20 max-w-3xl px-4">
-        <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto w-full max-w-3xl rounded-2xl" />
         <Reveal>
+
           <p className="mx-auto mt-8 w-fit rounded-full border-2 border-sakura-strong/30 bg-sakura px-8 py-4 text-center text-lg font-bold text-sakura-foreground shadow-lg md:text-2xl">塩水じゃないから遊びやすいよ</p>
         </Reveal>
         <img src={`${W}/2025/05/SUP02.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-4 w-full max-w-3xl rounded-2xl" />
@@ -329,6 +329,8 @@ function Index() {
             </li>
           ))}
         </ul>
+        <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-6 w-full max-w-2xl rounded-2xl shadow-md" />
+
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
           <p>{"\n"}</p>
