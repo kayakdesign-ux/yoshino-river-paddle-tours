@@ -391,13 +391,13 @@ function Index() {
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/20">
               <Camera className="h-6 w-6" />
             </span>
-            <p className="flex-1 text-base font-bold leading-snug md:text-lg">ツアー中の家族写真お撮りします</p>
+            <p className="flex-1 text-base font-bold leading-snug md:text-lg">GoPROや４Kのツアー中の家族写真お撮りします</p>
           </li>
           <li className="flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-md ring-1 ring-primary/10 md:p-5">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-secondary text-primary ring-1 ring-primary/20">
               <Baby className="h-6 w-6" />
             </span>
-            <p className="flex-1 text-base font-bold leading-snug md:text-lg">未就学も参加可能<span className="mt-1 block text-sm font-semibold text-muted-foreground">2人乗り 5歳ぐらい・35kgぐらい迄</span></p>
+            <p className="flex-1 text-base font-bold leading-snug md:text-lg">未就学も参加可能（２人乗り）<span className="mt-1 block text-sm font-semibold text-muted-foreground">5歳ぐらい・35kgぐらい迄</span></p>
           </li>
           <li className="flex items-center gap-4 rounded-2xl bg-cta p-4 text-cta-foreground shadow-lg shadow-cta/40 md:p-5">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-card/90 text-cta shadow-sm">
@@ -609,13 +609,13 @@ function Index() {
           </div>
           <div className="mx-auto mt-8 max-w-3xl space-y-4">
             <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
-            <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそうと思う方は、安定感抜群のパックラフトで一緒に参加できます。</p>
+            <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそう｜落ちたくない<br />安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
           <p className="mt-6 text-center">{"\n"}</p>
           <p className="mt-2 text-center font-bold">{"\n"}</p>
           <div className="mx-auto mt-6 flex max-w-xl items-start gap-3 rounded-2xl bg-card p-4">
             <img src="/duck.png" alt="だっく" className="h-14 w-14 shrink-0 rounded-full" />
-            <p className="text-sm"><b>だっく</b><br />初めての人が気軽に参加できるようにキャンペーンページ特別です。</p>
+            <p className="text-sm"><b></b><br />{"\n"}</p>
           </div>
         </div>
       </section>
@@ -713,10 +713,10 @@ function Index() {
             </p>
             <div className="mt-5 space-y-5 text-base leading-loose text-foreground md:text-lg">
               <p>
-                当ツアーは、四国の中央を流れる吉野川の、流れが穏やかで透明度の高い安全な区間で開催しています。20年以上ツアー無事故で開催。徳島県と高知県の県境に位置し、高速道路のインターチェンジからもアクセスが良く、四国観光のスケジュールにも組み込みやすい立地です。
+                当ツアーは、四国の中央を流れる吉野川の、流れが穏やかで透明度の高い安全な区間で開催しています。25年以上ツアー無事故で開催。徳島県と高知県の県境に位置し、高速道路のインターチェンジからもアクセスが良く、四国観光のスケジュールにも組み込みやすい立地です。
               </p>
               <p>
-                日本三大暴れ川の雄大な自然景観と、驚くほど澄んだ「碧（あお）」の流れを、ぜひ体感してください。都会の喧騒を離れ、鳥のさえずりやアンパンマン列車を眺めながら、のんびりとした時間を過ごせます。
+                日本三大暴れ川の雄大な自然景観と、驚くほど澄んだ「緑」の流れを、ぜひ体感してください。都会の喧騒を離れ、鳥のさえずりやアンパンマン列車を眺めながら、のんびりとした時間を過ごせます。
               </p>
             </div>
           </div>
