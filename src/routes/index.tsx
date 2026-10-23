@@ -25,6 +25,20 @@ const W = "https://kawaasobi.com/wp/wp-content/uploads";
 const K = "https://kayaks.jp/wp/wp-content/uploads";
 const HERO = `${W}/2024/10/GOPR3336-1024x896.jpg`;
 
+export const FAQS: { q: string; a: string }[] = [
+  { q: "泳げない人や小さな子ども、SUPが初めてでも参加できますか？", a: "もちろん大歓迎です！ご案内する吉野川のツアーエリアは、流れがとても穏やかで安全性の高い区間を厳選しています。浮力の高い専用ライフジャケットを必ず着用いただき、安定感抜群の「川用ワイドボード」を使用します。8歳前後のお子様から大人まで、ガイドが基本操作から丁寧にレクチャーしますので、泳ぎに自信がない方でも安心して川遊びを満喫していただけます。" },
+  { q: "当日の服装や持ち物は？手ぶらでも行けますか？", a: "水着（または濡れてもよい化繊の服）とタオル、お着替えをお持ちいただければ気軽にご参加いただけます。ボード・パドル・ライフジャケット一式はツアー料金に含まれています。足元は脱げにくい靴が必要ですが、リバーシューズ（300円）の有料レンタルもご用意しています（※ビーチサンダルは不可）。更衣室と無料シャワーを完備しており、川の水は海水と違ってベタつかないため、体験後もさっぱり着替えてすぐ次の観光へ出発できます。※当日のお支払いはPayPay・楽天PayのQR決済をご利用いただけます。" },
+  { q: "雨の日でもツアーは開催されますか？中止になる基準は？", a: "雨天でも規定の水位や安全基準を満たしていれば開催いたします。雨に濡れる吉野川の渓谷美や川靄（かわもや）は幻想的で、晴れの日とは違った大自然の魅力を楽しめます。万が一、大雨による増水などでツアー中止と判断した場合は、速やかに公式LINEまたはお電話にてご連絡いたします。" },
+  { q: "ツアー前後に大豊町周辺でランチや夕食を食べられるおすすめの場所はありますか？", a: "お昼のランチなら、大豊IC近くの大人気店「ひばり食堂」（ボリューム満点のカツ丼が全国的に有名）や、道の駅大杉で名物の「立川そば」を味わうのがおすすめです！また、ツアー終了後に車で約50分走れば高知市内へ到着します。夜のディナーは名所「ひろめ市場」で名物カツオのタタキや屋台餃子、地酒を堪能するのが旅行者に一番人気の王道ルートです。" },
+  { q: "体験後に立ち寄れるおすすめの温泉や観光スポットはありますか？", a: "当ツアーのベースは大豊ICから車で約15分と四国観光の拠点に最適な立地です。川遊びの後は、車で20〜30分ほどの「祖谷・大歩危温泉」で日帰り入浴をしてリフレッシュするのが一番人気のコースです。日本一の大杉「杉の大杉」やスリル満点の「祖谷のかずら橋」にも近く、四国の自然を満喫した後に高知市内のひろめ市場やホテルへ向かうドライブプランに最適です。" },
+];
+
+const FAQ_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
 export const LOCAL_BUSINESS_JSONLD = {
   "@context": "https://schema.org",
   "@type": "SportsActivityLocation",
@@ -72,7 +86,10 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: HERO },
     ],
     links: [{ rel: "canonical", href: "https://yoshino-river-paddle-tours.lovable.app/" }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(LOCAL_BUSINESS_JSONLD) }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(LOCAL_BUSINESS_JSONLD) },
+      { type: "application/ld+json", children: JSON.stringify(FAQ_JSONLD) },
+    ],
   }),
   component: Index,
 });
@@ -597,6 +614,26 @@ function Index() {
             <li>・ビーチサンダルは怪我防止の為、不可です。</li>
             <li className="font-bold text-destructive">・ウェットスーツは30度超えると熱中症回避の為、貸出自粛してます。</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-3xl px-4 pb-20">
+        <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">よくある質問（Q&amp;A）</h2>
+        <div className="space-y-3">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group rounded-2xl border bg-card p-5 shadow-sm open:shadow-md">
+              <summary className="flex cursor-pointer list-none items-start gap-3 font-bold [&::-webkit-details-marker]:hidden">
+                <span className="shrink-0 font-display text-lg text-primary">Q.</span>
+                <span className="flex-1 leading-relaxed">{f.q}</span>
+                <ChevronDown className="mt-1 h-5 w-5 shrink-0 text-primary transition group-open:rotate-180" />
+              </summary>
+              <div className="mt-4 flex gap-3 border-t pt-4 text-sm leading-loose">
+                <span className="shrink-0 font-display text-lg font-bold text-cta">A.</span>
+                <p>{f.a}</p>
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 
