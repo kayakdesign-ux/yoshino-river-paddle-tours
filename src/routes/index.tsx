@@ -329,6 +329,8 @@ function Index() {
             </li>
           ))}
         </ul>
+        <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-6 w-full max-w-2xl rounded-2xl shadow-md" />
+
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
           <p>{"\n"}</p>
