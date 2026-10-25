@@ -22,4 +22,4 @@
 - Keep booking_requests service-role-only with RLS and per-submission UUID deduplication; owners review entries in Cloud, not a public listing.
 - Add owner emails only after a sending domain is verified, using managed fixed-recipient templates and event-derived idempotency keys; never create email queues or email tables.
 - Tour season and departure times come only from `src/lib/season.ts`; the form and booking validation both read it so times can't drift apart.
-- The external availability widget is loaded inside a per-instance iframe because its script only targets one fixed element id.
+- The external availability widget is loaded inside a per-instance iframe with scoped three-column layout overrides and content-height observation; this preserves provider-owned data and links while fitting three days without internal scrolling.
