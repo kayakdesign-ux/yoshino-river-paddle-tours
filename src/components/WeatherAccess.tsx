@@ -58,6 +58,47 @@ export function MapAccessButton() {
   );
 }
 
+export function WeatherForecast3() {
+  const [days, setDays] = useState<Day[] | null>(null);
+  const [err, setErr] = useState(false);
+  useEffect(() => {
+    fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LNG}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTokyo&forecast_days=3`,
+    )
+      .then((r) => r.json())
+      .then((j) =>
+        setDays(
+          j.daily.time.map((d: string, i: number) => ({
+            date: d,
+            code: j.daily.weather_code[i],
+            max: Math.round(j.daily.temperature_2m_max[i]),
+            min: Math.round(j.daily.temperature_2m_min[i]),
+            rain: j.daily.precipitation_probability_max[i] ?? 0,
+          })),
+        ),
+      )
+      .catch(() => setErr(true));
+  }, []);
+  if (err) return <p className="text-sm text-muted-foreground">天気を取得できませんでした。</p>;
+  if (!days) return <p className="text-sm text-muted-foreground">天気を読み込み中…</p>;
+  return (
+    <div className="grid grid-cols-3 gap-2">
+      {days.map((d, i) => {
+        const { Icon, label, cls } = info(d.code);
+        return (
+          <div key={d.date} className="rounded-xl bg-card p-2 text-center shadow">
+            <p className="text-xs font-bold">{LABELS[i]} {d.date.slice(5).replace("-", "/")}</p>
+            <Icon className={`mx-auto my-1 h-8 w-8 ${cls}`} />
+            <p className="text-xs font-bold">{label}</p>
+            <p className="text-xs"><span className="text-destructive">{d.max}°</span> / <span className="text-primary">{d.min}°</span></p>
+            <p className="text-xs text-muted-foreground">降水 {d.rain}%</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export function WeatherAccess() {
   const [days, setDays] = useState<Day[] | null>(null);
   const [err, setErr] = useState(false);

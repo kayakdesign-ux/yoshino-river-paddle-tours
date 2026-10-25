@@ -4,7 +4,8 @@ import { EntryForm } from "@/components/EntryForm";
 import { Reveal } from "@/components/Reveal";
 import { MessageCircle, MapPin, Check, Lock, ShowerHead, ChevronDown, Fish, Droplets, Flame, ArrowDown, Ship, Camera, Baby, Smartphone, Smile, Store } from "lucide-react";
 
-import { WeatherAccess, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
+import { WeatherAccess, WeatherForecast3, MapAccessButton, DEST_DIR_URL } from "@/components/WeatherAccess";
+import { AvailabilityWidget } from "@/components/AvailabilityWidget";
 
 const afterFlow: { t: string; b: string[] }[] = [
   { t: "忘れ物ありませんか？", b: ["夏期は、化繊のTシャツやラッシュガード、サーフトランクスで参加いただけます。", "飲み物は川に沈まない物なら持込ます。", "携帯は防水ケースに入れて沈まないようにしてください。\n携帯ケースのヒモが切れて水中に沈んだ例がございます。水深が深いと回収できません。防水ケース、浮力付きを強くオススメ致します。"] },
@@ -293,6 +294,12 @@ function Index() {
         </div>
         <p className="mx-auto w-fit rounded-full border-2 border-sakura-strong/30 bg-sakura px-8 py-4 text-center text-lg font-bold text-sakura-foreground shadow-lg md:text-2xl">塩水じゃないから遊びやすいよ</p>
         <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席無くなる前に申し込もう！！</a>
+        <div className="space-y-4 rounded-3xl bg-secondary p-4 text-left">
+          <p className="font-display text-lg font-bold text-primary">大豊町の天気（3日間）</p>
+          <WeatherForecast3 />
+          <p className="font-display text-lg font-bold text-primary">空き状況（3日間）</p>
+          <AvailabilityWidget />
+        </div>
       </section>
 
       {/* Summer outline */}
