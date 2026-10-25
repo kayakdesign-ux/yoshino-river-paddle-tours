@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { Sun, Cloud, CloudRain, CloudSun, CloudSnow, CloudLightning, CloudFog, Navigation, X } from "lucide-react";
 
@@ -58,7 +58,22 @@ export function MapAccessButton() {
   );
 }
 
-export function WeatherForecast3() {
+function hasRain(days: Day[] | null) {
+  return !!days?.some((d) => (d.code >= 51 && d.code <= 67) || (d.code >= 80 && d.code <= 82) || d.code >= 95 || d.rain >= 50);
+}
+
+function WeatherTitle({ title, days, className }: { title: string; days: Day[] | null; className: string }) {
+  return (
+    <p className={`flex flex-wrap items-center gap-2 ${className}`}>
+      {title}
+      {hasRain(days) && (
+        <a href="#rain-perks" className="rounded-full bg-cta px-3 py-1 text-xs font-black text-cta-foreground shadow">☔ 雨の日特典あります</a>
+      )}
+    </p>
+  );
+}
+
+export function WeatherForecast3({ title }: { title?: string }) {
   const [days, setDays] = useState<Day[] | null>(null);
   const [err, setErr] = useState(false);
   useEffect(() => {
@@ -79,9 +94,11 @@ export function WeatherForecast3() {
       )
       .catch(() => setErr(true));
   }, []);
-  if (err) return <p className="text-sm text-muted-foreground">天気を取得できませんでした。</p>;
-  if (!days) return <p className="text-sm text-muted-foreground">天気を読み込み中…</p>;
+  const head = title ? <WeatherTitle title={title} days={days} className="mb-3 font-display text-lg font-bold text-primary" /> : null;
+  if (err) return <>{head}<p className="text-sm text-muted-foreground">天気を取得できませんでした。</p></>;
+  if (!days) return <>{head}<p className="text-sm text-muted-foreground">天気を読み込み中…</p></>;
   return (
+    <>{head}
     <div className="grid grid-cols-3 gap-2">
       {days.map((d, i) => {
         const { Icon, label, cls } = info(d.code);
@@ -96,10 +113,11 @@ export function WeatherForecast3() {
         );
       })}
     </div>
+    </>
   );
 }
 
-export function WeatherAccess() {
+export function WeatherAccess({ title, extra }: { title?: string; extra?: ReactNode }) {
   const [days, setDays] = useState<Day[] | null>(null);
   const [err, setErr] = useState(false);
   const [mapOpen, setMapOpen] = useState(false);
@@ -126,7 +144,7 @@ export function WeatherAccess() {
   return (
     <div className="mt-3 space-y-3 text-sm">
       <div>
-        <p className="font-bold">{"\n"}</p>
+        {title ? <WeatherTitle title={title} days={days} className="font-bold" /> : <p className="font-bold">{"\n"}</p>}
         <p className="text-xs text-muted-foreground">{"\n"}</p>
         {err ? (
           <p className="text-muted-foreground">天気を取得できませんでした。</p>
@@ -152,6 +170,7 @@ export function WeatherAccess() {
           <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
           雨の日特典あります。濡れるから楽しいよ
         </p>
+        {extra}
       </div>
       <p>
         <b>場所を確認</b>　高知県　おおとよICから約15分{"\n"}
@@ -198,7 +217,7 @@ export function WeatherAccess() {
       <p><b></b></p>
       <p className="rounded-xl bg-accent px-3 py-2 font-bold text-accent-foreground">
         <span className="mr-2 rounded-full bg-background px-2 py-0.5 text-xs text-accent">ワンポイント</span>
-        出発時間（9時30分｜13時30分）までに着替えて集合です。
+        出発時間（夏季7/10〜9/30は9時45分｜それ以外は10時45分、午後は13時30分）までに着替えて集合です。
       </p>
     </div>
   );

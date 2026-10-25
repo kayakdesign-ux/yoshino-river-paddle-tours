@@ -1,3 +1,4 @@
+import { departureTimes, morningTime } from "@/lib/season";
 import { useEffect, useRef, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,7 @@ const groups: {
   },
 ];
 
-const SLOTS = ["午前 9:30出発", "午後 13:30出発"];
+const slotsFor = (iso: string) => departureTimes(iso).map((t, i) => `${i === 0 ? "午前" : "午後"} ${t.replace(/^0/, "")}出発`);
 const WD = ["日", "月", "火", "水", "木", "金", "土"];
 
 // 当日表示は当日12時（日本時間）まで。12時を過ぎたら当日を消し、翌日から3日分を表示する。
@@ -104,7 +105,7 @@ export function EntryForm() {
     if (pairError || busy) return;
     setError("");
     setStatus("");
-    const payload = { name, contact, preferredDate: date, departure: slot.startsWith("午前") ? "09:30" : "13:30",
+    const payload = { name, contact, preferredDate: date, departure: slot.startsWith("午前") ? morningTime(date) : "13:30",
       participants: { s1a: c["s1a"] ?? 0, s1k: c["s1k"] ?? 0, s2a: c["s2a"] ?? 0, s2p: c["s2p"] ?? 0, pa: c["pa"] ?? 0, pk: c["pk"] ?? 0 }, weight80 };
     const signature = JSON.stringify(payload);
     if (submission.current?.payload !== signature) submission.current = { payload: signature, id: crypto.randomUUID() };
@@ -156,7 +157,7 @@ export function EntryForm() {
           {days.map((d) => (
             <div key={d.label} className="space-y-1 rounded-lg border bg-card p-2 text-center">
               <p className="font-bold">{d.label}</p>
-              {SLOTS.map((s) => {
+              {slotsFor(d.value).map((s) => {
                 const disabled = d.todayOnlyAfternoon && s.startsWith("午前");
                 if (disabled) return <div key={s} className="h-[34px]" />;
                 const on = date === d.value && slot === s;

@@ -44,7 +44,7 @@ export const LOCAL_BUSINESS_JSONLD = {
   "@context": "https://schema.org",
   "@type": "SportsActivityLocation",
   name: "アウトドア！ガルバンゾ（一般社団法人 自然体感ガルバンゾ）",
-  description: "吉野川の初心者・ファミリー向けリバーSUP体験ツアー。ツアー出発 9:30／13:30。ウォーターアクティビティは5月〜11月。",
+  description: "吉野川の初心者・ファミリー向けリバーSUP体験ツアー。開催期間4月1日〜11月末日。ツアー出発は夏季（7/10〜9/30）9:45／13:30、それ以外10:45／13:30。",
   image: HERO,
   url: "https://yoshino-river-paddle-tours.lovable.app/",
   sameAs: [
@@ -199,7 +199,7 @@ function CourseCard() {
         <p className="text-xl font-bold">ミニ！ツーリング1.5km</p>
         <p className="text-sm text-muted-foreground">たくさんの人に体験して欲しい</p>
         <p className="font-display text-3xl font-bold text-primary">5000円〜<span className="text-base">/1人</span></p>
-        <p className="text-sm">１人乗りは８歳ぐらいから ／ 9時30分・13時30分出発</p>
+        <p className="text-sm">１人乗りは８歳ぐらいから ／ 夏季9時45分・それ以外10時45分、13時30分出発</p>
       </div>
     </div>
   );
@@ -237,7 +237,7 @@ const flow = [
 ];
 
 const steps = [
-  { t: "お天気を確認（大豊町・3日間）（ワクワク）", b: ["\n"] },
+  { t: "大豊町の天気（3日間）", b: ["\n"] },
   { t: "空き状況を聞くだけでもOK！（公式ライン）お問合せ後、友達削除、ミュートOKです。", b: [], line: true },
   {
     t: "弊社からの返信を持って「予約」とさせていただきます。",
@@ -275,12 +275,12 @@ function Index() {
         <img src="/dji-hero.jpg" alt="夏の吉野川の清流とSUP" className="h-[88svh] max-h-[760px] min-h-[520px] w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-river/90 via-river/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-3xl px-5 pb-12 text-center text-primary-foreground">
-          <p className="mx-auto mb-4 w-fit rounded-full bg-cta px-5 py-2 text-sm font-black text-cta-foreground shadow-lg md:text-base">7/10 〜 9/30 毎日開催！</p>
+          <p className="mx-auto mb-4 w-fit rounded-full bg-cta px-5 py-2 text-sm font-black text-cta-foreground shadow-lg md:text-base">4/1 〜 11月末日 毎日開催！</p>
           <h1 className="font-display text-3xl font-black leading-tight drop-shadow-lg md:text-5xl">初めてでも立てる！<br />吉野川の穏やかSUP</h1>
           <p className="mt-4 text-sm opacity-90 md:text-base"><span className="font-bold">1.5kmを安全にくだる。</span><br />流れの優しい安全エリアを厳選。<br />高知市内から50分、手ぶらで安心の川遊び体験。</p>
           <a href="#entry" className="mt-8 inline-flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-2xl shadow-cta/40 active:scale-[0.98]">今すぐ空き状況を確認・予約</a>
           <p className="mx-auto mt-3 w-fit animate-pulse rounded-full bg-destructive px-3 py-1 text-xs font-bold text-destructive-foreground">夏休み・週末は残席わずか！</p>
-          <p className="mt-3 text-xs opacity-80">9:30・13:30出発 ／ 5,000円〜</p>
+          <p className="mt-3 text-xs opacity-80">夏季9:45／春秋10:45・13:30出発 ／ 5,000円〜</p>
         </div>
       </section>
 
@@ -295,8 +295,7 @@ function Index() {
         <p className="mx-auto w-fit rounded-full border-2 border-sakura-strong/30 bg-sakura px-8 py-4 text-center text-lg font-bold text-sakura-foreground shadow-lg md:text-2xl">塩水じゃないから遊びやすいよ</p>
         <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席無くなる前に申し込もう！！</a>
         <div className="space-y-4 rounded-3xl bg-secondary p-4 text-left">
-          <p className="font-display text-lg font-bold text-primary">大豊町の天気（3日間）</p>
-          <WeatherForecast3 />
+          <WeatherForecast3 title="大豊町の天気（3日間）" />
           <p className="font-display text-lg font-bold text-primary">空き状況（3日間）</p>
           <AvailabilityWidget />
         </div>
@@ -306,9 +305,9 @@ function Index() {
 
       <section className="mx-auto max-w-3xl px-4 pt-20">
         <div className="rounded-3xl border-4 border-cta bg-card p-6 text-center shadow-xl md:p-10">
-          <h2 className="font-display text-2xl font-black text-primary md:text-3xl">【2027年夏】吉野川SUPツアー開催概要</h2>
+          <h2 className="font-display text-2xl font-black text-primary md:text-3xl">【2027年】吉野川SUPツアー開催概要</h2>
           <div className="mt-6 grid gap-4">
-            <div className="rounded-2xl bg-secondary p-5"><p className="text-3xl">📅☀️</p><p className="font-display text-xl font-black md:text-2xl">開催期間：7月10日(土) 〜 9月30日(木)</p><p className="mt-1 font-display text-xl font-black md:text-2xl">期間中、毎日開催！</p></div>
+            <div className="rounded-2xl bg-secondary p-5"><p className="text-3xl">📅☀️</p><p className="font-display text-xl font-black md:text-2xl">開催期間：4月1日 〜 11月末日</p><p className="mt-1 font-display text-xl font-black md:text-2xl">期間中、毎日開催！</p><p className="mt-3 text-sm font-bold md:text-base">夏季（7/10〜9/30）出発 9:45・13:30<br />夏季以外 出発 10:45・13:30</p></div>
             <div className="rounded-2xl bg-cta p-5 text-cta-foreground"><p className="text-3xl">⏰</p><p className="font-display text-xl font-black md:text-2xl">ご予約はお早めに</p></div>
           </div>
         </div>
@@ -590,7 +589,7 @@ function Index() {
                   <td className="p-3">{r[3]}</td>
                 </tr>
               ))}
-              <tr><th colSpan={4} className="px-3 pt-3 text-left font-bold text-primary">雨の日特典</th></tr>
+              <tr id="rain-perks" className="scroll-mt-24"><th colSpan={4} className="px-3 pt-3 text-left font-bold text-primary">雨の日特典</th></tr>
               {[
                 ["雨の日キャンセル料", "5000円", "1000円", "無料"],
                 ["・写真割引", "－", "✓", "✓"],
@@ -672,11 +671,10 @@ function Index() {
           {steps.map((s, i) => (
             <li key={i} id={`step-${i + 1}`} className="scroll-mt-24 rounded-2xl border bg-card p-5">
               <p className="text-xs font-bold tracking-widest text-primary">STEP {i + 1}</p>
-              <p className="mt-1 font-bold">{s.t}</p>
+              {i !== 0 && <p className="mt-1 font-bold">{s.t}</p>}
               {i === 0 ? (
                 <div className="mt-2 text-sm">
-                  <p>{s.b[0]}</p>
-                  <WeatherAccess />
+                  <WeatherAccess title={s.t} extra={<div className="mt-4 space-y-2"><p className="font-bold">空き状況（3日間）</p><AvailabilityWidget /></div>} />
                 </div>
               ) : s.b.length > 0 && <ul className="mt-2 space-y-1 text-sm">{s.b.map((b) => <li key={b}>・{b}</li>)}</ul>}
               {s.note && (
