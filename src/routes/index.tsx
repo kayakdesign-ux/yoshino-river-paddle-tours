@@ -608,18 +608,24 @@ function Index() {
       </section>
 
       {/* Paid rental */}
-      <section className="mx-auto max-w-3xl px-4 py-20">
-        <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">
-          急な予定変更｜体調不良がご不安の方は<br />「おすすめ6000円コース・7000円コース」をお選びください。
-        </h2>
-        <div className="mt-6 rounded-2xl border-2 border-destructive/40 bg-card p-5">
-          <p className="mb-3">
-            <span className="inline-block rounded-full border-2 border-destructive px-4 py-1 text-sm font-bold text-destructive">ご注意</span>
-          </p>
-          <ul className="space-y-2 text-sm leading-relaxed">
-            <li>・ビーチサンダルは怪我防止の為、不可です。</li>
-            <li className="font-bold text-destructive">・ウェットスーツは30度超えると熱中症回避の為、貸出自粛してます。</li>
-          </ul>
+      <section className="mx-auto max-w-3xl px-4 pb-20">
+        <div className="rounded-2xl border bg-card p-5 shadow-sm md:p-6">
+          <p className="mb-2 inline-block rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">コース選びのポイント</p>
+          <h2 className="text-left font-display text-xl font-bold leading-relaxed text-primary md:text-2xl">
+            急な予定変更｜体調不良がご不安の方は<br />「おすすめ6000円コース・7000円コース」をお選びください。
+          </h2>
+          <div className="mt-5 rounded-xl border-2 border-destructive/30 bg-secondary p-4">
+            <p className="mb-3">
+              <span className="inline-block rounded-full border-2 border-destructive bg-card px-4 py-1 text-sm font-bold text-destructive">ご注意</span>
+            </p>
+            <ul className="space-y-2 text-sm leading-relaxed md:text-base">
+              <li className="flex items-start gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground" />ビーチサンダルは怪我防止の為、不可です。</li>
+              <li className="flex items-start gap-2 font-bold text-destructive"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />ウェットスーツは30度超えると熱中症回避の為、貸出自粛してます。</li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-8 text-center">
+          <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席がなくなる前に申し込もう！！</a>
         </div>
       </section>
 
