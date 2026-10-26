@@ -553,20 +553,24 @@ function Index() {
       <section className="mx-auto max-w-3xl px-4 py-20">
         <h2 className="mb-6 text-left font-display text-2xl font-bold text-primary md:text-3xl">吉野川SUP体験コース一覧・料金</h2>
         <div className="overflow-x-auto rounded-2xl border bg-card">
-          <table className="w-full min-w-[480px] text-center text-sm">
+          <table className="w-full min-w-[520px] text-center text-sm">
             <thead>
               <tr className="border-b">
                 <th className="p-3"></th>
-                <th className="p-3 pt-6">
+                <th className="w-1/4 p-3 pt-6 align-bottom">
                   <span className="block rounded-2xl border bg-card px-2 py-3 text-xl font-bold shadow-sm">5,000円</span>
                 </th>
-                <th className="bg-secondary p-3 pt-6">
-                  <span className="relative block rounded-2xl border-2 border-primary bg-card px-2 py-3 text-xl font-bold text-primary shadow-lg">
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-primary px-3 py-0.5 text-xs text-primary-foreground">便利でオススメ</span>
+                <th className="w-[30%] border-x-2 border-t-2 border-primary bg-primary/10 p-3 pt-4 align-bottom">
+                  <span className="mb-3 block rounded-xl bg-cta px-2 py-2 text-[11px] font-bold leading-snug text-cta-foreground shadow-md md:text-xs">
+                    👈 旅行の急なスケジュール変更・体調不良でも安心！
+                    <span className="mt-0.5 block text-[10px] font-normal opacity-90">当日キャンセル料わずか1,000円</span>
+                  </span>
+                  <span className="relative block rounded-2xl border-2 border-primary bg-card px-2 py-3 text-2xl font-black text-primary shadow-lg">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-primary px-3 py-0.5 text-xs text-primary-foreground">一番おすすめ</span>
                     6,000円
                   </span>
                 </th>
-                <th className="p-3 pt-6">
+                <th className="w-1/4 p-3 pt-6 align-bottom">
                   <span className="block rounded-2xl border bg-card px-2 py-3 text-xl font-bold shadow-sm">7,000円</span>
                 </th>
               </tr>
@@ -575,30 +579,34 @@ function Index() {
               {[
                 ["前日支払（クレジット｜PayPay）", "-", "○", "○"],
                 ["当日支払（QR決済：PayPay・楽天Pay）", "-", "○", "○"],
-                ["有料レンタルA 300円", "-", "○", "⚪︎", "靴だけレンタル（リバーシューズ）"],
+                ["有料レンタルA 300円", "-", "○", "○", "靴だけレンタル（リバーシューズ）"],
                 ["有料レンタルB 500円", "－", "－", "○", "ラッシュガード・ウェット長ズボン・帽子"],
-                ["通常キャンセル料（当日）", "5000円", "1000円", "1,000円"],
-              ].map((r) => (
+                ["通常キャンセル料（当日）", "5000円", "1,000円", "1,000円"],
+              ].map((r, i) => (
                 <tr key={r[0]} className="border-b">
                   <th className="p-3 text-left font-bold">
                     {r[0]}
                     {r[4] && <span className="mt-1 block text-xs font-normal text-muted-foreground">{r[4]}</span>}
                   </th>
                   <td className="p-3">{r[1]}</td>
-                  <td className="bg-secondary p-3 font-bold">{r[2]}</td>
+                  <td className={`border-x-2 border-primary bg-primary/10 p-3 font-bold ${i === 4 ? "text-lg font-black text-primary" : ""}`}>{r[2]}</td>
                   <td className="p-3">{r[3]}</td>
                 </tr>
               ))}
-              <tr id="rain-perks" className="scroll-mt-24"><th colSpan={4} className="px-3 pt-3 text-left font-bold text-primary">雨の日特典</th></tr>
+              <tr id="rain-perks" className="scroll-mt-24">
+                <th colSpan={2} className="px-3 pt-3 text-left font-bold text-primary">雨の日特典</th>
+                <td className="border-x-2 border-primary bg-primary/10"></td>
+                <td></td>
+              </tr>
               {[
                 ["雨の日キャンセル料", "5000円", "1000円", "無料"],
                 ["・写真割引", "－", "✓", "✓"],
                 ["・ウェットスーツ貸出", "有料", "半額", "無料"],
-              ].map((r) => (
+              ].map((r, i, a) => (
                 <tr key={r[0]} className="border-b last:border-0">
                   <th className="p-3 text-left font-normal">{r[0]}</th>
                   <td className="p-3">{r[1]}</td>
-                  <td className="bg-secondary p-3 font-bold">{r[2]}</td>
+                  <td className={`border-x-2 border-primary bg-primary/10 p-3 font-bold ${i === a.length - 1 ? "border-b-2" : ""}`}>{r[2]}</td>
                   <td className="p-3">{r[3]}</td>
                 </tr>
               ))}
@@ -607,22 +615,14 @@ function Index() {
         </div>
       </section>
 
-      {/* Paid rental */}
+      {/* Notes before booking */}
       <section className="mx-auto max-w-3xl px-4 pb-20">
         <div className="rounded-2xl border bg-card p-5 shadow-sm md:p-6">
-          <p className="mb-2 inline-block rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">コース選びのポイント</p>
-          <h2 className="text-left font-display text-xl font-bold leading-relaxed text-primary md:text-2xl">
-            急な予定変更｜体調不良がご不安の方は<br />「おすすめ6000円コース・7000円コース」をお選びください。
-          </h2>
-          <div className="mt-5 rounded-xl border-2 border-destructive/30 bg-secondary p-4">
-            <p className="mb-3">
-              <span className="inline-block rounded-full border-2 border-destructive bg-card px-4 py-1 text-sm font-bold text-destructive">ご注意</span>
-            </p>
-            <ul className="space-y-2 text-sm leading-relaxed md:text-base">
-              <li className="flex items-start gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground" />ビーチサンダルは怪我防止の為、不可です。</li>
-              <li className="flex items-start gap-2 font-bold text-destructive"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />ウェットスーツは30度超えると熱中症回避の為、貸出自粛してます。</li>
-            </ul>
-          </div>
+          <h2 className="text-left font-display text-xl font-bold text-primary md:text-2xl">⚠️ ご予約前の注意事項</h2>
+          <ul className="mt-4 space-y-3 text-sm leading-relaxed md:text-base">
+            <li className="flex items-start gap-3 rounded-xl bg-secondary p-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground" />怪我防止のため、ビーチサンダルでのご参加は不可です（シューズ必須）</li>
+            <li className="flex items-start gap-3 rounded-xl bg-destructive/10 p-3 font-bold text-destructive"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />気温が30℃を超える日は熱中症予防のため、ウェットスーツの貸出を自粛しております</li>
+          </ul>
         </div>
         <div className="mt-8 text-center">
           <a href="#entry" className="inline-flex min-h-14 items-center rounded-full bg-cta px-8 py-4 text-lg font-black text-cta-foreground shadow-xl shadow-cta/30">空席がなくなる前に申し込もう！！</a>
