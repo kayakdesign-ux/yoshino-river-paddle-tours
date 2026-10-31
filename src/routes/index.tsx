@@ -22,9 +22,8 @@ const afterFlow: { t: string; b: string[] }[] = [
 
 
 const LINE_URL = "https://page.line.me/418xyaym?openQrModal=true";
-const W = "https://kawaasobi.com/wp/wp-content/uploads";
 const K = "https://kayaks.jp/wp/wp-content/uploads";
-const HERO = `${W}/2024/10/GOPR3336-1024x896.jpg`;
+const HERO = `/__l5e/assets-v1/81219088-dbfe-4c68-8ddf-5e7cf90fb1b7/2024_10_GOPR3336-1024x896.jpg`;
 
 export const FAQS: { q: string; a: string }[] = [
   { q: "泳げない人や小さな子ども、SUPが初めてでも参加できますか？", a: "もちろん大歓迎です！ご案内する吉野川のツアーエリアは、流れがとても穏やかで安全性の高い区間を厳選しています。浮力の高い専用ライフジャケットを必ず着用いただき、安定感抜群の「川用ワイドボード」を使用します。8歳前後のお子様から大人まで、ガイドが基本操作から丁寧にレクチャーしますので、泳ぎに自信がない方でも安心して川遊びを満喫していただけます。" },
@@ -193,7 +192,7 @@ function PhoneRulePill() {
 function CourseCard() {
   return (
     <div className="overflow-hidden rounded-2xl border bg-card shadow-md">
-      <img src={`${W}/2024/10/GOPR3336-1024x896.jpg`} alt="リバーサップ体験" className="aspect-[8/7] w-full object-cover" />
+      <img src={`/__l5e/assets-v1/81219088-dbfe-4c68-8ddf-5e7cf90fb1b7/2024_10_GOPR3336-1024x896.jpg`} alt="リバーサップ体験" className="aspect-[8/7] w-full object-cover" />
       <div className="space-y-2 p-5 text-center">
         <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">オススメ</span>
         <p className="text-xl font-bold">ミニ！ツーリング1.5km</p>
@@ -206,12 +205,12 @@ function CourseCard() {
 }
 
 const features: { img: string; t: string; d: string; hot?: boolean; i?: typeof MapPin }[] = [
-  { img: `${W}/2024/10/DJI_0678__s-1024x683.jpg`, t: "塩水じゃないからサラサラ", d: "のんびり遊べます" },
-  { img: `${W}/2024/07/GOPR1471_s.jpg`, t: "人気の飛び込みも複数回OK", d: "希望者のみです。", hot: true },
-  { img: `${W}/2024/07/P9201623_s.jpg`, t: "泳げ無くてもライフジャケット着用", d: "夏は浮かんでいるだけも楽しい" },
-  { img: `${W}/2019/08/P6029311-1.jpg`, t: "2人乗りも可", d: "ゆったりとした流れの中なので色々ためせます" },
-  { img: `${W}/2024/07/GOPR1582_s.jpg`, t: "20分程度のレッスン付", d: "初めてでも乗り方、パドル持ち方から習えます。" },
-  { img: `${W}/2024/07/P1012125_s-1024x768.jpg`, t: "魚ウオッチングも楽しめる", d: "自由時間もあるのでのんびりくつろぐことも", i: Fish },
+  { img: `/__l5e/assets-v1/55bec760-f1df-44a2-85ad-e33c997a5d14/2024_10_DJI_0678__s-1024x683.jpg`, t: "塩水じゃないからサラサラ", d: "のんびり遊べます" },
+  { img: `/__l5e/assets-v1/9b90c163-9d18-4edb-9827-735de8bcba00/2024_07_GOPR1471_s.jpg`, t: "人気の飛び込みも複数回OK", d: "希望者のみです。", hot: true },
+  { img: `/__l5e/assets-v1/a59e3c6b-f0c2-46ba-8c1c-554e85baa6fc/2024_07_P9201623_s.jpg`, t: "泳げ無くてもライフジャケット着用", d: "夏は浮かんでいるだけも楽しい" },
+  { img: `/__l5e/assets-v1/cde61bd0-e234-464c-ab32-a76065f0adbc/2019_08_P6029311-1.jpg`, t: "2人乗りも可", d: "ゆったりとした流れの中なので色々ためせます" },
+  { img: `/__l5e/assets-v1/f2993121-7eb2-4c46-963a-3659bb6b9f24/2024_07_GOPR1582_s.jpg`, t: "20分程度のレッスン付", d: "初めてでも乗り方、パドル持ち方から習えます。" },
+  { img: `/__l5e/assets-v1/4418ad5c-3800-4c66-bc66-907b63730f2f/2024_07_P1012125_s-1024x768.jpg`, t: "魚ウオッチングも楽しめる", d: "自由時間もあるのでのんびりくつろぐことも", i: Fish },
 ];
 
 const accessPills: { t: string; i?: typeof MapPin; leaf?: boolean }[] = [
@@ -229,11 +228,11 @@ const highlights: { t: string; i?: typeof MapPin; hot?: boolean; soft?: boolean;
 ];
 
 const flow = [
-  { img: `${W}/2025/05/P8013228-1024x768.jpg`, d: "準備運動、漕ぎ方の練習。JRCA公認インストラクターがレッスン 20分程度" },
+  { img: `/__l5e/assets-v1/5935b99a-d6dd-4fd5-a7bb-f5efeddccfae/2025_05_P8013228-1024x768.jpg`, d: "準備運動、漕ぎ方の練習。JRCA公認インストラクターがレッスン 20分程度" },
   { img: `${K}/2024/07/GOPR2636_1500-1024x896.jpg`, d: "浮く練習・クールダウン・レスキュー練習と熱中症対策。記念写真もお撮りします。" },
-  { img: `${W}/2025/05/GOPR4249-1024x768.jpg`, d: "出発！のんびりする、練習する、癒される！ミニレッスンを受ける事も可能" },
-  { img: `${W}/2023/07/202307131342-1.jpg`, d: "希望者は岩から飛び込みもあり。約40分間 自由時間あるので自分のペースで遊ぶ。" },
-  { img: `${W}/2025/05/GOPR4324-1024x896.jpg`, d: "無事ゴール。笑顔が楽しさの証です。スタッフが撮った写真は購入も可能です。" },
+  { img: `/__l5e/assets-v1/5256d88a-8985-4b4a-91d9-e84fb20beaf8/2025_05_GOPR4249-1024x768.jpg`, d: "出発！のんびりする、練習する、癒される！ミニレッスンを受ける事も可能" },
+  { img: `/__l5e/assets-v1/23149119-670e-432c-9838-1490770b9030/2023_07_202307131342-1.jpg`, d: "希望者は岩から飛び込みもあり。約40分間 自由時間あるので自分のペースで遊ぶ。" },
+  { img: `/__l5e/assets-v1/f7d9f2e2-c465-48b6-81d4-85726b22acef/2025_05_GOPR4324-1024x896.jpg`, d: "無事ゴール。笑顔が楽しさの証です。スタッフが撮った写真は購入も可能です。" },
 ];
 
 const steps = [
@@ -332,7 +331,7 @@ function Index() {
 
       {/* Tags */}
       <section className="mx-auto py-20 max-w-3xl px-4">
-        <img src={`${W}/2025/05/SUP02.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-4 w-full max-w-3xl rounded-2xl" />
+        <img src={`/__l5e/assets-v1/7af0f364-f997-41d5-a7b6-7a91d7f14d2f/2025_05_SUP02.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-4 w-full max-w-3xl rounded-2xl" />
       </section>
 
       {/* About copy 1 */}
@@ -346,7 +345,7 @@ function Index() {
             </li>
           ))}
         </ul>
-        <img src={`${W}/2025/05/Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-6 w-full max-w-2xl rounded-2xl shadow-md" />
+        <img src={`/__l5e/assets-v1/0a54183b-b7c7-4a95-ba4b-2aea038abdcd/2025_05_Sup03.png`} alt="高知の吉野川でSUPを楽しむ参加者" className="mx-auto mt-6 w-full max-w-2xl rounded-2xl shadow-md" />
 
         <div className="space-y-3 leading-relaxed">
           <p>四国の清流と言うと、「四万十川」「仁淀川」が有名ですが、吉野川も清流ランキングで１位になる清流です。</p>
@@ -400,7 +399,7 @@ function Index() {
               ))}
             </ul>
           </div>
-          <img src={`${W}/2025/05/Photo03.png`} alt="ツアー写真" className="rounded-2xl" />
+          <img src={`/__l5e/assets-v1/32b9816f-f439-47c7-9c64-efb408030de1/2025_05_Photo03.png`} alt="ツアー写真" className="rounded-2xl" />
         </div>
       </section>
 
@@ -454,7 +453,7 @@ function Index() {
           ))}
         </div>
         <Reveal delay={250}>
-          <img src={`${W}/2025/05/SUP06.png`} alt="スマホ持ち込み" loading="lazy" className="mx-auto mt-6 block w-full max-w-md rounded-2xl shadow-lg" />
+          <img src={`/__l5e/assets-v1/6924dc11-c1b8-4ad5-939b-0b966fde3c56/2025_05_SUP06.png`} alt="スマホ持ち込み" loading="lazy" className="mx-auto mt-6 block w-full max-w-md rounded-2xl shadow-lg" />
         </Reveal>
         <Reveal delay={300}>
           <p className="mt-4 rounded-2xl bg-accent px-4 py-3 font-semibold text-accent-foreground">始めてサップ（SUP）で川下りする方が、のんびりと楽しめるツアーになります。</p>
@@ -475,7 +474,7 @@ function Index() {
             </div>
           ))}
           <div className="w-72 shrink-0 snap-start overflow-hidden rounded-2xl border bg-card shadow-sm">
-            <img src={`${W}/2018/05/IONX0079-1.jpg`} alt="リバーSUP吉野川" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+            <img src={`/__l5e/assets-v1/c02450b8-08bd-40c3-a5ef-318d60e6a011/2018_05_IONX0079-1.jpg`} alt="リバーSUP吉野川" loading="lazy" className="aspect-[4/3] w-full object-cover" />
             <div className="p-4">
               <p className="font-display font-bold text-accent-foreground">番外</p>
               <p className="mt-1 text-sm">リバーSUP（サップ）は１回で終わらない！もっとスリリングな1.5km→4.0kmコースもあります。</p>
@@ -487,7 +486,7 @@ function Index() {
 
       {/* Hobby */}
       <section className="mx-auto py-20 grid max-w-3xl items-center gap-6 px-4">
-        <img src={`${W}/2025/05/SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
+        <img src={`/__l5e/assets-v1/bec4f062-0b05-408b-b3cc-0aadfd8bf44d/2025_05_SUP11-1024x614.png`} alt="吉野川SUP" className="rounded-2xl" />
         <div className="text-center">
           <H2>今年、最高の趣味を手に入れよう</H2>
           <p>リバーSUPは日本中でやってます。経験があれば他の川に旅行いっても色々な川に行けます。</p>
@@ -658,7 +657,7 @@ function Index() {
             <CourseCard />
           </div>
           <div className="mx-auto mt-8 max-w-3xl space-y-4">
-            <img src={`${W}/2025/05/P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
+            <img src={`/__l5e/assets-v1/6b207932-0d68-4b77-ad96-0b778a25739f/2025_05_P7253530-1024x768.jpg`} alt="パックラフト" className="mx-auto w-full max-w-md rounded-2xl" />
             <p className="flex items-center justify-center gap-2 rounded-full border-2 border-primary bg-card px-5 py-3 text-center font-bold text-primary"><img src="/duck.png" alt="だっく" className="h-10 w-10 shrink-0 rounded-full" />サップ（SUP）が難しそう｜落ちたくない<br />安定感抜群のパックラフトで一緒に参加できます。</p>
           </div>
           <p className="mt-6 text-center">{"\n"}</p>
@@ -694,7 +693,7 @@ function Index() {
               {s.line && (
                 <div className="mt-4 space-y-3 text-sm">
                   <div className="flex flex-col items-center gap-3 sm:flex-row">
-                    <a href={LINE_URL} target="_blank" rel="noopener noreferrer"><img src={`${W}/2024/07/QR_LINE_336.png`} alt="公式LINE QRコード" className="h-32 w-32" /></a>
+                    <a href={LINE_URL} target="_blank" rel="noopener noreferrer"><img src={`/__l5e/assets-v1/b5f681d9-6d79-46fb-b655-4f3c134a4603/2024_07_QR_LINE_336.png`} alt="公式LINE QRコード" className="h-32 w-32" /></a>
                     <div className="text-center sm:text-left">
                       <LineButton label="Galbanzo | LINE 公式アカウント" />
                       <p className="mt-2">{"\n"}</p>
